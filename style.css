@@ -1,0 +1,709 @@
+@import url('https://fonts.googleapis.com/css2? family= Roboto:wght@300;400;500;700;900 & display=swap');
+
+
+/* ====== Google fonts Para elegir las fuentes para el TXT del meme  ===== */
+
+
+@font-face {
+    font-family: 'Alegreya';
+    src: url(fuentes/AlegreyaSC-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Amaranth';
+    src: url(fuentes/Amaranth-BoldItalic.ttf);
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Dosis';
+    src: url(fuentes/Dosis-VariableFont_wght.ttf);
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Serif';
+    src: url(fuentes/InstrumentSerif-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Langar';
+    src: url(fuentes/Langar-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Lemon';
+    src: url(fuentes/Lemon-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Luckiest Guy';
+    src: url(fuentes/LuckiestGuy-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pattaya';
+    src: url(fuentes/Pattaya-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Permanent Marker';
+    src: url(fuentes/PermanentMarker-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Twinkle Star';
+    src: url(fuentes/TwinkleStar-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ============================= COLORES =============================*/
+:root{                               /* Modo OSCURO*/
+    --color-header:    #005285 ;    
+    --color-seccion:   #012639;     
+    --color-cont-main: #0ba8e2;     
+    --color-fondoBtn:  #72d5f8;     
+    --color-fuente:    #f3f4f6;     
+
+    --color-hover:  #4eae48;
+    --color_btn-desc-arriba-abajo: #000000;
+    color-scheme: dark;   /*color por defecto de win, para barras de scroll*/
+   
+    --transition: color 0.1s, background-color 0.2s ease-in-out;
+
+    --cajita_meme-tm-maximo: 600;
+    --cajita_meme-tm-inicial-txt: 50;
+    --alto-botones-paneles: 27;
+    --ancho-panel-imgtxt: 280;
+
+    --breakpoints-uno: 1300;
+    --breakpoints-dos: 850;
+    --breakpoints-tres: 570;
+}  
+
+:root[data-theme-color="light"] {     /* Modo CLARO*/
+    --color-header:    #78c0ee;        /* gray 400*/
+    --color-seccion:    #1490d0;       /*  gray 100*/
+    --color-cont-main: #d3d8e2;       /*  gray 300*/
+    --color-fondoBtn:  #b1bcd1;       /*  gray 200*/
+    --color-fuente:    #010101;       /*  gray 800*/
+  
+    color-scheme: light;  /*color por defecto de win, para barras de scroll*/
+}
+
+  
+/* ============================= CONFIG GENERAL =============================*/
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    transition: var(--transition);
+}
+
+ html{
+    font-size: 20px;
+    height: 100vh;
+} 
+
+body{
+    /* height: 100%; */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Roboto";
+    font-weight: 900;
+}
+
+.bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+  
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+  }
+  
+  .bg3 {
+    animation-duration:5s;
+  }
+
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
+
+
+
+
+/* ============================= HEADER =============================*/
+.contenedor-header{
+    height: 15%;
+    width: 100%;
+    color: var(--color-fuente);
+    background-color: var(--color-header);
+    padding: 10px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.header-titulo{
+    font-size: 2rem;
+}
+.nav-btn{
+  /*   all: unset;         /*Quita todo estilo por defecto.*/
+    padding: 10px;
+    font-size: 0.8rem;
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px ;
+}
+.nav-btn:hover{
+    background-color: var(--color-fondoBtn);
+    border-radius: 5px ;
+}
+
+.fa-sun-o:before { 
+    content: "\f185"; /* Este valor es del icono del SOL (Font Awesome 4.7.0 Icon) */
+}
+.fa-moon-o:before { 
+    content: "\f186"; /* Este valor es del icono del Luna (Font Awesome 4.7.0 Icon) */
+}
+
+/* ============================= CONTENEDOR PRINCIPAL  ============================= */
+.contenedor-ppal{   /* Contiene a  "contenedor-main" y al "seccion". */
+    width: 100%;
+    height: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: var(--color-cont-ppal);  
+}
+
+.contenedor-main{   /* Contiene a:  main-img-txt y main-btn-descargar. */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 0px;
+}
+
+.main-img-txt{
+    width: 100%;
+    height: calc(var(--cajita_meme-tm-maximo) * 1px); 
+    max-width: calc(var(--cajita_meme-tm-maximo) * 1px);    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .main-img{
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-header); 
+        position: relative;
+    }
+
+    .main-txt{
+        width: 100%;
+        font-family: 'Alegreya', serif;
+        font-size: 40px;
+        text-align:center;
+        color: black;
+        background-color: white;
+        padding: 10px 0px 10px 0px;
+
+        position: static; /* ver absolute*/
+        z-index: 1; 
+    }
+    #main-txt-superior{ 
+        top: 0;
+    }
+    #main-txt-inferior{   
+       bottom: 0;
+    }
+
+
+
+/* ------ DESCARGAR MEME ---------*/
+.main-btn-descargar{
+    /*  all: unset;       Quita todo estilo por defecto.*/
+    border: 0;
+    background-color: var(--color_btn-desc-arriba-abajo); /*#89a105;*/
+    box-shadow: 3px 3px 3px var(--color-header);
+    border-radius: 5px ;
+    padding: 10px;
+    font-size: 0.8rem;
+    margin-top: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
+.main-btn-descargar:hover{
+    background-color: #ffffff;/* #e2f092;*/
+    color:#000000
+}
+
+
+/* ============================= SECTION (para el panel de txt y img ================= */
+
+.contenedor-paneles{
+    width:calc(var(--ancho-panel-imgtxt) * 1px );
+    height: 100%;
+    flex-direction: column;
+    background-color: var(--color-seccion);
+    padding: 35px 10px 20px 10px;
+    overflow-y: visible;  /*scroll y visible*/
+    overflow-x: hidden; /*scroll x ocultar*/
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    font-family: 'roboto';
+}
+
+.panel-btn-cerrar{
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 0px;
+    font-size: 1rem;
+}
+.fa-times-circle-o:before { 
+    content: "\f05c"; /* Valor del icono de CERRAR (Font Awesome 4.7.0 Icon) */
+}
+
+.ocultar{
+    display: none;
+}
+/* .mostrar{
+    display: block;
+} */
+
+.panel-titulo{
+    display: flex;
+    justify-content: center;
+}
+
+.panel-sectores-controles{   /*Borde de cada control*/
+    margin-top: 10px;
+    padding: 5px;    
+}
+
+.panel-img, .panel-txt{
+    width: 100%;
+    height: 100%;
+}
+
+input{
+    background-color: var(--color-fondoBtn);
+    color:var(--color-fuente);
+    border: 0;          
+    border-radius: 3px; 
+    padding: 3px; 
+    outline: none;      /* Borra un borde negro. */
+}
+
+/*----------------------- SECTION: panel de IMAGEN -------------------*/
+.contenedor-de-origen-y-fondo{
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-sectores{  /*Para acomodar controles que van en fila. Ej: btn de URL y PC */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 5px;
+} 
+
+/*------------------ ORIGEN */
+.alto-origen-img{
+    height: 100px;
+}
+
+.seccion-img-btn-subir{  /* Para el btn de URL/PC. */
+    background-color: var(--color-fondoBtn);
+    border-radius: 5px ;
+    border: 0px;
+    padding: 3px;
+    margin-bottom: 5px;
+    font-size: 0.7rem;
+    width: calc(50% - 2px);   /*110px;*/
+    height: calc( var(--alto-botones-paneles)* 1px);
+    cursor: pointer;  /*Para que aparezca la manito sobre el btn. */
+    color:#000000;
+}
+
+input[type="url"]{
+    height: calc( var(--alto-botones-paneles)* 1px);
+    width: calc(100% - 0px);
+        
+}
+
+::placeholder{  /* Modifica TXT  del placeholder del input-url */
+    color: var(--color_btn-desc-arriba-abajo);
+    font-size: 0.7rem;
+    
+} 
+
+.archivo-img input{  /* Para btn subir desde PC*/
+    display: none;
+}
+.archivo-img label{ /* Para btn subir desde PC*/
+    margin-top: 3px;
+    width: 100%;
+    height: calc( var(--alto-botones-paneles)* 1px);
+    background-color: var(--color-fondoBtn);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.7rem;
+}
+
+/*------------------ FONDO */
+.panel-sector-fondo-color{
+    background-color: var(--color-fondoBtn);
+    font-size: 0.7rem;
+    width: calc(50% - 2px);  
+    border-radius: 3px;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; 
+    color:#000000;
+}
+
+[type="color"] {       /*Para que input=color, quede redondo*/
+    display: inline-flex;
+    vertical-align: bottom;
+    justify-content: center;
+    border: none;
+}
+::-webkit-color-swatch-wrapper { /*Para que input=color, quede redondo*/
+    padding: 0;
+    cursor: pointer;
+    height: 20px; /*Para el cículo de color*/
+    width: 20px;  /*Para el cículo de color*/
+}
+
+::-webkit-color-swatch { /*Para que input=color, quede redondo*/
+    border: 0;
+    border-radius: 50%;
+}
+
+.panel-sector-fondo-modoMezcla{
+    background-color: var(--color-fondoBtn);
+    border-radius: 3px;
+    display: flex;
+    width: calc(50% - 2px);  
+    height: var(--alto-botones-paneles)px;
+    display: flex;
+    align-items: center;
+        
+}
+.panel-sector-fondo-modoMezcla select{
+  	border: 0;
+	background-color: var(--color-fondoBtn);
+	color: var(--color-fuente);
+    font-size: 0.7rem;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+    color:#000000;
+}
+ 
+/* ------------------ Filtros */
+.filtros{
+    width: 100%;
+    margin-top: 25px;
+    font-size: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    
+    
+}
+
+input[type='range'] {
+    overflow: hidden;
+    appearance: none;
+    background-color: var(--color-fondoBtn);/*parte derecha*/
+    
+  }
+  
+input[type='range']::-webkit-slider-thumb {
+    width: 10px;
+    height: 10px;
+    border-radius: 30%;
+    -webkit-appearance: none;
+    cursor: ew-resize;
+    background: var(--color-header);
+    box-shadow: -130px 0 0 130px var(--color-cont-ppal); /*parte izq*/
+}
+
+.seccion-img-btn-reestablecer{ /*  BTN reestablecer */
+    width: 100%;
+    border: 0px;
+    background-color: var(--color-fondoBtn);
+    border-radius: 5px ;
+    padding: 7px;
+    font-size: 0.7rem;
+    margin-top: 15px;
+    cursor: pointer;  
+    color:#000000;
+}
+
+
+.panel-sector-fondo-color:hover .input-color{ /*Para que tome a los dos al mismo tiempo*/
+    background-color: var(--color-hover);    /*Esto tmbn sirve para panel de TXT*/
+}
+
+.archivo-img label:hover,
+.panel-sector-fondo-color:hover, 
+input[type="url"]:hover,
+input[type="color"] :hover,
+.panel-sector-fondo-modoMezcla:hover select, 
+.panel-sector-fondo-modoMezcla:hover,
+.seccion-img-btn-subir:hover,
+.seccion-img-btn-reestablecer:hover{
+    background-color: var(--color-hover);
+}
+
+
+/*----------------------- SECTION: panel de TEXTO -------------------*/
+.input-textarea-supInf{
+    margin-top: 5px;
+    resize: none;
+    font-size: 0.9rem;
+    background-color: var(--color-fondoBtn);
+    width: 100%;
+    height: 70px;
+    overflow-y: scroll;
+        
+    
+}
+
+.checkbox-txt-supInf{
+    font-size: 0.7rem;
+}
+
+.panel-sector-seleccionar-fuente{
+    margin-top: 5px;
+    background-color: var(--color-fondoBtn);
+    border-radius: 3px;
+    display: flex;
+    width: 100%;
+    height: var(--alto-botones-paneles)px;
+    color:#000000;
+}
+.panel-sector-seleccionar-fuente select{
+  	border: 0;
+	background-color: var(--color-fondoBtn);
+	color: var(--color-fuente);
+    font-size: 0.7rem;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+    height: calc( var(--alto-botones-paneles)* 1px);
+    color: #000000;
+}
+
+.contenedor-tmnTxt-alinear{   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #000000;
+}
+.tamanio-txt-meme{
+    margin-top: 5px;
+    width: calc(50% - 2px);
+    height: calc( var(--alto-botones-paneles)* 1px);
+    color: #000000;
+}
+
+.btn-alinear{
+    margin-top: 5px;
+    background-color: var(--color-fondoBtn);
+    border-radius: 5px ;
+    border: 0px;
+    font-size: 0.7rem;
+    width: 35px;  
+    height: calc( var(--alto-botones-paneles)* 1px);
+    cursor: pointer;  /*Para que aparezca la manito sobre el btn. */
+    color: #000000;
+}
+
+.columna{
+    display: flex;
+    flex-direction: column;
+}
+.fila{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.tamanio{
+    width: calc(100% - 6px);
+    margin-top: 5px;
+    
+}
+
+.checkbox-txt-fondo-transparente{
+    font-size: 0.7rem;
+    margin-top: 5px;
+   
+}
+
+.btn-contorno{ 
+    background-color: var(--color-fondoBtn);
+    border-radius: 5px ;
+    border: 0px;
+    padding: 3px;
+    margin-bottom: 5px;
+    font-size: 0.7rem;
+    color: #000000;
+    width: calc(33% - 2px);   
+    height: calc( var(--alto-botones-paneles)* 1px);
+    cursor: pointer; 
+}
+
+.ancho-alto-esp-inter{
+    margin-top: 5px;
+    width: 100%;
+    height: calc( var(--alto-botones-paneles)* 1px);
+    color: #000000;
+}
+
+.sin-margin{
+    margin: 0px;
+}
+
+.input-textarea-supInf:hover,
+.panel-sector-seleccionar-fuente select:hover, 
+.panel-sector-seleccionar-fuente:hover,
+.tamanio-txt-meme:hover, 
+.btn-alinear:hover,
+.btn-contorno:hover,
+.ancho-alto-esp-inter:hover{
+    background-color: var(--color-hover);
+}
+
+
+
+
+
+/* -----  MEDIA QUERY  "SECTION" -------  */
+/*-- Cuando la ventana está es >=1300 el BTN CERRAR panel debe ocultarse.  */
+@media(width> 1300px){  /* OJO.. si cambia 1300, cambiar la var ROOT: breakpoint-uno*/
+    .panel-btn-cerrar{
+        display: none;
+    }
+}
+
+/* -----  MEDIA QUERY ------- (solo el título del Header) */
+@media(width> 640px){
+    .header-titulo{
+        font-size: 2rem;
+    }
+}
+
+/* Para ubicar el SECTION (txt e img) debajo de la Cajita-Meme. */
+ /* PANELES: UNA columna, y debajo*/
+@media (width < 570px) { /* OJO.. si cambia 570, cambiar la var ROOT: breakpoint-tres*/
+    /* body{
+        height: auto;
+    } */
+    .contenedor-ppal{ 
+        position: relative;
+        top:0px;
+        flex-direction: column;  
+    }
+    .contenedor-main{
+        position: relative;  
+    }
+    .contenedor-paneles{ 
+        position: relative;  
+        width: calc(var(--ancho-panel-imgtxt) * 1px);
+        height: 800px;
+        margin-bottom: 20px;
+    }
+
+    .panel-btn-cerrar{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+/* PANELES: DOS columnas, y debajo*/
+@media (570px <= width <= 850px) {  /* OJO.. si cambia 850, cambiar la var ROOT: breakpoint-dos*/
+   
+    .contenedor-ppal{
+        position: relative; 
+        top:0px;
+        flex-direction: column;  /*esto cambia*/
+    }
+    .contenedor-main{
+        position: relative;
+    }
+    .contenedor-paneles{
+        position: relative;  /* fixed para que quede a la derecha*/
+        width: calc(var(--ancho-panel-imgtxt) * 2px);
+        height: 490px;
+        margin-bottom: 50px;
+    }
+    .contenedor-para-poner-a-dos-columnas{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+ 
+    .filtros-col, .panel-sectores{
+        width: calc(var(--ancho-panel-imgtxt) * 1px - 25px); 
+    }
+    .columnas-txt{
+        width: calc(var(--ancho-panel-imgtxt) * 1px - 15px);
+    }
+
+    .panel-btn-cerrar{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+}
