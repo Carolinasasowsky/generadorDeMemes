@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
     <title>Generador de Memes</title>
 
 </head>
@@ -26,7 +26,8 @@
     <div class="bg"></div>
     <div class="bg bg2"></div>
     <div class="bg bg3"></div>
-    <!--   HEADER  (Título y barra de navegación)  -->
+
+    <!-- =================   header section  ================== -->
      <header class="contenedor-header" id="contenedor-header">
         <h1 class="header-titulo">Generador de Memes</h1>
         <nav>
@@ -47,10 +48,9 @@
         </nav>
     </header>
 
-    <!--  CONTENEDOR (MAIN y SECTION) -->
+    <!-- ========  Main container section: text and image of meme creation ======== -->
     <div class="contenedor-ppal" id="contenedor-ppal">
 
-        <!--  Main  (sector principal para la imagen y el texto del MEME) -->
         <main class="contenedor-main">
             
             <div class="main-img-txt" id="main-img-txt">
@@ -65,20 +65,20 @@
             </button>
 
         </main>
-        <!--  SECTION  (controles para img y txt) -->
+        <!-- =================   image and text control panel  ================== -->
         <section class="contenedor-paneles ocultar" id="contenedor-paneles">
             <button class="panel-btn-cerrar" id="panel-btn-cerrar" tabindex="0">
                 <i class="fa fa-times-circle-o" aria-hidden="true"></i>
             </button>
 
-            <!--  Controles para imagen -->
+            
             <div class="panel-img ocultar" id="panel-img">
 
-                <h3 class="panel-titulo animate__animated animate__bounce">IMAGEN</h3>
+                <h3 class="panel-titulo">IMAGEN</h3>
 
                 <div class="contenedor-para-poner-a-dos-columnas">
 
-                    <div class="panel-sectores-controles alto-origen-img"> <!-- Origen de la imagen -->
+                    <div class="panel-sectores-controles alto-origen-img"> 
                         <h6>ORIGEN</h6>
 
                         <div class="panel-sectores">
@@ -110,7 +110,7 @@
                     </div>
 
 
-                    <div class="panel-sectores-controles"> <!-- Fondo  -->
+                    <div class="panel-sectores-controles">
                         <h6>FONDO</h6>
                         <div class="panel-sectores">
 
@@ -137,35 +137,35 @@
                     </div>
                 </div>
 
-
-                <div class="panel-sectores-controles"> <!-- Filtros -->
+                <!-- =================   filter panel  ================== -->
+                <div class="panel-sectores-controles"> 
                     <h6>FILTROS</h6>
 
                     <div class="contenedor-para-poner-a-dos-columnas">
 
                         <div class="filtros-col">
                             <div class="filtros">
-                                <label for="brillo">BRILLO</label>  <!-- Al no poner %, toma NÚMERO => 0.5 = 50% -->
+                                <label for="brillo">BRILLO</label> 
                                 <input type="range" id="brillo" min="0" max="1" value="1" step="0.1" tabindex="0">
                             </div>
 
                             <div class="filtros">
-                                <label for="opacidad">OPACIDAD</label> <!-- Al no poner %, toma NÚMERO => 0.5 = 50% -->
+                                <label for="opacidad">OPACIDAD</label> 
                                 <input type="range" id="opacidad" min="0" max="1" value="1" step="0.1" tabindex="0">
                             </div>
 
                             <div class="filtros">
-                                <label for="contraste">CONTRASTE</label> <!--los valores superiores a 100% crean un contraste. -->
+                                <label for="contraste">CONTRASTE</label> 
                                 <input type="range" id="contraste" min="100" max="1000" value="100" step="1" tabindex="0">
                             </div>
 
                             <div class="filtros">
-                                <label for="desenfoque">DESENFOQUE</label> <!-- 0/2px => cuántos px de RADIO se combinan-->
+                                <label for="desenfoque">DESENFOQUE</label> 
                                 <input type="range" id="desenfoque" min="0" max="10" value="0" step="0.1" tabindex="0">
                             </div>
 
                             <div class="filtros">
-                                <label for="grises">ESCALA DE GRISES</label> <!--0=nada / 100=escala de gris -->
+                                <label for="grises">ESCALA DE GRISES</label> 
                                 <input type="range" id="grises" min="0" max="100" value="0" step="1" tabindex="0">
                             </div>
 
@@ -173,22 +173,22 @@
 
                         <div class="filtros-col">
                             <div class="filtros">
-                                <label for="sepia">SEPIA</label> <!--0=nada / 100=sepia -->
+                                <label for="sepia">SEPIA</label> 
                                 <input type="range" id="sepia" min="0" max="100" value="0" step="1" tabindex="0">
                             </div>
 
                             <div class="filtros">
-                                <label for="hue">ROTACIÓN DE COLOR</label> <!-- Ángulo de rotación => 0deg=nada /  -->
+                                <label for="hue">ROTACIÓN DE COLOR</label>
                                 <input type="range" id="hue" min="0" max="359" value="0" step="1" tabindex="0">
                             </div>
 
                             <div class="filtros">
-                                <label for="saturacion">SATURACIÓN</label> <!-- 0%=insaturado, 100%=sin cambios, >100% aumenta la saturación -->
+                                <label for="saturacion">SATURACIÓN</label>
                                 <input type="range" id="saturacion" min="100" max="1000" value="100" step="10" tabindex="0">
                             </div>
 
                             <div class="filtros">
-                                <label for="invertido">INVERTIDO</label> <!-- Al no poner %, toma NÚMERO => 0.5 = 50% -->
+                                <label for="invertido">INVERTIDO</label> 
                                 <input type="range" id="invertido" min="0" max="1" value="0" step="0.1" vtabindex="0">
                             </div>
 
@@ -203,7 +203,7 @@
                 </div>
             </div>
 
-            <!--  Text controls section -->
+            <!-- =================   text editing panel  ================== -->
             <div class="panel-txt ocultar"  id="panel-txt">
                 <h3 class="panel-titulo animate__animated animate__bounce">TEXTO</h3>
                 
@@ -322,9 +322,9 @@
                             <select class="panel-control-modoMezcla" id="interlineado-txt-meme"
                                 aria-label="Seleccionar interlineado del texto">
                                 <option value=1  selected>1</option>
-                                <option value=1.15       >1.15</option>
-                                <option value=2          >2   </option>
-                                <option value=2.5        >2.5 </option>
+                                <option value=1.15>1.15</option>
+                                <option value=2>2</option>
+                                <option value=2.5>2.5 </option>
                             </select>
                         </div>
                     </div>

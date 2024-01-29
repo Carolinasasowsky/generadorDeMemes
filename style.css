@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2? family= Roboto:wght@300;400;500;700;900 & display=swap');
 
 
-/* ====== Google fonts Para elegir las fuentes para el TXT del meme  ===== */
-
+/* ::::::::::::::::::::::::::: settings to choose the meme text  ::::::::::::::::::::::::::: */
 
 @font-face {
-    font-family: 'Alegreya';
-    src: url(fuentes/AlegreyaSC-Regular.ttf);
-    font-weight: normal;
+    font-family: 'Anton';
+    src: url(assets/fonts/Anton-Regular.ttf);          
+    font-weight: bold;
     font-style: normal;
 }
 @font-face {
@@ -17,56 +16,86 @@
     font-style: italic;
 }
 @font-face {
-    font-family: 'Dosis';
-    src: url(fuentes/Dosis-VariableFont_wght.ttf);
+    font-family: 'Almarai';
+    src: url(assets/fonts/Almarai-Bold.ttf)
+    font-weightbold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BlackOpsOne';
+    src: url(assets/fonts/BlackOpsOne-Regular.ttf);
     font-weight: bold;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Instrument Serif';
-    src: url(fuentes/InstrumentSerif-Regular.ttf);
-    font-weight: normal;
+    font-family: 'DancingScript';
+    src: url(assets/fonts/DancingScript-Bold.ttf);
+    font-weight: bold;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Langar';
-    src: url(fuentes/Langar-Regular.ttf);
-    font-weight: normal;
-    font-style: normal;
+    font-family: 'Dokdo';
+    src: url(assets/fonts/Dokdo-Regular.ttf);
+    font-weight: bold;
+    font-style: regular;
 }
 @font-face {
-    font-family: 'Lemon';
-    src: url(fuentes/Lemon-Regular.ttf);
+    font-family: 'Honk';
+    src: url(assets/fonts/Honk-Regular.ttf);
     font-weight: normal;
-    font-style: normal;
+    font-style: regular;
 }
 @font-face {
-    font-family: 'Luckiest Guy';
+    font-family: 'LuckiestGuy';
     src: url(fuentes/LuckiestGuy-Regular.ttf);
     font-weight: normal;
+    font-style: regular;
+}
+@font-face {
+    font-family: 'OldStandardTT';
+    src: url(assets/fonts/OldStandardTT-Bold.ttf);
+    font-weight: bold;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Pattaya';
-    src: url(fuentes/Pattaya-Regular.ttf);
+    font-family: 'Pacifico';
+    src: url(assets/fonts/Pacifico-Regular.ttf);
     font-weight: normal;
+    font-style: regular;
+}
+@font-face {
+    font-family: 'RammettoOne';
+    src: url(assets/fonts/RammettoOne-Regular.ttf);
+    font-weight: normal;
+    font-style: regular;
+}
+@font-face {
+    font-family: 'SongMyung';
+    src: url(assets/fonts/SongMyung-Regular.ttf);
+    font-weight: normal;
+    font-style: regular;
+}
+@font-face {
+    font-family: 'SpecialElite';
+    src: url(assets/fonts/SpecialElite-Regular.ttf);
+    font-weight: normal;
+    font-style: regular;
+}
+@font-face {
+    font-family: 'Teko';
+    src: url(assets/fonts/Teko-Bold.ttf);
+    font-weight: bold;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Permanent Marker';
-    src: url(fuentes/PermanentMarker-Regular.ttf);
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Twinkle Star';
-    src: url(fuentes/TwinkleStar-Regular.ttf);
-    font-weight: normal;
+    font-family: 'Ultra';
+    src: url(assets/fonts/Ultra-Regular.ttf);
+    font-weight: bold;
     font-style: normal;
 }
 
-/* ============================= COLORES =============================*/
-:root{                               /* Modo OSCURO*/
+/* ::::::::::::::::::::::::::: dark mode and light mode :::::::::::::::::::::::::::*/
+:root{                              
     --color-header:    #005285 ;    
     --color-seccion:   #012639;     
     --color-cont-main: #0ba8e2;     
@@ -75,7 +104,7 @@
 
     --color-hover:  #4eae48;
     --color_btn-desc-arriba-abajo: #000000;
-    color-scheme: dark;   /*color por defecto de win, para barras de scroll*/
+    color-scheme: dark;
    
     --transition: color 0.1s, background-color 0.2s ease-in-out;
 
@@ -89,18 +118,18 @@
     --breakpoints-tres: 570;
 }  
 
-:root[data-theme-color="light"] {     /* Modo CLARO*/
-    --color-header:    #78c0ee;        /* gray 400*/
-    --color-seccion:    #1490d0;       /*  gray 100*/
-    --color-cont-main: #d3d8e2;       /*  gray 300*/
-    --color-fondoBtn:  #b1bcd1;       /*  gray 200*/
-    --color-fuente:    #010101;       /*  gray 800*/
+:root[data-theme-color="light"] {    
+    --color-header:    #78c0ee;       
+    --color-seccion:    #1490d0;     
+    --color-cont-main: #d3d8e2;      
+    --color-fondoBtn:  #b1bcd1;      
+    --color-fuente:    #010101;       
   
-    color-scheme: light;  /*color por defecto de win, para barras de scroll*/
+    color-scheme: light; 
 }
 
   
-/* ============================= CONFIG GENERAL =============================*/
+/* ::::::::::::::::::::::::::: general styles and bodysuit styles :::::::::::::::::::::::::::*/
 *{
     box-sizing: border-box;
     margin: 0px;
@@ -114,7 +143,7 @@
 } 
 
 body{
-    /* height: 100%; */
+    
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -154,9 +183,8 @@ body{
   }
 
 
+/* ::::::::::::::::::::::::::: header section styles :::::::::::::::::::::::::::*/
 
-
-/* ============================= HEADER =============================*/
 .contenedor-header{
     height: 15%;
     width: 100%;
@@ -171,10 +199,9 @@ body{
 }
 
 .header-titulo{
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 .nav-btn{
-  /*   all: unset;         /*Quita todo estilo por defecto.*/
     padding: 10px;
     font-size: 0.8rem;
     background-color: transparent;
@@ -188,14 +215,14 @@ body{
 }
 
 .fa-sun-o:before { 
-    content: "\f185"; /* Este valor es del icono del SOL (Font Awesome 4.7.0 Icon) */
+    content: "\f185"; /* sun icon*/
 }
 .fa-moon-o:before { 
-    content: "\f186"; /* Este valor es del icono del Luna (Font Awesome 4.7.0 Icon) */
+    content: "\f186"; /* moon icon*/
 }
 
-/* ============================= CONTENEDOR PRINCIPAL  ============================= */
-.contenedor-ppal{   /* Contiene a  "contenedor-main" y al "seccion". */
+/* ::::::::::::::::::::::::::: main section styles :::::::::::::::::::::::::::*/
+.contenedor-ppal{ 
     width: 100%;
     height: 85%;
     display: flex;
@@ -205,7 +232,7 @@ body{
     background-color: var(--color-cont-ppal);  
 }
 
-.contenedor-main{   /* Contiene a:  main-img-txt y main-btn-descargar. */
+.contenedor-main{   
     width: 100%;
     height: 100%;
     display: flex;
@@ -234,14 +261,14 @@ body{
 
     .main-txt{
         width: 100%;
-        font-family: 'Alegreya', serif;
+        font-family: 'Anton';
         font-size: 40px;
         text-align:center;
         color: black;
         background-color: white;
         padding: 10px 0px 10px 0px;
 
-        position: static; /* ver absolute*/
+        position: static; 
         z-index: 1; 
     }
     #main-txt-superior{ 
@@ -253,11 +280,10 @@ body{
 
 
 
-/* ------ DESCARGAR MEME ---------*/
+/* ::::::::::::::::::::::::::: meme download button style :::::::::::::::::::::::::::*/
 .main-btn-descargar{
-    /*  all: unset;       Quita todo estilo por defecto.*/
     border: 0;
-    background-color: var(--color_btn-desc-arriba-abajo); /*#89a105;*/
+    background-color: var(--color_btn-desc-arriba-abajo);
     box-shadow: 3px 3px 3px var(--color-header);
     border-radius: 5px ;
     padding: 10px;
@@ -268,12 +294,12 @@ body{
     color: rgb(255, 255, 255);
 }
 .main-btn-descargar:hover{
-    background-color: #ffffff;/* #e2f092;*/
+    background-color: #ffffff;
     color:#000000
 }
 
 
-/* ============================= SECTION (para el panel de txt y img ================= */
+/* ::::::::::::::::::::::::::: text and image panel styles :::::::::::::::::::::::::::  */
 
 .contenedor-paneles{
     width:calc(var(--ancho-panel-imgtxt) * 1px );
@@ -300,15 +326,12 @@ body{
     font-size: 1rem;
 }
 .fa-times-circle-o:before { 
-    content: "\f05c"; /* Valor del icono de CERRAR (Font Awesome 4.7.0 Icon) */
+    content: "\f05c"; /* close icon*/
 }
 
 .ocultar{
     display: none;
 }
-/* .mostrar{
-    display: block;
-} */
 
 .panel-titulo{
     display: flex;
@@ -331,7 +354,7 @@ input{
     border: 0;          
     border-radius: 3px; 
     padding: 3px; 
-    outline: none;      /* Borra un borde negro. */
+    outline: none;      /* borra bordes negros. */
 }
 
 /*----------------------- SECTION: panel de IMAGEN -------------------*/
@@ -340,7 +363,7 @@ input{
     flex-direction: column;
 }
 
-.panel-sectores{  /*Para acomodar controles que van en fila. Ej: btn de URL y PC */
+.panel-sectores{ 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -348,7 +371,7 @@ input{
     margin-top: 5px;
 } 
 
-/*------------------ ORIGEN */
+
 .alto-origen-img{
     height: 100px;
 }
@@ -360,9 +383,9 @@ input{
     padding: 3px;
     margin-bottom: 5px;
     font-size: 0.7rem;
-    width: calc(50% - 2px);   /*110px;*/
+    width: calc(50% - 2px);  
     height: calc( var(--alto-botones-paneles)* 1px);
-    cursor: pointer;  /*Para que aparezca la manito sobre el btn. */
+    cursor: pointer; 
     color:#000000;
 }
 
@@ -372,7 +395,7 @@ input[type="url"]{
         
 }
 
-::placeholder{  /* Modifica TXT  del placeholder del input-url */
+::placeholder{  /* modifica el texto del placeholder del input-url */
     color: var(--color_btn-desc-arriba-abajo);
     font-size: 0.7rem;
     
@@ -394,7 +417,7 @@ input[type="url"]{
     font-size: 0.7rem;
 }
 
-/*------------------ FONDO */
+
 .panel-sector-fondo-color{
     background-color: var(--color-fondoBtn);
     font-size: 0.7rem;
@@ -639,7 +662,7 @@ input[type="color"] :hover,
 /* -----  MEDIA QUERY ------- (solo el título del Header) */
 @media(width> 640px){
     .header-titulo{
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 }
 

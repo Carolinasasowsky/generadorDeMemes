@@ -33,10 +33,6 @@ function altoContenedorPpal(){
        
         document.getElementById("contenedor-ppal").style.minHeight = `${alturaContenedor}px`;
         
-        // console.log('win          ',window.visualViewport.height);
-        // console.log('alt header = ', compStyles.getPropertyValue('height'));
-        // console.log('var alt      ', alturaContenedor);
-        // console.log('cont ', document.getElementById("contenedor-ppal").style.minHeight); 
     }
 }
 
@@ -256,8 +252,6 @@ saturacion.addEventListener('input', obtenerValorFiltros);
 invertido.addEventListener('input', obtenerValorFiltros);
 
 btn_reestablecer_filtros.addEventListener("click",()=>{
-    /* Valor inicial de cada uno.*/
-    /*         bri, opa  const,Desen, gris sep, HUE, sat, inv  */
     filtrarImg(  1,   1,   100,    0,    0,  0, 0  , 100,   0);
 })
 
@@ -281,14 +275,9 @@ function filtrarImg(bri, opa, con, blu, gri, sep, hue, sat, inv){
     mostarValorFiltros()
 }
 
-/* Las funciones de filtros grayscale(), sepia(), saturate(), opacity(), 
-brightness(), contrast() e invert() toman un PORCENTAJE ó NÚMERO un  como valor, esto 
-ocurre porque es posible proporcionporquear dicho valor de dos formas diferentes:
-* Porcentaje: Como valor porcentual: 0%, 50%, 100%, 150%...
-* Número: Como valor numérico: 0, 0.5, 1, 1.5...
-Así pues, indicar filter: contrast(0.5) es lo mismo que: contrast(50%). */
 
-/* Mostrar valor de los filtros */
+
+/* ::::::::::::::::::::::::::: Valores de los filtros ::::::::::::::::::::::::::: */
 function mostarValorFiltros(){
     const label_bri = document.querySelector('label[for="brillo"]'); 
     const label_opa = document.querySelector('label[for="opacidad"]'); 
@@ -345,26 +334,23 @@ sin_txt_inf.addEventListener('click', () =>{
 const selecionar_fuentes = document.getElementById("selecionar-fuentes");
 function cargarFuentes(){
     var fuentes = "";
-/*     let array=[ "Arial","Arial Black", "Bradley Hand", "Brush Script MT",
-        "Cambria", "Comic Sans MS", "Courier",
-        "Didot", "Garamond", "Georgia", "Helvetica", 
-        "Impact", "Lucida Console", "Luminari",
-        "Tahoma", "Times New Roman",
-        "Trebuchet MS", "Verdana" ,
-        "Oswald", "Lemon","Pattaya"    
-    ];  */
 
     let array = [
-        { "familia": "'Alegreya', serif",          "fuente":"Alegreya" },
+        { "familia": "'Anton',  sans-serif",   "fuente":"Anton" },
         { "familia": "'Amaranth', sans-serif",     "fuente":"Amaranth" },
-        { "familia": "'Dosis', sans-serif",        "fuente":"Dosis" },
-        { "familia": "'Instrument Serif', serif",  "fuente":"Instrument Serif" },
-        { "familia": "'Langar', system-ui",        "fuente":"Langar" },
-        { "familia": "'Lemon', serif",             "fuente":"Lemon" },
+        { "familia": "'Almarai', sans-serif",        "fuente":"Almarai" },
+        { "familia": "'BlackOpsOne', sans-serif",  "fuente":"BlackOpsOne" },
+        { "familia": "'DancingScript', sans-serif",        "fuente":"DancingScript" },
+        { "familia": "'Dokdo', sans-serif",        "fuente":"Dokdo" },
+        { "familia": "'Honk', sans-serif",        "fuente":"Honk" },
         { "familia": "'Luckiest Guy', sans-serif", "fuente":"Luckiest Guya" },
-        { "familia": "'Pattaya', sans-serif",      "fuente":"Pattaya" },
-        { "familia": "'Permanent Marker', cursive","fuente":"Permanent Marker" },
-        { "familia": "'Twinkle Star', cursive",    "fuente":"Twinkle Star" }
+        { "familia": "'OldStandardTT', serif",      "fuente":"OldStandardTT" },
+        { "familia": "'Pacifico', cursive","fuente":"Pacifico" },
+        { "familia": "'RammettoOne', sans-serif",    "fuente":"RammettoOne" },
+        { "familia": "'SongMyung', serif",    "fuente":"SongMyung" },
+        { "familia": "'SpecialElite', serif",    "fuente":"SpecialElite" },
+        { "familia": "'Teko', sans-serif",    "fuente":"Teko" },
+        { "familia": "'Ultra', serif",    "fuente":"Ultra" }
     ] ;    
 
     for (var i = 0; i < array.length; i++) {
