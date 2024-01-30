@@ -1,341 +1,499 @@
 <!DOCTYPE html>
 <html lang="en" data-theme-color="dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="robots" content="noarchive" />
+		<link rel="icon" href="favicon.ico" type="image/png" />
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+			integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+			integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<title>Generador de Memes</title>
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noarchive"> 
-    <link rel="icon" href="favicon.ico" type="image/png"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
-        integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
-        integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Generador de Memes</title>
+	<body>
+		<div class="bg"></div>
+		<div class="bg bg2"></div>
+		<div class="bg bg3"></div>
 
-</head>
+		<!-- =================   header section  ================== -->
+		<header class="contenedor-header" id="contenedor-header">
+			<h1 class="header-titulo">Generador de Memes</h1>
+			<nav>
+				<button class="nav-btn" id="nav-btn-img" tabindex="0">
+					<i class="fa-solid fa-camera"></i>
+					Imagen
+				</button>
+				<button class="nav-btn" id="nav-btn-txt" tabindex="0">
+					<i class="fa fa-font icon-col" aria-hidden="true"></i>
+					Texto
+				</button>
 
-<body>
-    <div class="bg"></div>
-    <div class="bg bg2"></div>
-    <div class="bg bg3"></div>
+				<button class="nav-btn" id="nav-btn-claroOscuro" tabindex="0">
+					<i class="fa fa-sun-o"></i>
+					Modo Claro
+				</button>
+			</nav>
+		</header>
 
-    <!-- =================   header section  ================== -->
-     <header class="contenedor-header" id="contenedor-header">
-        <h1 class="header-titulo">Generador de Memes</h1>
-        <nav>
-            <button class="nav-btn" id="nav-btn-img" tabindex="0">
-                <i class="fa-solid fa-camera"></i>
-                Imagen
-            </button>
-            <button class="nav-btn" id="nav-btn-txt" tabindex="0">
-                <i class="fa fa-font icon-col" aria-hidden="true"></i>
-                Texto
-            </button>
+		<!-- ========  Main container section: text and image of meme creation ======== -->
+		<div class="contenedor-ppal" id="contenedor-ppal">
+			<main class="contenedor-main">
+				<div class="main-img-txt" id="main-img-txt">
+					<p class="main-txt" id="main-txt-superior">TEXTO SUPERIOR</p>
+					<div class="main-img" id="main-img"></div>
+					<p class="main-txt" id="main-txt-inferior">TEXTO INFERIOR</p>
+				</div>
 
-            <button class="nav-btn" id="nav-btn-claroOscuro" tabindex="0">
-                <i class="fa fa-sun-o"></i>
-                Modo Claro
-            </button>
+				<button class="main-btn-descargar" id="btn-descargar-meme" tabindex="0">
+					<i class="fa fa-download" aria-hidden="true"></i>
+					Descargar Meme
+				</button>
+			</main>
+			<!-- =================   image and text control panel  ================== -->
+			<section class="contenedor-paneles ocultar" id="contenedor-paneles">
+				<button class="panel-btn-cerrar" id="panel-btn-cerrar" tabindex="0">
+					<i class="fa fa-times-circle-o" aria-hidden="true"></i>
+				</button>
 
-        </nav>
-    </header>
+				<div class="panel-img ocultar" id="panel-img">
+					<h3 class="panel-titulo">IMAGEN</h3>
 
-    <!-- ========  Main container section: text and image of meme creation ======== -->
-    <div class="contenedor-ppal" id="contenedor-ppal">
+					<div class="contenedor-para-poner-a-dos-columnas">
+						<div class="panel-sectores-controles alto-origen-img">
+							<h6>ORIGEN</h6>
 
-        <main class="contenedor-main">
-            
-            <div class="main-img-txt" id="main-img-txt">
-                <p class="main-txt" id="main-txt-superior" >TEXTO SUPERIOR</p>
-                <div class="main-img" id="main-img"></div>
-                <p class="main-txt" id="main-txt-inferior" >TEXTO INFERIOR</p>
-            </div>
-           
-            <button class="main-btn-descargar" id="btn-descargar-meme" tabindex="0">
-                <i class="fa fa-download" aria-hidden="true"></i>
-                Descargar Meme
-            </button>
+							<div class="panel-sectores">
+								<button
+									class="seccion-img-btn-subir"
+									id="subir-url-btn"
+									tabindex="0"
+								>
+									<i class="fa-solid fa-link"></i>
+									URL
+								</button>
 
-        </main>
-        <!-- =================   image and text control panel  ================== -->
-        <section class="contenedor-paneles ocultar" id="contenedor-paneles">
-            <button class="panel-btn-cerrar" id="panel-btn-cerrar" tabindex="0">
-                <i class="fa fa-times-circle-o" aria-hidden="true"></i>
-            </button>
+								<button
+									class="seccion-img-btn-subir"
+									id="subir-pc-btn"
+									tabindex="0"
+								>
+									<i class="fa-solid fa-desktop"></i>
+									Computadora
+								</button>
+							</div>
 
-            
-            <div class="panel-img ocultar" id="panel-img">
+							<div class="ocultar" id="subir-url-input">
+								<input
+									type="url"
+									aria-label="Seleccionar archivo desde una URL"
+									placeholder="URL de la imagen"
+									tabindex="0"
+								/>
+							</div>
 
-                <h3 class="panel-titulo">IMAGEN</h3>
+							<div class="ocultar" id="subir-pc-input">
+								<div class="archivo-img">
+									<label for="input-file" tabindex="0">
+										<i class="fa-solid fa-upload"> </i>. Seleccionar
+										Archivo</label
+									>
+									<input
+										type="file"
+										id="input-file"
+										accept="image/png, image/gif, image/jpeg"
+										aria-label="Seleccionar archivo desde PC"
+										tabindex="0"
+									/>
+								</div>
+							</div>
+						</div>
 
-                <div class="contenedor-para-poner-a-dos-columnas">
+						<div class="panel-sectores-controles">
+							<h6>FONDO</h6>
+							<div class="panel-sectores">
+								<div class="panel-sector-fondo-color">
+									<input
+										type="color"
+										class="input-color"
+										id="input-color"
+										value="#FFFFFF"
+										oninput="colorhex.value=value.toUpperCase()"
+										aria-label="Color de fondo de la imagen"
+										tabindex="0"
+									/>
+									<output id="colorhex">#FFFFFF</output>
+								</div>
 
-                    <div class="panel-sectores-controles alto-origen-img"> 
-                        <h6>ORIGEN</h6>
+								<div class="panel-sector-fondo-modoMezcla">
+									<select
+										class="panel-control-modoMezcla"
+										id="modo-mezcla"
+										aria-label="Modos de mezcla entre color de fondo e imágen"
+									>
+										<option value="unset" selected>Ninguno</option>
+										<option value="lighten">Aclarar</option>
+										<option value="darken">Oscurecer</option>
+										<option value="difference">Diferencia</option>
+										<option value="luminosity">Luminosidad</option>
+										<option value="multiply">Multiplicar</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
 
-                        <div class="panel-sectores">
-                            <button class="seccion-img-btn-subir" id="subir-url-btn" tabindex="0">
-                                <i class="fa-solid fa-link"></i>
-                                URL
-                            </button>
+					<!-- =================   filter panel  ================== -->
+					<div class="panel-sectores-controles">
+						<h6>FILTROS</h6>
 
-                            <button class="seccion-img-btn-subir" id="subir-pc-btn" tabindex="0">
-                                <i class="fa-solid fa-desktop"></i>
-                                Computadora
-                            </button>
-                        </div>
+						<div class="contenedor-para-poner-a-dos-columnas">
+							<div class="filtros-col">
+								<div class="filtros">
+									<label for="brillo">BRILLO</label>
+									<input
+										type="range"
+										id="brillo"
+										min="0"
+										max="1"
+										value="1"
+										step="0.1"
+										tabindex="0"
+									/>
+								</div>
 
-                        <div  class="ocultar" id="subir-url-input">
-                            <input type="url" aria-label="Seleccionar archivo desde una URL"
-                                placeholder="URL de la imagen" tabindex="0">
-                        </div>
+								<div class="filtros">
+									<label for="opacidad">OPACIDAD</label>
+									<input
+										type="range"
+										id="opacidad"
+										min="0"
+										max="1"
+										value="1"
+										step="0.1"
+										tabindex="0"
+									/>
+								</div>
 
-                        <div class="ocultar" id="subir-pc-input" >
-                            <div class="archivo-img" >
-                                <label for="input-file" tabindex="0">
-                                    <i class="fa-solid fa-upload"> </i>. Seleccionar Archivo</label>
-                                <input type="file" id="input-file" accept="image/png, image/gif, image/jpeg"
-                                    aria-label="Seleccionar archivo desde PC"  tabindex="0">
-                            </div>
-                        </div>
+								<div class="filtros">
+									<label for="contraste">CONTRASTE</label>
+									<input
+										type="range"
+										id="contraste"
+										min="100"
+										max="1000"
+										value="100"
+										step="1"
+										tabindex="0"
+									/>
+								</div>
 
-                    </div>
+								<div class="filtros">
+									<label for="desenfoque">DESENFOQUE</label>
+									<input
+										type="range"
+										id="desenfoque"
+										min="0"
+										max="10"
+										value="0"
+										step="0.1"
+										tabindex="0"
+									/>
+								</div>
 
+								<div class="filtros">
+									<label for="grises">ESCALA DE GRISES</label>
+									<input
+										type="range"
+										id="grises"
+										min="0"
+										max="100"
+										value="0"
+										step="1"
+										tabindex="0"
+									/>
+								</div>
+							</div>
 
-                    <div class="panel-sectores-controles">
-                        <h6>FONDO</h6>
-                        <div class="panel-sectores">
+							<div class="filtros-col">
+								<div class="filtros">
+									<label for="sepia">SEPIA</label>
+									<input
+										type="range"
+										id="sepia"
+										min="0"
+										max="100"
+										value="0"
+										step="1"
+										tabindex="0"
+									/>
+								</div>
 
-                            <div class="panel-sector-fondo-color">
-                                <input type="color" class="input-color" id="input-color" value="#FFFFFF"
-                                    oninput="colorhex.value=value.toUpperCase()"
-                                    aria-label="Color de fondo de la imagen" tabindex="0">
-                                <output id="colorhex">#FFFFFF</output>
-                            </div>
+								<div class="filtros">
+									<label for="hue">ROTACIÓN DE COLOR</label>
+									<input
+										type="range"
+										id="hue"
+										min="0"
+										max="359"
+										value="0"
+										step="1"
+										tabindex="0"
+									/>
+								</div>
 
-                            <div class="panel-sector-fondo-modoMezcla"> 
-                                <select class="panel-control-modoMezcla" id="modo-mezcla"
-                                    aria-label="Modos de mezcla entre color de fondo e imágen">
-                                    <option value="unset" selected>Ninguno</option>
-                                    <option value="lighten">Aclarar</option>
-                                    <option value="darken">Oscurecer</option>
-                                    <option value="difference">Diferencia</option>
-                                    <option value="luminosity">Luminosidad</option>
-                                    <option value="multiply">Multiplicar</option>
-                                </select>
-                            </div>
+								<div class="filtros">
+									<label for="saturacion">SATURACIÓN</label>
+									<input
+										type="range"
+										id="saturacion"
+										min="100"
+										max="1000"
+										value="100"
+										step="10"
+										tabindex="0"
+									/>
+								</div>
 
-                        </div>
-                    </div>
-                </div>
+								<div class="filtros">
+									<label for="invertido">INVERTIDO</label>
+									<input
+										type="range"
+										id="invertido"
+										min="0"
+										max="1"
+										value="0"
+										step="0.1"
+										vtabindex="0"
+									/>
+								</div>
 
-                <!-- =================   filter panel  ================== -->
-                <div class="panel-sectores-controles"> 
-                    <h6>FILTROS</h6>
+								<button
+									class="seccion-img-btn-reestablecer"
+									id="btn-reestablecer-filtros"
+									tabindex="0"
+								>
+									<i class="fa fa-undo" aria-hidden="true"></i>
+									Restablecer Filtros
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
 
-                    <div class="contenedor-para-poner-a-dos-columnas">
+				<!-- =================   text editing panel  ================== -->
+				<div class="panel-txt ocultar" id="panel-txt">
+					<h3 class="panel-titulo animate__animated animate__bounce">TEXTO</h3>
 
-                        <div class="filtros-col">
-                            <div class="filtros">
-                                <label for="brillo">BRILLO</label> 
-                                <input type="range" id="brillo" min="0" max="1" value="1" step="0.1" tabindex="0">
-                            </div>
+					<div class="contenedor-para-poner-a-dos-columnas">
+						<!--txt sup/inf  -->
+						<div class="panel-sectores-controles columnas-txt">
+							<h6>SUPERIOR</h6>
+							<textarea
+								class="input-textarea-supInf"
+								id="input-txt-sup"
+								aria-label="Escriba el texto superior"
+								placeholder="Texto superior..."
+							></textarea>
+							<div class="checkbox-txt-supInf">
+								<input type="checkbox" id="sin-txt-sup" tabindex="0" />
+								<label for="sin-txt-sup">Sin texto superior</label>
+							</div>
+						</div>
 
-                            <div class="filtros">
-                                <label for="opacidad">OPACIDAD</label> 
-                                <input type="range" id="opacidad" min="0" max="1" value="1" step="0.1" tabindex="0">
-                            </div>
+						<div class="panel-sectores-controles columnas-txt">
+							<h6>INFERIOR</h6>
+							<textarea
+								class="input-textarea-supInf"
+								id="input-txt-inf"
+								aria-label="Escriba el texto inferior"
+								placeholder="Texto inferior..."
+							></textarea>
+							<div class="checkbox-txt-supInf">
+								<input type="checkbox" id="sin-txt-inf" tabindex="0" />
+								<label for="sin-txt-inf">Sin texto inferior</label>
+							</div>
+						</div>
+					</div>
 
-                            <div class="filtros">
-                                <label for="contraste">CONTRASTE</label> 
-                                <input type="range" id="contraste" min="100" max="1000" value="100" step="1" tabindex="0">
-                            </div>
+					<div class="panel-sectores-controles">
+						<h6>FUENTE</h6>
+						<div class="contenedor-para-poner-a-dos-columnas">
+							<div class="panel-sector-seleccionar-fuente filtros-col">
+								<select
+									class="selecionar-fuentes"
+									id="selecionar-fuentes"
+									aria-label="Seleccionar fuente para el texto"
+								></select>
+							</div>
 
-                            <div class="filtros">
-                                <label for="desenfoque">DESENFOQUE</label> 
-                                <input type="range" id="desenfoque" min="0" max="10" value="0" step="0.1" tabindex="0">
-                            </div>
+							<div class="contenedor-tmnTxt-alinear filtros-col">
+								<input
+									type="number"
+									class="tamanio-txt-meme"
+									id="tamanio-txt-meme"
+									min="10"
+									max="80"
+									value="50"
+									step="2"
+									aria-label="Tamaño del texto"
+									tabindex="0"
+								/>
 
-                            <div class="filtros">
-                                <label for="grises">ESCALA DE GRISES</label> 
-                                <input type="range" id="grises" min="0" max="100" value="0" step="1" tabindex="0">
-                            </div>
+								<div>
+									<button
+										class="btn-alinear"
+										id="btn-alinear-izq"
+										aria-label="Alineación a izquierda"
+										tabindex="0"
+									>
+										<i class="fa-solid fa-align-left"></i>
+									</button>
+									<button
+										class="btn-alinear"
+										id="btn-alinear-cen"
+										aria-label="Alineación al centro"
+										tabindex="0"
+									>
+										<i class="fa-solid fa-align-center"></i>
+									</button>
+									<button
+										class="btn-alinear"
+										id="btn-alinear-der"
+										aria-label="Alineación a derecha"
+										tabindex="0"
+									>
+										<i class="fa-solid fa-align-right"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
 
-                        </div>
+					<div class="contenedor-para-poner-a-dos-columnas">
+						<div class="panel-sectores-controles columnas-txt">
+							<div class="fila filtros-col">
+								<div class="panel-sectores columna sin-margin">
+									<h6>COLOR</h6>
+									<div class="panel-sector-fondo-color tamanio">
+										<input
+											type="color"
+											class="input-color"
+											id="input-color-txt"
+											value="#FFFFFF"
+											oninput="colorhexFuente.value=value.toUpperCase()"
+											aria-label="Color del texto"
+											tabindex="0"
+										/>
+										<output id="colorhexFuente">#FFFFFF</output>
+									</div>
+								</div>
 
-                        <div class="filtros-col">
-                            <div class="filtros">
-                                <label for="sepia">SEPIA</label> 
-                                <input type="range" id="sepia" min="0" max="100" value="0" step="1" tabindex="0">
-                            </div>
+								<div class="panel-sectores columna sin-margin">
+									<h6>FONDO</h6>
+									<div class="panel-sector-fondo-color tamanio">
+										<input
+											type="color"
+											class="input-color"
+											id="input-color-fon"
+											value="#FFFFFF"
+											oninput="colorhexFondo.value=value.toUpperCase()"
+											aria-label="Color de fondo del texto"
+											tabindex="0"
+										/>
+										<output id="colorhexFondo">#FFFFFF</output>
+									</div>
+								</div>
+							</div>
 
-                            <div class="filtros">
-                                <label for="hue">ROTACIÓN DE COLOR</label>
-                                <input type="range" id="hue" min="0" max="359" value="0" step="1" tabindex="0">
-                            </div>
+							<div class="checkbox-txt-fondo-transparente">
+								<input type="checkbox" id="fondo-transparente" tabindex="0" />
+								<label for="fondo-transparente">Fondo transparente</label>
+							</div>
+						</div>
 
-                            <div class="filtros">
-                                <label for="saturacion">SATURACIÓN</label>
-                                <input type="range" id="saturacion" min="100" max="1000" value="100" step="10" tabindex="0">
-                            </div>
+						<div class="panel-sectores-controles columnas-txt">
+							<h6>CONTORNO</h6>
+							<div class="panel-sectores">
+								<button
+									class="btn-contorno"
+									id="btn-contorno-ninguno"
+									tabindex="0"
+								>
+									Ninguno
+								</button>
 
-                            <div class="filtros">
-                                <label for="invertido">INVERTIDO</label> 
-                                <input type="range" id="invertido" min="0" max="1" value="0" step="0.1" vtabindex="0">
-                            </div>
+								<button
+									class="btn-contorno"
+									id="btn-contorno-claro"
+									tabindex="0"
+								>
+									Claro
+								</button>
 
-                            <button class="seccion-img-btn-reestablecer" id="btn-reestablecer-filtros" tabindex="0">
-                                <i class="fa fa-undo" aria-hidden="true"></i>
-                                Restablecer Filtros
-                            </button>
+								<button
+									class="btn-contorno"
+									id="btn-contorno-oscuro"
+									tabindex="0"
+								>
+									Oscuro
+								</button>
+							</div>
+						</div>
+					</div>
 
-                        </div>
+					<div class="contenedor-para-poner-a-dos-columnas">
+						<div class="panel-sectores-controles columnas-txt">
+							<h6>ESPACIADO</h6>
+							<input
+								type="number"
+								class="ancho-alto-esp-inter"
+								id="espaciado-txt-meme"
+								min="10"
+								max="50"
+								value="30"
+								step="1"
+								aria-label="Separación entre el texto y la imagen"
+								tabindex="0"
+							/>
+						</div>
 
-                    </div>
-                </div>
-            </div>
-
-            <!-- =================   text editing panel  ================== -->
-            <div class="panel-txt ocultar"  id="panel-txt">
-                <h3 class="panel-titulo animate__animated animate__bounce">TEXTO</h3>
-                
-                <div class="contenedor-para-poner-a-dos-columnas"> <!--txt sup/inf  -->
-                    <div class="panel-sectores-controles columnas-txt">
-                        <h6>SUPERIOR</h6>
-                        <textarea class="input-textarea-supInf" id="input-txt-sup" aria-label="Escriba el texto superior"
-                            placeholder="Texto superior..."></textarea>
-                        <div class="checkbox-txt-supInf">
-                            <input type="checkbox" id="sin-txt-sup" tabindex="0">
-                            <label for="sin-txt-sup">Sin texto superior</label>
-                        </div>
-                    </div>
-
-                    <div class="panel-sectores-controles  columnas-txt">
-                        <h6>INFERIOR</h6>
-                        <textarea class="input-textarea-supInf" id="input-txt-inf"
-                            aria-label="Escriba el texto inferior" placeholder="Texto inferior..."></textarea>
-                        <div class="checkbox-txt-supInf">
-                            <input type="checkbox" id="sin-txt-inf" tabindex="0">
-                            <label for="sin-txt-inf">Sin texto inferior</label>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="panel-sectores-controles">
-                    <h6>FUENTE</h6>
-                    <div class="contenedor-para-poner-a-dos-columnas">
-                        <div class="panel-sector-seleccionar-fuente filtros-col">
-                            <select class="selecionar-fuentes" id="selecionar-fuentes" aria-label="Seleccionar fuente para el texto">
-                            </select>
-                        </div>
-
-                        <div class="contenedor-tmnTxt-alinear filtros-col">
-                            <input type="number" class="tamanio-txt-meme" id="tamanio-txt-meme" 
-                                min="10" max="80" value="50" step="2" aria-label="Tamaño del texto" tabindex="0"/>
-                         
-                            <div>
-                                <button class="btn-alinear" id="btn-alinear-izq" aria-label="Alineación a izquierda" tabindex="0">
-                                    <i class="fa-solid fa-align-left"></i>
-                                </button>
-                                    <button class="btn-alinear" id="btn-alinear-cen" aria-label="Alineación al centro" tabindex="0">
-                                    <i class="fa-solid fa-align-center"></i>
-                                </button>
-                                    <button class="btn-alinear" id="btn-alinear-der" aria-label="Alineación a derecha" tabindex="0">
-                                    <i class="fa-solid fa-align-right"></i>
-                                </button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contenedor-para-poner-a-dos-columnas">
-                    
-                    <div class="panel-sectores-controles columnas-txt">
-                        <div class="fila filtros-col">
-                            <div class="panel-sectores columna sin-margin">
-                                <h6>COLOR</h6>
-                                <div class="panel-sector-fondo-color tamanio">
-                                    <input type="color" class="input-color" id="input-color-txt" value="#FFFFFF"
-                                        oninput="colorhexFuente.value=value.toUpperCase()"
-                                        aria-label="Color del texto" tabindex="0">
-                                    <output id="colorhexFuente">#FFFFFF</output>
-                                </div>
-                            </div>
-
-                            <div class="panel-sectores columna sin-margin">
-                                <h6>FONDO</h6>
-                                <div class="panel-sector-fondo-color tamanio">
-                                    <input type="color" class="input-color" id="input-color-fon" value="#FFFFFF"
-                                        oninput="colorhexFondo.value=value.toUpperCase()"
-                                        aria-label="Color de fondo del texto" tabindex="0">
-                                    <output id="colorhexFondo">#FFFFFF</output>
-                                </div>
-                            </div>  
-                        </div>
-
-                        <div class="checkbox-txt-fondo-transparente">
-                            <input type="checkbox" id="fondo-transparente" tabindex="0">
-                            <label for="fondo-transparente">Fondo transparente</label>
-                        </div>
-                    </div>
-                    
-
-                    <div class="panel-sectores-controles columnas-txt">
-                        <h6>CONTORNO</h6>
-                        <div class="panel-sectores">
-                            <button class="btn-contorno" id="btn-contorno-ninguno" tabindex="0">   
-                                Ninguno
-                            </button>
-
-                            <button class="btn-contorno" id="btn-contorno-claro" tabindex="0">
-                                Claro
-                            </button>
-
-                            <button class="btn-contorno" id="btn-contorno-oscuro" tabindex="0">
-                                Oscuro
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="contenedor-para-poner-a-dos-columnas">
-                    <div class="panel-sectores-controles columnas-txt">
-                        <h6>ESPACIADO</h6>
-                        <input type="number" class="ancho-alto-esp-inter" id="espaciado-txt-meme" 
-                        min="10" max="50" value="30" step="1" aria-label="Separación entre el texto y la imagen"  tabindex="0"/>
-                    </div>
-
-                    <div class="panel-sectores-controles columnas-txt">
-                        <h6>INTERLINEADO</h6>
-                        <div class="panel-sector-fondo-modoMezcla ancho-alto-esp-inter"> 
-                            <select class="panel-control-modoMezcla" id="interlineado-txt-meme"
-                                aria-label="Seleccionar interlineado del texto">
-                                <option value=1  selected>1</option>
-                                <option value=1.15>1.15</option>
-                                <option value=2>2</option>
-                                <option value=2.5>2.5 </option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
- 
-     
-</body>
-<script src="main.js"></script>
-
+						<div class="panel-sectores-controles columnas-txt">
+							<h6>INTERLINEADO</h6>
+							<div class="panel-sector-fondo-modoMezcla ancho-alto-esp-inter">
+								<select
+									class="panel-control-modoMezcla"
+									id="interlineado-txt-meme"
+									aria-label="Seleccionar interlineado del texto"
+								>
+									<option value="1" selected>1</option>
+									<option value="1.15">1.15</option>
+									<option value="2">2</option>
+									<option value="2.5">2.5</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</body>
+	<script src="main.js"></script>
 </html>

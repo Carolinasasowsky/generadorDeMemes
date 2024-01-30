@@ -338,7 +338,6 @@ function cargarFuentes(){
     let array = [
         { "familia": "'Anton',  sans-serif",   "fuente":"Anton" },
         { "familia": "'Amaranth', sans-serif",     "fuente":"Amaranth" },
-        { "familia": "'Almarai', sans-serif",        "fuente":"Almarai" },
         { "familia": "'BlackOpsOne', sans-serif",  "fuente":"BlackOpsOne" },
         { "familia": "'DancingScript', sans-serif",        "fuente":"DancingScript" },
         { "familia": "'Dokdo', sans-serif",        "fuente":"Dokdo" },
@@ -354,7 +353,6 @@ function cargarFuentes(){
     ] ;    
 
     for (var i = 0; i < array.length; i++) {
-        /* fuentes += `<option value="`+array[i]+ `">`+ array[i]+`</option>`; */
         fuentes += `<option value="`+array[i].familia+ `">`+ array[i].fuente+`</option>`;
     }
     selecionar_fuentes.innerHTML = fuentes;   
@@ -487,7 +485,7 @@ btn_descargar_meme.addEventListener("click", () => {
 
 /* ================================================================================================*/
 
-function funcionesAEjecutar(){
+function initializePageFunctions(){
     mostrarPanelImagen1300(); /* El Panel de IMG debe ser VISIBLE, si la ventana está a mas de 1300px*/
     dispositivoMovil();       /* Carga la pg, y es un celu? */
     cargarFuentes();          /* Para el panel de TXT */
@@ -496,4 +494,4 @@ function funcionesAEjecutar(){
 }
 
 /* Cuando se termina de cargar la página  */
-window.onload  =  funcionesAEjecutar; 
+window.onload  =  initializePageFunctions; 

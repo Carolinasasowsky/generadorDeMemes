@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2? family= Roboto:wght@300;400;500;700;900 & display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
 
 
 /* ::::::::::::::::::::::::::: settings to choose the meme text  ::::::::::::::::::::::::::: */
@@ -14,12 +15,6 @@
     src: url(fuentes/Amaranth-BoldItalic.ttf);
     font-weight: bold;
     font-style: italic;
-}
-@font-face {
-    font-family: 'Almarai';
-    src: url(assets/fonts/Almarai-Bold.ttf)
-    font-weightbold;
-    font-style: normal;
 }
 @font-face {
     font-family: 'BlackOpsOne';
@@ -91,7 +86,7 @@
     font-family: 'Ultra';
     src: url(assets/fonts/Ultra-Regular.ttf);
     font-weight: bold;
-    font-style: normal;
+    font-style: Regular;
 }
 
 /* ::::::::::::::::::::::::::: dark mode and light mode :::::::::::::::::::::::::::*/
