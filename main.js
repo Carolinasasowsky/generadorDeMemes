@@ -23,24 +23,26 @@ btn_oscuro.addEventListener("click", ()=> {
 });
 
 
-/* ======================== Alto del contenedor ppal ========================  */
-function altoContenedorPpal(){
-    if (window.innerWidth <= ( breakPointDos() )) {
-        let element = document.getElementById('header-container');
-        let compStyles = window.getComputedStyle(element);
-        let altura = compStyles.getPropertyValue('height');
-        let alturaContenedor = window.visualViewport.height - parseInt(altura);
-       
-        document.getElementById("contenedor-ppal").style.minHeight = `${alturaContenedor}px`;
-        
-    }
+/* ======================== Alto del main container========================  */
+function adjustMainContainerHeight() {
+	if (window.innerWidth <= breakPointDos()) {
+		let element = document.getElementById("header-container");
+		let compStyles = window.getComputedStyle(element);
+		let height = compStyles.getPropertyValue("height");
+		let containerHeight = window.visualViewport.height - parseInt(height);
+
+		document.getElementById(
+			"main-container"
+		).style.minHeight = `${containerHeight}px`;
+	}
 }
 
 
+
 /*======================== TAMAÑO DE LA CAJITA DEL MEME ======================== */
-const cajita_del_meme = document.getElementById("main-img-txt");
-const cajita_txt_sup = document.getElementById("main-txt-superior");
-const cajita_txt_inf = document.getElementById("main-txt-inferior");
+const cajita_del_meme = document.getElementById("image-text-container");
+const cajita_txt_sup = document.getElementById("text-top");
+const cajita_txt_inf = document.getElementById("text-lower");
 const cajita_margin = 40; /* para que no quede muy pegado al borde (der e izq) de la ventana */
 
 const getFontSizeCajitaMeme = () =>
@@ -68,7 +70,7 @@ window.visualViewport.addEventListener("resize", () => {
         cajita_txt_sup.style.fontSize =  getTamanioMaximoCajitaMeme();
         cajita_txt_inf.style.fontSize =  getTamanioMaximoCajitaMeme();
     }
-    altoContenedorPpal(); /*Calcula el alto del contenedor-ppal, según el alto de la Ventaga Gráfica*/
+    adjustMainContainerHeight(); /*Calcula el alto del contenedor-ppal, según el alto de la Ventaga Gráfica*/
 });
 
 
@@ -77,65 +79,65 @@ const ir_arriba = document.getElementById("ir-arriba");
 const ir_abajo = document.getElementById("ir-abajo");
 
 const panel_img = document.getElementById("panel-img");
-const panel_txt = document.getElementById("panel-txt");
+const textPanel = document.getElementById("text-panel");
 const panel_cnt = document.getElementById("contenedor-paneles");
 
 function mostrarPanelImagen(){
-    panel_img.classList.remove("ocultar");
-    panel_cnt.classList.remove("ocultar");
-    panel_txt.classList.add("ocultar");
+    panel_img.classList.remove("hide");
+    panel_cnt.classList.remove("hide");
+    textPanel.classList.add("hide");
 };
 
 function mostrarPanelImagen1300(){  /*Carga pg x 1ra vez, y está a más de 1300px, carga panel de IMG*/
     
     document.getElementById("nav-button-img").focus(); /* carga la pg, y el focus lo tiene el btn imagen*/
-    if ( window.innerWidth >= ( breakPointUno() ) &&  panel_cnt.classList.contains("ocultar") ) {
+    if ( window.innerWidth >= ( breakPointUno() ) &&  panel_cnt.classList.contains("hide") ) {
         mostrarPanelImagen();
     }
 }
  
 window.visualViewport.addEventListener("resize", () => { /* Cuando se agranda la ventana a más de 1300, debe conservar 
                                                             lo que estaba seleccionado, o mostrar Panel Imagen, por defecto */
-    if ( window.innerWidth >= ( breakPointUno() ) &&  panel_cnt.classList.contains("ocultar") ) {
+    if ( window.innerWidth >= ( breakPointUno() ) &&  panel_cnt.classList.contains("hide") ) {
            mostrarPanelImagen();
     }
 
-    if ( window.innerWidth <= ( breakPointDos() ) &&  !panel_cnt.classList.contains("ocultar") ) {
-        ir_arriba.classList.remove("ocultar");
-        ir_abajo.classList.remove("ocultar");
+    if ( window.innerWidth <= ( breakPointDos() ) &&  !panel_cnt.classList.contains("hide") ) {
+        ir_arriba.classList.remove("hide");
+        ir_abajo.classList.remove("hide");
     }
 });
 
 document.getElementById("nav-button-img").addEventListener("click", (e)=>{
-    panel_txt.classList.add("ocultar");
-    panel_img.classList.remove("ocultar");
-    panel_cnt.classList.remove("ocultar");
+    textPanel.classList.add("hide");
+    panel_img.classList.remove("hide");
+    panel_cnt.classList.remove("hide");
 
-    subir_url_input.classList.add("ocultar"); /* Siempre que cargue IMG, deben estar ocultos*/
-    subir_pc_input.classList.add("ocultar");
+    subir_url_input.classList.add("hide"); /* Siempre que cargue IMG, deben estar ocultos*/
+    subir_pc_input.classList.add("hide");
    
-    if ( window.innerWidth <= ( breakPointDos() ) &&  !panel_cnt.classList.contains("ocultar") ) {
-        ir_arriba.classList.remove("ocultar");
-        ir_abajo.classList.remove("ocultar");
+    if ( window.innerWidth <= ( breakPointDos() ) &&  !panel_cnt.classList.contains("hide") ) {
+        ir_arriba.classList.remove("hide");
+        ir_abajo.classList.remove("hide");
     }
 })
 
 document.getElementById("nav-button-text").addEventListener("click", (e)=>{
-    panel_img.classList.add("ocultar");
-    panel_txt.classList.remove("ocultar");
-    panel_cnt.classList.remove("ocultar");
+    panel_img.classList.add("hide");
+    textPanel.classList.remove("hide");
+    panel_cnt.classList.remove("hide");
     
 
-    if ( window.innerWidth <= ( breakPointDos() ) &&  !panel_cnt.classList.contains("ocultar") ) {
-        ir_arriba.classList.remove("ocultar");
-        ir_abajo.classList.remove("ocultar");
+    if ( window.innerWidth <= ( breakPointDos() ) &&  !panel_cnt.classList.contains("hide") ) {
+        ir_arriba.classList.remove("hide");
+        ir_abajo.classList.remove("hide");
     }
 })
 
 document.getElementById("panel-btn-cerrar").addEventListener("click", (e)=>{
-    panel_img.classList.add("ocultar");
-    panel_txt.classList.add("ocultar");
-    panel_cnt.classList.add("ocultar");
+    panel_img.classList.add("hide");
+    textPanel.classList.add("hide");
+    panel_cnt.classList.add("hide");
    
     if ( window.innerWidth <= ( breakPointDos() ) ) {
         ir_arriba.classList.add("ocultar");
@@ -170,12 +172,12 @@ function dispositivoMovil(){ /* Si es celu, cambia el icono de subir img por Des
 }
 
 subir_url_btn.addEventListener("click",()=>{
-    subir_url_input.classList.remove("ocultar");
-    subir_pc_input.classList.add("ocultar");
+    subir_url_input.classList.remove("hide");
+    subir_pc_input.classList.add("hide");
 })
 subir_pc_btn.addEventListener("click",()=>{
-    subir_pc_input.classList.remove("ocultar");
-    subir_url_input.classList.add("ocultar");
+    subir_pc_input.classList.remove("hide");
+    subir_url_input.classList.add("hide");
 })
 
 /* Si la imagen es por URL*/
@@ -306,29 +308,30 @@ function mostarValorFiltros(){
 /* ================================================================================================ */
 
 /* ======================== Aplicar TXT superior y/o inferior ======================== */
-const input_txt_sup = document.getElementById("input-txt-sup");
-const main_txt_superior = document.getElementById("main-txt-superior");
-input_txt_sup.addEventListener("input", (e)=>{
-    main_txt_superior.textContent = input_txt_sup.value;
-    main_txt_superior.textContent = main_txt_superior.textContent.toUpperCase();
-})
-
-const input_txt_inf = document.getElementById("input-txt-inf");
-const main_txt_inferior = document.getElementById("main-txt-inferior");
-input_txt_inf.addEventListener("input", (e)=>{
-    main_txt_inferior.textContent = input_txt_inf.value;
-    main_txt_inferior.textContent = main_txt_inferior.textContent.toUpperCase();
-})
-
-const sin_txt_sup = document.getElementById("sin-txt-sup");
-sin_txt_sup.addEventListener('click', () => {
-    main_txt_superior.classList.toggle("ocultar");
+const inputTextTop = document.getElementById("input-text-top");
+const mainTextTop = document.getElementById("text-top");
+inputTextTop.addEventListener("input", (e) => {
+	mainTextTop.textContent = inputTextTop.value;
+	mainTextTop.textContent = mainTextTop.textContent.toUpperCase();
 });
 
-const sin_txt_inf = document.getElementById("sin-txt-inf");
-sin_txt_inf.addEventListener('click', () =>{
-    main_txt_inferior.classList.toggle("ocultar");
+const inputTextLower = document.getElementById("input-text-lower");
+const mainTextLower = document.getElementById("text-lower");
+inputTextLower.addEventListener("input", (e) => {
+	mainTextLower.textContent = inputTextLower.value;
+	mainTextLower.textContent = mainTextLower.textContent.toUpperCase();
 });
+
+const hideTextTopCheckbox = document.getElementById("hide-text-top");
+hideTextTopCheckbox.addEventListener("click", () => {
+	mainTextTop.classList.toggle("hide");
+});
+
+const hideTextLowerCheckbox = document.getElementById("hide-text-lower");
+hideTextLowerCheckbox.addEventListener("click", () => {
+	mainTextLower.classList.toggle("hide");
+});
+
 
 /* ======================== Fuente - Tamaño - Alineación ======================== */
 const selecionar_fuentes = document.getElementById("selecionar-fuentes");
@@ -359,29 +362,29 @@ function cargarFuentes(){
 }
 
 selecionar_fuentes.addEventListener("input", ()=>{  /*estaba change y no tomaba*/
-    main_txt_superior.style.fontFamily = selecionar_fuentes.value;
-    main_txt_inferior.style.fontFamily = selecionar_fuentes.value;
+    mainTextTop.style.fontFamily = selecionar_fuentes.value;
+    mainTextLower.style.fontFamily = selecionar_fuentes.value;
 })
 
 const tamanio_txt_meme = document.getElementById("tamanio-txt-meme");
 tamanio_txt_meme.addEventListener("input", ()=>{
-    main_txt_superior.style.fontSize = `${tamanio_txt_meme.value}px`;
-    main_txt_inferior.style.fontSize = `${tamanio_txt_meme.value}px`;
+    mainTextTop.style.fontSize = `${tamanio_txt_meme.value}px`;
+    mainTextLower.style.fontSize = `${tamanio_txt_meme.value}px`;
 })
 
 document.getElementById("btn-alinear-izq").addEventListener("click", ()=>{
-    main_txt_superior.style.textAlign = "left";
-    main_txt_inferior.style.textAlign = "left";
+    mainTextTop.style.textAlign = "left";
+    mainTextLower.style.textAlign = "left";
 })
 
 document.getElementById("btn-alinear-cen").addEventListener("click", ()=>{
-    main_txt_superior.style.textAlign = "center";
-    main_txt_inferior.style.textAlign = "center";
+    mainTextTop.style.textAlign = "center";
+    mainTextLower.style.textAlign = "center";
 })
 
 document.getElementById("btn-alinear-der").addEventListener("click", ()=>{
-    main_txt_superior.style.textAlign = "right";
-    main_txt_inferior.style.textAlign = "right";
+    mainTextTop.style.textAlign = "right";
+    mainTextLower.style.textAlign = "right";
 })
 
 
@@ -391,33 +394,33 @@ const input_color_fon = document.getElementById("input-color-fon");
 const fondo_transparente = document.getElementById("fondo-transparente");
 
 input_color_txt.addEventListener("input", ()=>{
-    main_txt_superior.style.color = `${input_color_txt.value}`;
-    main_txt_inferior.style.color = `${input_color_txt.value}`;
+    mainTextTop.style.color = `${input_color_txt.value}`;
+    mainTextLower.style.color = `${input_color_txt.value}`;
 })
 
 input_color_fon.addEventListener("input", ()=>{
     if(fondo_transparente.checked) {
-        main_txt_superior.style.backgroundColor = `transparent`;
-        main_txt_inferior.style.backgroundColor = `transparent`;
+        mainTextTop.style.backgroundColor = `transparent`;
+        mainTextLower.style.backgroundColor = `transparent`;
     } else {
-        main_txt_superior.style.backgroundColor = `${input_color_fon.value}`;
-        main_txt_inferior.style.backgroundColor = `${input_color_fon.value}`;
+        mainTextTop.style.backgroundColor = `${input_color_fon.value}`;
+        mainTextLower.style.backgroundColor = `${input_color_fon.value}`;
     }
 })
 
 fondo_transparente.addEventListener('click', ()=> {
     if(fondo_transparente.checked) {
-        main_txt_superior.style.backgroundColor = `transparent`;
-        main_txt_inferior.style.backgroundColor = `transparent`;
+        mainTextTop.style.backgroundColor = `transparent`;
+        mainTextLower.style.backgroundColor = `transparent`;
 
-        main_txt_superior.style.position = `absolute`;
-        main_txt_inferior.style.position = `absolute`;
+        mainTextTop.style.position = `absolute`;
+        mainTextLower.style.position = `absolute`;
     } else {
-        main_txt_superior.style.backgroundColor = `${input_color_fon.value}`;
-        main_txt_inferior.style.backgroundColor = `${input_color_fon.value}`;
+        mainTextTop.style.backgroundColor = `${input_color_fon.value}`;
+        mainTextLower.style.backgroundColor = `${input_color_fon.value}`;
 
-        main_txt_superior.style.position = `static`;
-        main_txt_inferior.style.position = `static`;
+        mainTextTop.style.position = `static`;
+        mainTextLower.style.position = `static`;
     }
 });
 
@@ -428,17 +431,17 @@ const btn_contorno_claro = document.getElementById("btn-contorno-claro");
 const btn_contorno_oscuro = document.getElementById("btn-contorno-oscuro");
 
 btn_contorno_ninguno.addEventListener("click", ()=>{
-    main_txt_superior.style.textShadow = `none`;
-    main_txt_inferior.style.textShadow = `none`;
+    mainTextTop.style.textShadow = `none`;
+    mainTextLower.style.textShadow = `none`;
 });
 
 btn_contorno_claro.addEventListener("click", ()=>{
     /* desplazamiento hor (X-offset), el desplazamiento vert (Y-offset), el desenfoque (blur) y el color (color*/
-    main_txt_superior.style.textShadow = `2px  0px 0px white, 
+    mainTextTop.style.textShadow = `2px  0px 0px white, 
                                          -2px  0px 0px white,
                                           0px  2px 0px white,
                                           0px -2px 0px white`;
-    main_txt_inferior.style.textShadow = `2px  0px 0px white, 
+    mainTextLower.style.textShadow = `2px  0px 0px white, 
                                           -2px  0px 0px white,
                                            0px  2px 0px white,
                                            0px -2px 0px white`;
@@ -446,11 +449,11 @@ btn_contorno_claro.addEventListener("click", ()=>{
 
 btn_contorno_oscuro.addEventListener("click", ()=>{
     /* desplazamiento hor (X-offset), el desplazamiento vert (Y-offset), el desenfoque (blur) y el color (color*/
-    main_txt_superior.style.textShadow = `2px  0px 0px black, 
+    mainTextTop.style.textShadow = `2px  0px 0px black, 
                                          -2px  0px 0px black,
                                           0px  2px 0px black,
                                           0px -2px 0px black`;
-    main_txt_inferior.style.textShadow = `2px  0px 0px black, 
+    mainTextLower.style.textShadow = `2px  0px 0px black, 
                                           -2px  0px 0px black,
                                            0px  2px 0px black,
                                            0px -2px 0px black`;                                      
@@ -462,21 +465,21 @@ const espaciado_txt_meme = document.getElementById("espaciado-txt-meme");
 const interlineado_txt_meme = document.getElementById("interlineado-txt-meme");
 
 espaciado_txt_meme.addEventListener("input", () => {
-    main_txt_superior.style.padding = `${espaciado_txt_meme.value}px 20px`;
-    main_txt_inferior.style.padding = `${espaciado_txt_meme.value}px 20px`;
+    mainTextTop.style.padding = `${espaciado_txt_meme.value}px 20px`;
+    mainTextLower.style.padding = `${espaciado_txt_meme.value}px 20px`;
 });
   
 interlineado_txt_meme.addEventListener("change", () => {
-    main_txt_superior.style.lineHeight = `${interlineado_txt_meme.value}`;
-    main_txt_inferior.style.lineHeight = `${interlineado_txt_meme.value}`;
+    mainTextTop.style.lineHeight = `${interlineado_txt_meme.value}`;
+    mainTextLower.style.lineHeight = `${interlineado_txt_meme.value}`;
 });
   
 
 /* ================================================================================================*/
 /* ------------ BOTON descargar MEME como IMG ---------------- */
-const div_img_txt = document.getElementById("main-img-txt");
-const  btn_descargar_meme = document.getElementById("btn-descargar-meme");
-btn_descargar_meme.addEventListener("click", () => {
+const div_img_txt = document.getElementById("image-text-container");
+const meme_download_btn = document.getElementById("meme-download-btn");
+meme_download_btn.addEventListener("click", () => {
     domtoimage.toBlob(div_img_txt).then((blob) => {
       window.saveAs(blob, "meme.png");
     });

@@ -54,15 +54,15 @@
 		</header>
 
 		<!-- ========  Main container section: text and image of meme creation ======== -->
-		<div class="contenedor-ppal" id="contenedor-ppal">
-			<main class="contenedor-main">
-				<div class="main-img-txt" id="main-img-txt">
-					<p class="main-txt" id="main-txt-superior">TEXTO SUPERIOR</p>
+		<div class="main-container" id="main-container">
+			<main class="main-content">
+				<div class="image-text-container" id="image-text-container">
+					<p class="main-text" id="text-top">TEXTO SUPERIOR</p>
 					<div class="main-img" id="main-img"></div>
-					<p class="main-txt" id="main-txt-inferior">TEXTO INFERIOR</p>
+					<p class="main-text" id="text-lower">TEXTO INFERIOR</p>
 				</div>
 
-				<button class="main-btn-descargar" id="btn-descargar-meme" tabindex="0">
+				<button class="main-button-download" id="meme-download-btn" tabindex="0">
 					<i class="fa fa-download" aria-hidden="true"></i>
 					Descargar Meme
 				</button>
@@ -73,8 +73,8 @@
 					<i class="fa fa-times-circle-o" aria-hidden="true"></i>
 				</button>
 
-				<div class="panel-img ocultar" id="panel-img">
-					<h3 class="panel-titulo">IMAGEN</h3>
+				<div class="panel-img" id="panel-img">
+					<h3 class="panel-title">IMAGEN</h3>
 
 					<div class="contenedor-para-poner-a-dos-columnas">
 						<div class="panel-sectores-controles alto-origen-img">
@@ -100,7 +100,7 @@
 								</button>
 							</div>
 
-							<div class="ocultar" id="subir-url-input">
+							<div class="hide" id="subir-url-input">
 								<input
 									type="url"
 									aria-label="Seleccionar archivo desde una URL"
@@ -109,7 +109,7 @@
 								/>
 							</div>
 
-							<div class="ocultar" id="subir-pc-input">
+							<div class="hide" id="subir-pc-input">
 								<div class="archivo-img">
 									<label for="input-file" tabindex="0">
 										<i class="fa-solid fa-upload"> </i>. Seleccionar
@@ -299,36 +299,36 @@
 				</div>
 
 				<!-- =================   text editing panel  ================== -->
-				<div class="panel-txt ocultar" id="panel-txt">
-					<h3 class="panel-titulo animate__animated animate__bounce">TEXTO</h3>
+				<div class="text-panel hide" id="text-panel">
+					<h3 class="panel-title">TEXTO</h3>
 
-					<div class="contenedor-para-poner-a-dos-columnas">
+					<div class="two-column-container">
 						<!--txt sup/inf  -->
-						<div class="panel-sectores-controles columnas-txt">
+						<div class="text-controls-panel column-text">
 							<h6>SUPERIOR</h6>
 							<textarea
-								class="input-textarea-supInf"
-								id="input-txt-sup"
+								class="input-textarea-topLower"
+								id="input-text-top"
 								aria-label="Escriba el texto superior"
 								placeholder="Texto superior..."
 							></textarea>
-							<div class="checkbox-txt-supInf">
-								<input type="checkbox" id="sin-txt-sup" tabindex="0" />
-								<label for="sin-txt-sup">Sin texto superior</label>
+							<div class="checkbox-text-topLower">
+								<input type="checkbox" id="hide-text-top" tabindex="0" />
+								<label for="hide-text-top">Sin texto superior</label>
 							</div>
 						</div>
 
-						<div class="panel-sectores-controles columnas-txt">
+						<div class="text-controls-panel column-text">
 							<h6>INFERIOR</h6>
 							<textarea
-								class="input-textarea-supInf"
-								id="input-txt-inf"
+								class="input-textarea-topLower"
+								id="input-text-lower"
 								aria-label="Escriba el texto inferior"
 								placeholder="Texto inferior..."
 							></textarea>
-							<div class="checkbox-txt-supInf">
-								<input type="checkbox" id="sin-txt-inf" tabindex="0" />
-								<label for="sin-txt-inf">Sin texto inferior</label>
+							<div class="checkbox-text-topLower">
+								<input type="checkbox" id="hide-text-lower" tabindex="0" />
+								<label for="hide-text-lower">Sin texto inferior</label>
 							</div>
 						</div>
 					</div>
