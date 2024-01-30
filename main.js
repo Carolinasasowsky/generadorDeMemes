@@ -9,7 +9,7 @@ parseInt(getComputedStyle(document.documentElement)
 
 
 /* ======================== CLARO - OSCURO ========================  */
-const btn_oscuro = document.getElementById("nav-btn-claroOscuro");
+const btn_oscuro = document.getElementById("nav-button-lightDark");
 
 btn_oscuro.addEventListener("click", ()=> {
     if (btn_oscuro.textContent.trim() === "Modo Claro") {
@@ -88,7 +88,7 @@ function mostrarPanelImagen(){
 
 function mostrarPanelImagen1300(){  /*Carga pg x 1ra vez, y está a más de 1300px, carga panel de IMG*/
     
-    document.getElementById("nav-btn-img").focus(); /* carga la pg, y el focus lo tiene el btn imagen*/
+    document.getElementById("nav-button-img").focus(); /* carga la pg, y el focus lo tiene el btn imagen*/
     if ( window.innerWidth >= ( breakPointUno() ) &&  panel_cnt.classList.contains("ocultar") ) {
         mostrarPanelImagen();
     }
@@ -106,7 +106,7 @@ window.visualViewport.addEventListener("resize", () => { /* Cuando se agranda la
     }
 });
 
-document.getElementById("nav-btn-img").addEventListener("click", (e)=>{
+document.getElementById("nav-button-img").addEventListener("click", (e)=>{
     panel_txt.classList.add("ocultar");
     panel_img.classList.remove("ocultar");
     panel_cnt.classList.remove("ocultar");
@@ -120,7 +120,7 @@ document.getElementById("nav-btn-img").addEventListener("click", (e)=>{
     }
 })
 
-document.getElementById("nav-btn-txt").addEventListener("click", (e)=>{
+document.getElementById("nav-button-text").addEventListener("click", (e)=>{
     panel_img.classList.add("ocultar");
     panel_txt.classList.remove("ocultar");
     panel_cnt.classList.remove("ocultar");
