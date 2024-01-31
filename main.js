@@ -78,12 +78,12 @@ window.visualViewport.addEventListener("resize", () => {
 const ir_arriba = document.getElementById("ir-arriba");
 const ir_abajo = document.getElementById("ir-abajo");
 
-const panel_img = document.getElementById("panel-img");
+const imagePanel = document.getElementById("image-panel");
 const textPanel = document.getElementById("text-panel");
 const panelContainer = document.getElementById("panel-container");
 
 function mostrarPanelImagen(){
-    panel_img.classList.remove("hide");
+    imagePanel.classList.remove("hide");
     panelContainer.classList.remove("hide");
     textPanel.classList.add("hide");
 };
@@ -110,7 +110,7 @@ window.visualViewport.addEventListener("resize", () => { /* Cuando se agranda la
 
 document.getElementById("nav-button-img").addEventListener("click", (e)=>{
     textPanel.classList.add("hide");
-    panel_img.classList.remove("hide");
+    imagePanel.classList.remove("hide");
     panelContainer.classList.remove("hide");
 
     subir_url_input.classList.add("hide"); /* Siempre que cargue IMG, deben estar ocultos*/
@@ -123,7 +123,7 @@ document.getElementById("nav-button-img").addEventListener("click", (e)=>{
 })
 
 document.getElementById("nav-button-text").addEventListener("click", (e)=>{
-    panel_img.classList.add("hide");
+    imagePanel.classList.add("hide");
     textPanel.classList.remove("hide");
     panelContainer.classList.remove("hide");
     
@@ -135,7 +135,7 @@ document.getElementById("nav-button-text").addEventListener("click", (e)=>{
 })
 
 document.getElementById("panel-close-btn").addEventListener("click", (e)=>{
-    panel_img.classList.add("hide");
+    imagePanel.classList.add("hide");
     textPanel.classList.add("hide");
     panelContainer.classList.add("hide");
    
