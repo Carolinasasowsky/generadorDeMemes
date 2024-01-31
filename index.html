@@ -126,7 +126,7 @@
 						<div class="control-sectors-panel">
 							<h6>FONDO</h6>
 							<div class="sectors-panel">
-								<div class="panel-sector-fondo-color">
+								<div class="panel-bg-color">
 									<input
 										type="color"
 										class="input-color"
@@ -162,7 +162,7 @@
 						<h6>FILTROS</h6>
 
 						<div class="two-column-container">
-							<div class="filtros-col">
+							<div class="filters-column">
 								<div class="filtros">
 									<label for="brillo">BRILLO</label>
 									<input
@@ -229,7 +229,7 @@
 								</div>
 							</div>
 
-							<div class="filtros-col">
+							<div class="filters-column">
 								<div class="filtros">
 									<label for="sepia">SEPIA</label>
 									<input
@@ -356,24 +356,24 @@
 
 								<div>
 									<button
-										class="btn-alinear"
-										id="btn-alinear-izq"
+										class="btn-align"
+										id="btn-align-left"
 										aria-label="Alineación a izquierda"
 										tabindex="0"
 									>
 										<i class="fa-solid fa-align-left"></i>
 									</button>
 									<button
-										class="btn-alinear"
-										id="btn-alinear-cen"
+										class="btn-align"
+										id="btn-align-center"
 										aria-label="Alineación al centro"
 										tabindex="0"
 									>
 										<i class="fa-solid fa-align-center"></i>
 									</button>
 									<button
-										class="btn-alinear"
-										id="btn-alinear-der"
+										class="btn-align"
+										id="btn-align-right"
 										aria-label="Alineación a derecha"
 										tabindex="0"
 									>
@@ -385,37 +385,37 @@
 					</div>
 
 					<div class="two-column-container">
-						<div class="panel-sectores-controles columnas-txt">
-							<div class="fila filtros-col">
-								<div class="panel-sectores columna sin-margin">
+						<div class="control-sectors-panels text-columns">
+							<div class="row filters-column">
+								<div class="sectors-panels column marginless">
 									<h6>COLOR</h6>
-									<div class="panel-sector-fondo-color tamanio">
+									<div class="panel-bg-color size">
 										<input
 											type="color"
 											class="input-color"
-											id="input-color-txt"
+											id="input-text-color"
 											value="#FFFFFF"
-											oninput="colorhexFuente.value=value.toUpperCase()"
+											oninput="colorhexFont.value=value.toUpperCase()"
 											aria-label="Color del texto"
 											tabindex="0"
 										/>
-										<output id="colorhexFuente">#FFFFFF</output>
+										<output id="colorhexFont">#FFFFFF</output>
 									</div>
 								</div>
 
-								<div class="sectors-panel columna sin-margin">
+								<div class="sectors-panel column marginless">
 									<h6>FONDO</h6>
-									<div class="panel-sector-fondo-color tamanio">
+									<div class="panel-bg-color size">
 										<input
 											type="color"
 											class="input-color"
-											id="input-color-fon"
+											id="input-font-color"
 											value="#FFFFFF"
-											oninput="colorhexFondo.value=value.toUpperCase()"
+											oninput="colorhexBg.value=value.toUpperCase()"
 											aria-label="Color de fondo del texto"
 											tabindex="0"
 										/>
-										<output id="colorhexFondo">#FFFFFF</output>
+										<output id="colorhexBg">#FFFFFF</output>
 									</div>
 								</div>
 							</div>
@@ -426,7 +426,7 @@
 							</div>
 						</div>
 
-						<div class="control-sectors-panel columnas-txt">
+						<div class="control-sectors-panel text-columns">
 							<h6>CONTORNO</h6>
 							<div class="sectors-panel">
 								<button
@@ -457,7 +457,7 @@
 					</div>
 
 					<div class="two-column-container">
-						<div class="control-sectors-panel columnas-txt">
+						<div class="control-sectors-panel text-columns">
 							<h6>ESPACIADO</h6>
 							<input
 								type="number"
@@ -472,7 +472,7 @@
 							/>
 						</div>
 
-						<div class="control-sectors-panel columnas-txt">
+						<div class="control-sectors-panel text-columns">
 							<h6>INTERLINEADO</h6>
 							<div class="panel-sector-fondo-modoMezcla ancho-alto-esp-inter">
 								<select

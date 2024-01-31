@@ -416,38 +416,38 @@ memeTextSize.addEventListener("input", () => {
 	mainTextLower.style.fontSize = `${memeTextSize.value}px`;
 });
 
-document.getElementById("btn-alinear-izq").addEventListener("click", () => {
+document.getElementById("btn-align-left").addEventListener("click", () => {
 	mainTextTop.style.textAlign = "left";
 	mainTextLower.style.textAlign = "left";
 });
 
-document.getElementById("btn-alinear-cen").addEventListener("click", () => {
+document.getElementById("btn-align-center").addEventListener("click", () => {
 	mainTextTop.style.textAlign = "center";
 	mainTextLower.style.textAlign = "center";
 });
 
-document.getElementById("btn-alinear-der").addEventListener("click", () => {
+document.getElementById("btn-align-right").addEventListener("click", () => {
 	mainTextTop.style.textAlign = "right";
 	mainTextLower.style.textAlign = "right";
 });
 
 /* ======================== Color de la fuente, color de fondo, y fondo transparente ======================== */
-const input_color_txt = document.getElementById("input-color-txt");
-const input_color_fon = document.getElementById("input-color-fon");
+const inputTextColor = document.getElementById("input-text-color");
+const inputFontColor = document.getElementById("input-font-color");
 const fondo_transparente = document.getElementById("fondo-transparente");
 
-input_color_txt.addEventListener("input", () => {
-	mainTextTop.style.color = `${input_color_txt.value}`;
-	mainTextLower.style.color = `${input_color_txt.value}`;
+inputTextColor.addEventListener("input", () => {
+	mainTextTop.style.color = `${inputTextColor.value}`;
+	mainTextLower.style.color = `${inputTextColor.value}`;
 });
 
-input_color_fon.addEventListener("input", () => {
+inputFontColor.addEventListener("input", () => {
 	if (fondo_transparente.checked) {
 		mainTextTop.style.backgroundColor = `transparent`;
 		mainTextLower.style.backgroundColor = `transparent`;
 	} else {
-		mainTextTop.style.backgroundColor = `${input_color_fon.value}`;
-		mainTextLower.style.backgroundColor = `${input_color_fon.value}`;
+		mainTextTop.style.backgroundColor = `${inputFontColor.value}`;
+		mainTextLower.style.backgroundColor = `${inputFontColor.value}`;
 	}
 });
 

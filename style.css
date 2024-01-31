@@ -350,7 +350,7 @@ input{
     border: 0;          
     border-radius: 3px; 
     padding: 3px; 
-    outline: none;      /* borra bordes negros. */
+    outline: none; 
 }
 
 /*----------------------- SECTION: panel de IMAGEN -------------------*/
@@ -414,7 +414,7 @@ input[type="url"]{
 }
 
 
-.panel-sector-fondo-color{
+.panel-bg-color {
     background-color: var(--color-fondoBtn);
     font-size: 0.7rem;
     width: calc(50% - 2px);  
@@ -427,18 +427,18 @@ input[type="url"]{
     color:#000000;
 }
 
-[type="color"] {       /*Para que input=color, quede redondo*/
+[type="color"] {       
     display: inline-flex;
     vertical-align: bottom;
     justify-content: center;
     border: none;
 }
-::-webkit-color-swatch-wrapper { /*Para que input=color, quede redondo*/
+::-webkit-color-swatch-wrapper {
     padding: 0;
     cursor: pointer;
     height: 20px; /*Para el cículo de color*/
     width: 20px;  /*Para el cículo de color*/
-}
+} 
 
 ::-webkit-color-swatch { /*Para que input=color, quede redondo*/
     border: 0;
@@ -467,7 +467,7 @@ input[type="url"]{
 }
  
 /* ------------------ Filtros */
-.filtros{
+.filtros {
     width: 100%;
     margin-top: 25px;
     font-size: 0.7rem;
@@ -508,12 +508,12 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 
-.panel-sector-fondo-color:hover .input-color{ /*Para que tome a los dos al mismo tiempo*/
+.panel-bg-color:hover .input-color{ /*Para que tome a los dos al mismo tiempo*/
     background-color: var(--color-hover);    /*Esto tmbn sirve para panel de TXT*/
 }
 
 .archivo-img label:hover,
-.panel-sector-fondo-color:hover, 
+.panel-bg-color:hover, 
 input[type="url"]:hover,
 input[type="color"] :hover,
 .panel-sector-fondo-modoMezcla:hover select, 
@@ -576,7 +576,7 @@ input[type="color"] :hover,
     color: #000000;
 }
 
-.btn-alinear{
+.btn-align {
     margin-top: 5px;
     background-color: var(--color-fondoBtn);
     border-radius: 5px ;
@@ -588,20 +588,19 @@ input[type="color"] :hover,
     color: #000000;
 }
 
-.columna{
+.column {
     display: flex;
     flex-direction: column;
 }
-.fila{
+.row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.tamanio{
+.size{
     width: calc(100% - 6px);
     margin-top: 5px;
-    
 }
 
 .checkbox-txt-fondo-transparente{
@@ -630,15 +629,15 @@ input[type="color"] :hover,
     color: #000000;
 }
 
-.sin-margin{
+.marginless{
     margin: 0px;
 }
 
-.input-textarea-supInf:hover,
+.input-textarea-topLower:hover,
 .select-font-panel select:hover, 
 .select-font-panel:hover,
 .meme-text-size:hover, 
-.btn-alinear:hover,
+.btn-aling:hover,
 .btn-contorno:hover,
 .ancho-alto-esp-inter:hover{
     background-color: var(--color-hover);
@@ -649,26 +648,17 @@ input[type="color"] :hover,
 
 
 /* -----  MEDIA QUERY  "SECTION" -------  */
-/*-- Cuando la ventana está es >=1300 el BTN CERRAR panel debe ocultarse.  */
-@media(width> 1300px){  /* OJO.. si cambia 1300, cambiar la var ROOT: breakpoint-uno*/
+@media(width> 1300px){  
     .panel-close-btn{
         display: none;
     }
 }
-
-/* -----  MEDIA QUERY ------- (solo el título del Header) */
 @media(width> 640px){
     .header-title {
         font-size: 2.5rem;
     }
 }
-
-/* Para ubicar el SECTION (txt e img) debajo de la Cajita-Meme. */
- /* PANELES: UNA columna, y debajo*/
-@media (width < 570px) { /* OJO.. si cambia 570, cambiar la var ROOT: breakpoint-tres*/
-    /* body{
-        height: auto;
-    } */
+@media (width < 570px) { 
     .main-container { 
         position: relative;
         top:0px;
@@ -690,14 +680,12 @@ input[type="color"] :hover,
         right: 10px;
     }
 }
-
-/* PANELES: DOS columnas, y debajo*/
-@media (570px <= width <= 850px) {  /* OJO.. si cambia 850, cambiar la var ROOT: breakpoint-dos*/
+@media (570px <= width <= 850px) {  
    
     .main-container {
         position: relative; 
         top:0px;
-        flex-direction: column;  /*esto cambia*/
+        flex-direction: column;  
     }
     .main-content {
         position: relative;
@@ -708,16 +696,16 @@ input[type="color"] :hover,
         height: 490px;
         margin-bottom: 50px;
     }
-    .two-column-container{
+    .two-column-container {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
  
-    .filtros-col, .panel-sectores{
+    .filters-column, .sectors-panel {
         width: calc(var(--ancho-panel-imgtxt) * 1px - 25px); 
     }
-    .columnas-txt{
+    .text-columns {
         width: calc(var(--ancho-panel-imgtxt) * 1px - 15px);
     }
 
