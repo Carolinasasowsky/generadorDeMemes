@@ -296,7 +296,7 @@ body{
 
 /* ::::::::::::::::::::::::::: text and image panel styles :::::::::::::::::::::::::::  */
 
-.contenedor-paneles {
+.panel-container {
     width:calc(var(--ancho-panel-imgtxt) * 1px );
     height: 100%;
     flex-direction: column;
@@ -311,7 +311,7 @@ body{
     font-family: 'roboto';
 }
 
-.panel-btn-cerrar {
+.panel-close-btn {
     position: fixed;
     top: 15px;
     right: 20px;
@@ -650,7 +650,7 @@ input[type="color"] :hover,
 /* -----  MEDIA QUERY  "SECTION" -------  */
 /*-- Cuando la ventana está es >=1300 el BTN CERRAR panel debe ocultarse.  */
 @media(width> 1300px){  /* OJO.. si cambia 1300, cambiar la var ROOT: breakpoint-uno*/
-    .panel-btn-cerrar{
+    .panel-close-btn{
         display: none;
     }
 }
@@ -676,14 +676,14 @@ input[type="color"] :hover,
     .main-content {
         position: relative;  
     }
-    .contenedor-paneles{ 
+    .panel-container { 
         position: relative;  
         width: calc(var(--ancho-panel-imgtxt) * 1px);
         height: 800px;
         margin-bottom: 20px;
     }
 
-    .panel-btn-cerrar{
+    .panel-close-btn {
         position: absolute;
         top: 10px;
         right: 10px;
@@ -701,7 +701,7 @@ input[type="color"] :hover,
     .main-content {
         position: relative;
     }
-    .contenedor-paneles{
+    .panel-container {
         position: relative;  /* fixed para que quede a la derecha*/
         width: calc(var(--ancho-panel-imgtxt) * 2px);
         height: 490px;
@@ -720,7 +720,7 @@ input[type="color"] :hover,
         width: calc(var(--ancho-panel-imgtxt) * 1px - 15px);
     }
 
-    .panel-btn-cerrar{
+    .panel-close-btn {
         position: absolute;
         top: 10px;
         right: 10px;

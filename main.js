@@ -80,29 +80,29 @@ const ir_abajo = document.getElementById("ir-abajo");
 
 const panel_img = document.getElementById("panel-img");
 const textPanel = document.getElementById("text-panel");
-const panel_cnt = document.getElementById("contenedor-paneles");
+const panelContainer = document.getElementById("panel-container");
 
 function mostrarPanelImagen(){
     panel_img.classList.remove("hide");
-    panel_cnt.classList.remove("hide");
+    panelContainer.classList.remove("hide");
     textPanel.classList.add("hide");
 };
 
 function mostrarPanelImagen1300(){  /*Carga pg x 1ra vez, y está a más de 1300px, carga panel de IMG*/
     
     document.getElementById("nav-button-img").focus(); /* carga la pg, y el focus lo tiene el btn imagen*/
-    if ( window.innerWidth >= ( breakPointUno() ) &&  panel_cnt.classList.contains("hide") ) {
+    if ( window.innerWidth >= ( breakPointUno() ) &&  panelContainer.classList.contains("hide") ) {
         mostrarPanelImagen();
     }
 }
  
 window.visualViewport.addEventListener("resize", () => { /* Cuando se agranda la ventana a más de 1300, debe conservar 
                                                             lo que estaba seleccionado, o mostrar Panel Imagen, por defecto */
-    if ( window.innerWidth >= ( breakPointUno() ) &&  panel_cnt.classList.contains("hide") ) {
+    if ( window.innerWidth >= ( breakPointUno() ) &&  panelContainer.classList.contains("hide") ) {
            mostrarPanelImagen();
     }
 
-    if ( window.innerWidth <= ( breakPointDos() ) &&  !panel_cnt.classList.contains("hide") ) {
+    if ( window.innerWidth <= ( breakPointDos() ) &&  !panelContainer.classList.contains("hide") ) {
         ir_arriba.classList.remove("hide");
         ir_abajo.classList.remove("hide");
     }
@@ -111,12 +111,12 @@ window.visualViewport.addEventListener("resize", () => { /* Cuando se agranda la
 document.getElementById("nav-button-img").addEventListener("click", (e)=>{
     textPanel.classList.add("hide");
     panel_img.classList.remove("hide");
-    panel_cnt.classList.remove("hide");
+    panelContainer.classList.remove("hide");
 
     subir_url_input.classList.add("hide"); /* Siempre que cargue IMG, deben estar ocultos*/
     subir_pc_input.classList.add("hide");
    
-    if ( window.innerWidth <= ( breakPointDos() ) &&  !panel_cnt.classList.contains("hide") ) {
+    if ( window.innerWidth <= ( breakPointDos() ) &&  !panelContainer.classList.contains("hide") ) {
         ir_arriba.classList.remove("hide");
         ir_abajo.classList.remove("hide");
     }
@@ -125,19 +125,19 @@ document.getElementById("nav-button-img").addEventListener("click", (e)=>{
 document.getElementById("nav-button-text").addEventListener("click", (e)=>{
     panel_img.classList.add("hide");
     textPanel.classList.remove("hide");
-    panel_cnt.classList.remove("hide");
+    panelContainer.classList.remove("hide");
     
 
-    if ( window.innerWidth <= ( breakPointDos() ) &&  !panel_cnt.classList.contains("hide") ) {
+    if ( window.innerWidth <= ( breakPointDos() ) &&  !panelContainer.classList.contains("hide") ) {
         ir_arriba.classList.remove("hide");
         ir_abajo.classList.remove("hide");
     }
 })
 
-document.getElementById("panel-btn-cerrar").addEventListener("click", (e)=>{
+document.getElementById("panel-close-btn").addEventListener("click", (e)=>{
     panel_img.classList.add("hide");
     textPanel.classList.add("hide");
-    panel_cnt.classList.add("hide");
+    panelContainer.classList.add("hide");
    
     if ( window.innerWidth <= ( breakPointDos() ) ) {
         ir_arriba.classList.add("ocultar");
