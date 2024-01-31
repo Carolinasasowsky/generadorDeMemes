@@ -563,13 +563,13 @@ input[type="color"] :hover,
     color: #000000;
 }
 
-.contenedor-tmnTxt-alinear{   
+.text-size-container-align {   
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     color: #000000;
 }
-.tamanio-txt-meme{
+.meme-text-size {
     margin-top: 5px;
     width: calc(50% - 2px);
     height: calc( var(--alto-botones-paneles)* 1px);
@@ -637,7 +637,7 @@ input[type="color"] :hover,
 .input-textarea-supInf:hover,
 .select-font-panel select:hover, 
 .select-font-panel:hover,
-.tamanio-txt-meme:hover, 
+.meme-text-size:hover, 
 .btn-alinear:hover,
 .btn-contorno:hover,
 .ancho-alto-esp-inter:hover{
