@@ -334,9 +334,9 @@ hideTextLowerCheckbox.addEventListener("click", () => {
 
 
 /* ======================== Fuente - Tamaño - Alineación ======================== */
-const selecionar_fuentes = document.getElementById("selecionar-fuentes");
+const fontSelection = document.getElementById("font-selection");
 function cargarFuentes(){
-    var fuentes = "";
+    var font = "";
 
     let array = [
         { "familia": "'Anton',  sans-serif",   "fuente":"Anton" },
@@ -356,14 +356,14 @@ function cargarFuentes(){
     ] ;    
 
     for (var i = 0; i < array.length; i++) {
-        fuentes += `<option value="`+array[i].familia+ `">`+ array[i].fuente+`</option>`;
+        font += `<option value="`+array[i].familia+ `">`+ array[i].fuente+`</option>`;
     }
-    selecionar_fuentes.innerHTML = fuentes;   
+    fontSelection.innerHTML = font;   
 }
 
-selecionar_fuentes.addEventListener("input", ()=>{  /*estaba change y no tomaba*/
-    mainTextTop.style.fontFamily = selecionar_fuentes.value;
-    mainTextLower.style.fontFamily = selecionar_fuentes.value;
+fontSelection.addEventListener("input", ()=>{  /*estaba change y no tomaba*/
+    mainTextTop.style.fontFamily = fontSelection.value;
+    mainTextLower.style.fontFamily = fontSelection.value;
 })
 
 const tamanio_txt_meme = document.getElementById("tamanio-txt-meme");

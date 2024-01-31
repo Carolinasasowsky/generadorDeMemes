@@ -533,6 +533,7 @@ input[type="color"] :hover,
     width: 100%;
     height: 70px;
     overflow-y: scroll;
+    color: var(--color_btn-desc-arriba-abajo)
         
     
 }
@@ -541,7 +542,7 @@ input[type="color"] :hover,
     font-size: 0.7rem;
 }
 
-.panel-sector-seleccionar-fuente{
+.select-font-panel {
     margin-top: 5px;
     background-color: var(--color-fondoBtn);
     border-radius: 3px;
@@ -550,7 +551,7 @@ input[type="color"] :hover,
     height: var(--alto-botones-paneles)px;
     color:#000000;
 }
-.panel-sector-seleccionar-fuente select{
+.select-font-panel select {
   	border: 0;
 	background-color: var(--color-fondoBtn);
 	color: var(--color-fuente);
@@ -634,8 +635,8 @@ input[type="color"] :hover,
 }
 
 .input-textarea-supInf:hover,
-.panel-sector-seleccionar-fuente select:hover, 
-.panel-sector-seleccionar-fuente:hover,
+.select-font-panel select:hover, 
+.select-font-panel:hover,
 .tamanio-txt-meme:hover, 
 .btn-alinear:hover,
 .btn-contorno:hover,
