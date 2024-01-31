@@ -113,7 +113,7 @@ document.getElementById("nav-button-img").addEventListener("click", (e)=>{
     imagePanel.classList.remove("hide");
     panelContainer.classList.remove("hide");
 
-    subir_url_input.classList.add("hide"); /* Siempre que cargue IMG, deben estar ocultos*/
+    upload_url_input.classList.add("hide"); /* Siempre que cargue IMG, deben estar ocultos*/
     subir_pc_input.classList.add("hide");
    
     if ( window.innerWidth <= ( breakPointDos() ) &&  !panelContainer.classList.contains("hide") ) {
@@ -150,10 +150,10 @@ document.getElementById("panel-close-btn").addEventListener("click", (e)=>{
 /* ================================================================================================ */
 
 /* ======================== Seleccionar origen de la imagen URL / PC ======================== */
-const subir_url_btn = document.getElementById("subir-url-btn");
+const uploadUrlBtn = document.getElementById("upload-url-btn");
 const subir_pc_btn = document.getElementById("subir-pc-btn");
 
-const subir_url_input = document.getElementById("subir-url-input");
+const upload_url_input = document.getElementById("upload-url-input");
 const subir_pc_input = document.getElementById("subir-pc-input");
 
 function esMovil(){
@@ -171,13 +171,13 @@ function dispositivoMovil(){ /* Si es celu, cambia el icono de subir img por Des
     }
 }
 
-subir_url_btn.addEventListener("click",()=>{
-    subir_url_input.classList.remove("hide");
+uploadUrlBtn.addEventListener("click",()=>{
+    upload_url_input.classList.remove("hide");
     subir_pc_input.classList.add("hide");
 })
 subir_pc_btn.addEventListener("click",()=>{
     subir_pc_input.classList.remove("hide");
-    subir_url_input.classList.add("hide");
+    upload_url_input.classList.add("hide");
 })
 
 /* Si la imagen es por URL*/
@@ -189,7 +189,7 @@ function formatearImg(){
     main_img.style.backgroundPosition= `center center`;
 }
 
-subir_url_input.addEventListener("input",(e)=>{
+upload_url_input.addEventListener("input",(e)=>{
     main_img.style.backgroundImage = `url("${e.target.value}")`;
     formatearImg();
 })

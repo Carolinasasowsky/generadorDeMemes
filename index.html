@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="robots" content="noarchive" />
 		<link rel="icon" href="favicon.ico" type="image/png" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<script
 			src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
 			integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
@@ -62,7 +63,11 @@
 					<p class="main-text" id="text-lower">TEXTO INFERIOR</p>
 				</div>
 
-				<button class="main-button-download" id="meme-download-btn" tabindex="0">
+				<button
+					class="main-button-download"
+					id="meme-download-btn"
+					tabindex="0"
+				>
 					<i class="fa fa-download" aria-hidden="true"></i>
 					Descargar Meme
 				</button>
@@ -80,27 +85,19 @@
 						<div class="control-sectors-panel origin-image-height">
 							<h6>ORIGEN</h6>
 
-							<div class="panel-sectores">
-								<button
-									class="seccion-img-btn-subir"
-									id="subir-url-btn"
-									tabindex="0"
-								>
+							<div class="sectors-panel">
+								<button class="upload-btn" id="upload-url-btn" tabindex="0">
 									<i class="fa-solid fa-link"></i>
 									URL
 								</button>
 
-								<button
-									class="seccion-img-btn-subir"
-									id="subir-pc-btn"
-									tabindex="0"
-								>
+								<button class="upload-btn" id="subir-pc-btn" tabindex="0">
 									<i class="fa-solid fa-desktop"></i>
 									Computadora
 								</button>
 							</div>
 
-							<div class="hide" id="subir-url-input">
+							<div class="hide" id="upload-url-input">
 								<input
 									type="url"
 									aria-label="Seleccionar archivo desde una URL"
@@ -126,9 +123,9 @@
 							</div>
 						</div>
 
-						<div class="panel-sectores-controles">
+						<div class="control-sectors-panel">
 							<h6>FONDO</h6>
-							<div class="panel-sectores">
+							<div class="sectors-panel">
 								<div class="panel-sector-fondo-color">
 									<input
 										type="color"
@@ -161,10 +158,10 @@
 					</div>
 
 					<!-- =================   filter panel  ================== -->
-					<div class="panel-sectores-controles">
+					<div class="control-sectors-panel">
 						<h6>FILTROS</h6>
 
-						<div class="contenedor-para-poner-a-dos-columnas">
+						<div class="two-column-container">
 							<div class="filtros-col">
 								<div class="filtros">
 									<label for="brillo">BRILLO</label>
@@ -333,9 +330,9 @@
 						</div>
 					</div>
 
-					<div class="panel-sectores-controles">
+					<div class="control-sectors-panel">
 						<h6>FUENTE</h6>
-						<div class="contenedor-para-poner-a-dos-columnas">
+						<div class="two-column-container">
 							<div class="panel-sector-seleccionar-fuente filtros-col">
 								<select
 									class="selecionar-fuentes"
@@ -387,7 +384,7 @@
 						</div>
 					</div>
 
-					<div class="contenedor-para-poner-a-dos-columnas">
+					<div class="two-column-container">
 						<div class="panel-sectores-controles columnas-txt">
 							<div class="fila filtros-col">
 								<div class="panel-sectores columna sin-margin">
@@ -406,7 +403,7 @@
 									</div>
 								</div>
 
-								<div class="panel-sectores columna sin-margin">
+								<div class="sectors-panel columna sin-margin">
 									<h6>FONDO</h6>
 									<div class="panel-sector-fondo-color tamanio">
 										<input
@@ -429,9 +426,9 @@
 							</div>
 						</div>
 
-						<div class="panel-sectores-controles columnas-txt">
+						<div class="control-sectors-panel columnas-txt">
 							<h6>CONTORNO</h6>
-							<div class="panel-sectores">
+							<div class="sectors-panel">
 								<button
 									class="btn-contorno"
 									id="btn-contorno-ninguno"
@@ -459,8 +456,8 @@
 						</div>
 					</div>
 
-					<div class="contenedor-para-poner-a-dos-columnas">
-						<div class="panel-sectores-controles columnas-txt">
+					<div class="two-column-container">
+						<div class="control-sectors-panel columnas-txt">
 							<h6>ESPACIADO</h6>
 							<input
 								type="number"
@@ -475,7 +472,7 @@
 							/>
 						</div>
 
-						<div class="panel-sectores-controles columnas-txt">
+						<div class="control-sectors-panel columnas-txt">
 							<h6>INTERLINEADO</h6>
 							<div class="panel-sector-fondo-modoMezcla ancho-alto-esp-inter">
 								<select

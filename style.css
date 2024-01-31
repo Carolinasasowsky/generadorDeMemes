@@ -359,7 +359,7 @@ input{
     flex-direction: column;
 }
 
-.panel-sectores{ 
+.sectors-panel { 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -368,11 +368,11 @@ input{
 } 
 
 
-.origin-image-height{
+.origin-image-height {
     height: 100px;
 }
 
-.seccion-img-btn-subir{  /* Para el btn de URL/PC. */
+.upload-btn {  /* Para el btn de URL/PC. */
     background-color: var(--color-fondoBtn);
     border-radius: 5px ;
     border: 0px;
@@ -518,7 +518,7 @@ input[type="url"]:hover,
 input[type="color"] :hover,
 .panel-sector-fondo-modoMezcla:hover select, 
 .panel-sector-fondo-modoMezcla:hover,
-.seccion-img-btn-subir:hover,
+.upload-btn:hover,
 .seccion-img-btn-reestablecer:hover{
     background-color: var(--color-hover);
 }
