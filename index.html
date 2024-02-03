@@ -139,11 +139,11 @@
 									<output id="colorhex">#FFFFFF</output>
 								</div>
 
-								<div class="panel-sector-fondo-modoMezcla">
+								<div class="blendModePanel">
 									<select
-										class="panel-control-modoMezcla"
-										id="modo-mezcla"
-										aria-label="Modos de mezcla entre color de fondo e imágen"
+										class="blendModeControl"
+										id="blendMode"
+										aria-label="Variaciones de fusión entre el color de fondo y la imagen"
 									>
 										<option value="unset" selected>Ninguno</option>
 										<option value="lighten">Aclarar</option>
@@ -163,7 +163,7 @@
 
 						<div class="two-column-container">
 							<div class="filters-column">
-								<div class="filtros">
+								<div class="filter">
 									<label for="brillo">BRILLO</label>
 									<input
 										type="range"
@@ -176,7 +176,7 @@
 									/>
 								</div>
 
-								<div class="filtros">
+								<div class="filter">
 									<label for="opacidad">OPACIDAD</label>
 									<input
 										type="range"
@@ -189,7 +189,7 @@
 									/>
 								</div>
 
-								<div class="filtros">
+								<div class="filter">
 									<label for="contraste">CONTRASTE</label>
 									<input
 										type="range"
@@ -202,7 +202,7 @@
 									/>
 								</div>
 
-								<div class="filtros">
+								<div class="filter">
 									<label for="desenfoque">DESENFOQUE</label>
 									<input
 										type="range"
@@ -215,7 +215,7 @@
 									/>
 								</div>
 
-								<div class="filtros">
+								<div class="filter">
 									<label for="grises">ESCALA DE GRISES</label>
 									<input
 										type="range"
@@ -230,7 +230,7 @@
 							</div>
 
 							<div class="filters-column">
-								<div class="filtros">
+								<div class="filter">
 									<label for="sepia">SEPIA</label>
 									<input
 										type="range"
@@ -243,7 +243,7 @@
 									/>
 								</div>
 
-								<div class="filtros">
+								<div class="filter">
 									<label for="hue">ROTACIÓN DE COLOR</label>
 									<input
 										type="range"
@@ -256,7 +256,7 @@
 									/>
 								</div>
 
-								<div class="filtros">
+								<div class="filter">
 									<label for="saturacion">SATURACIÓN</label>
 									<input
 										type="range"
@@ -269,7 +269,7 @@
 									/>
 								</div>
 
-								<div class="filtros">
+								<div class="filter">
 									<label for="invertido">INVERTIDO</label>
 									<input
 										type="range"
@@ -283,8 +283,8 @@
 								</div>
 
 								<button
-									class="seccion-img-btn-reestablecer"
-									id="btn-reestablecer-filtros"
+									class="img-reset-section"
+									id="reset-filters"
 									tabindex="0"
 								>
 									<i class="fa fa-undo" aria-hidden="true"></i>
@@ -420,9 +420,9 @@
 								</div>
 							</div>
 
-							<div class="checkbox-txt-fondo-transparente">
-								<input type="checkbox" id="fondo-transparente" tabindex="0" />
-								<label for="fondo-transparente">Fondo transparente</label>
+							<div class="transCheckboxText">
+								<input type="checkbox" id="transBg" tabindex="0" />
+								<label for="transBg">Fondo transparente</label>
 							</div>
 						</div>
 
@@ -430,24 +430,24 @@
 							<h6>CONTORNO</h6>
 							<div class="sectors-panel">
 								<button
-									class="btn-contorno"
-									id="btn-contorno-ninguno"
+									class="outlineBtn"
+									id="outlineLessBtn"
 									tabindex="0"
 								>
 									Ninguno
 								</button>
 
 								<button
-									class="btn-contorno"
-									id="btn-contorno-claro"
+									class="outlineBtn"
+									id="outlineLightBtn"
 									tabindex="0"
 								>
 									Claro
 								</button>
 
 								<button
-									class="btn-contorno"
-									id="btn-contorno-oscuro"
+									class="outlineBtn"
+									id="outlineDarkBtn"
 									tabindex="0"
 								>
 									Oscuro

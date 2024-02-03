@@ -445,7 +445,7 @@ input[type="url"]{
     border-radius: 50%;
 }
 
-.panel-sector-fondo-modoMezcla{
+.blendModePanel {
     background-color: var(--color-fondoBtn);
     border-radius: 3px;
     display: flex;
@@ -455,7 +455,7 @@ input[type="url"]{
     align-items: center;
         
 }
-.panel-sector-fondo-modoMezcla select{
+.blendModePanel select {
   	border: 0;
 	background-color: var(--color-fondoBtn);
 	color: var(--color-fuente);
@@ -466,22 +466,21 @@ input[type="url"]{
     color:#000000;
 }
  
-/* ------------------ Filtros */
-.filtros {
+/* :::::::::::::::::::::::: filter style ::::::::::::::::::: */
+.filter {
     width: 100%;
     margin-top: 25px;
     font-size: 0.7rem;
     display: flex;
     flex-direction: column;
     font-weight: 500;
-    
-    
+        
 }
 
 input[type='range'] {
     overflow: hidden;
     appearance: none;
-    background-color: var(--color-fondoBtn);/*parte derecha*/
+    background-color: var(--color-fondoBtn);
     
   }
   
@@ -492,10 +491,11 @@ input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
     cursor: ew-resize;
     background: var(--color-header);
-    box-shadow: -130px 0 0 130px var(--color-cont-ppal); /*parte izq*/
+    box-shadow: -130px 0 0 130px var(--color-cont-ppal); 
 }
 
-.seccion-img-btn-reestablecer{ /*  BTN reestablecer */
+/* :::::::::::::::::::::::::::::::::: reset button :::::::::::::::::::::::::*/
+.img-reset-section{ 
     width: 100%;
     border: 0px;
     background-color: var(--color-fondoBtn);
@@ -508,18 +508,18 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 
-.panel-bg-color:hover .input-color{ /*Para que tome a los dos al mismo tiempo*/
-    background-color: var(--color-hover);    /*Esto tmbn sirve para panel de TXT*/
+.panel-bg-color:hover .input-color{ 
+    background-color: var(--color-hover);  
 }
 
 .archivo-img label:hover,
 .panel-bg-color:hover, 
 input[type="url"]:hover,
 input[type="color"] :hover,
-.panel-sector-fondo-modoMezcla:hover select, 
-.panel-sector-fondo-modoMezcla:hover,
+.blendModePanel:hover select, 
+.blendModePanel:hover,
 .upload-btn:hover,
-.seccion-img-btn-reestablecer:hover{
+.img-reset-section:hover{
     background-color: var(--color-hover);
 }
 
@@ -603,13 +603,13 @@ input[type="color"] :hover,
     margin-top: 5px;
 }
 
-.checkbox-txt-fondo-transparente{
+.transCheckboxText {
     font-size: 0.7rem;
     margin-top: 5px;
    
 }
 
-.btn-contorno{ 
+.outlineBtn { 
     background-color: var(--color-fondoBtn);
     border-radius: 5px ;
     border: 0px;
@@ -638,7 +638,7 @@ input[type="color"] :hover,
 .select-font-panel:hover,
 .meme-text-size:hover, 
 .btn-aling:hover,
-.btn-contorno:hover,
+.outlineBtn:hover,
 .ancho-alto-esp-inter:hover{
     background-color: var(--color-hover);
 }

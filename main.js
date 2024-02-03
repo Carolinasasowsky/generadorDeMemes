@@ -253,19 +253,19 @@ document.addEventListener("keyup", function (event) {
 
 /* ======================== Seleccionar color de FONDO img,  y BLEND MODE (se aplica al background) ======================== */
 const input_color = document.getElementById("input-color"); //input que selecciona color
-const modo_mezcla = document.getElementById("modo-mezcla");
+const blendMode = document.getElementById("blendMode");
 
 input_color.addEventListener("input", (e) => {
 	main_img.style.backgroundColor = `${e.target.value}`;
 });
 
-modo_mezcla.addEventListener("input", (e) => {
+blendMode.addEventListener("input", (e) => {
 	main_img.style.backgroundBlendMode = `${e.target.value}`;
 });
 
-/* ======================== Aplicar Filtos y Restablecer ======================== */
-const btn_reestablecer_filtros = document.getElementById(
-	"btn-reestablecer-filtros"
+/* ======================== apply reset filters ======================== */
+const resetFilters = document.getElementById(
+	"reset-filters"
 );
 const brillo = document.getElementById("brillo");
 const opacidad = document.getElementById("opacidad");
@@ -287,7 +287,7 @@ hueR.addEventListener("input", obtenerValorFiltros);
 saturacion.addEventListener("input", obtenerValorFiltros);
 invertido.addEventListener("input", obtenerValorFiltros);
 
-btn_reestablecer_filtros.addEventListener("click", () => {
+resetFilters.addEventListener("click", () => {
 	filtrarImg(1, 1, 100, 0, 0, 0, 0, 100, 0);
 });
 
@@ -434,7 +434,7 @@ document.getElementById("btn-align-right").addEventListener("click", () => {
 /* ======================== Color de la fuente, color de fondo, y fondo transparente ======================== */
 const inputTextColor = document.getElementById("input-text-color");
 const inputFontColor = document.getElementById("input-font-color");
-const fondo_transparente = document.getElementById("fondo-transparente");
+const transBg = document.getElementById("transBg");
 
 inputTextColor.addEventListener("input", () => {
 	mainTextTop.style.color = `${inputTextColor.value}`;
@@ -442,7 +442,7 @@ inputTextColor.addEventListener("input", () => {
 });
 
 inputFontColor.addEventListener("input", () => {
-	if (fondo_transparente.checked) {
+	if (transBg.checked) {
 		mainTextTop.style.backgroundColor = `transparent`;
 		mainTextLower.style.backgroundColor = `transparent`;
 	} else {
@@ -451,16 +451,16 @@ inputFontColor.addEventListener("input", () => {
 	}
 });
 
-fondo_transparente.addEventListener("click", () => {
-	if (fondo_transparente.checked) {
+transBg.addEventListener("click", () => {
+	if (transBg.checked) {
 		mainTextTop.style.backgroundColor = `transparent`;
 		mainTextLower.style.backgroundColor = `transparent`;
 
 		mainTextTop.style.position = `absolute`;
 		mainTextLower.style.position = `absolute`;
 	} else {
-		mainTextTop.style.backgroundColor = `${input_color_fon.value}`;
-		mainTextLower.style.backgroundColor = `${input_color_fon.value}`;
+		mainTextTop.style.backgroundColor = `${inputFontColor.value}`;
+		mainTextLower.style.backgroundColor = `${inputFontColor.value}`;
 
 		mainTextTop.style.position = `static`;
 		mainTextLower.style.position = `static`;
@@ -468,16 +468,16 @@ fondo_transparente.addEventListener("click", () => {
 });
 
 /* ======================== Contorno de la fuente ======================== */
-const btn_contorno_ninguno = document.getElementById("btn-contorno-ninguno");
-const btn_contorno_claro = document.getElementById("btn-contorno-claro");
-const btn_contorno_oscuro = document.getElementById("btn-contorno-oscuro");
+const outlineLessBtn = document.getElementById("outlineLessBtn");
+const outlineLightBtn = document.getElementById("outlineLightBtn");
+const outlineDarkBtn = document.getElementById("outlineDarkBtn");
 
-btn_contorno_ninguno.addEventListener("click", () => {
+outlineLessBtn.addEventListener("click", () => {
 	mainTextTop.style.textShadow = `none`;
 	mainTextLower.style.textShadow = `none`;
 });
 
-btn_contorno_claro.addEventListener("click", () => {
+outlineLightBtn.addEventListener("click", () => {
 	/* desplazamiento hor (X-offset), el desplazamiento vert (Y-offset), el desenfoque (blur) y el color (color*/
 	mainTextTop.style.textShadow = `2px  0px 0px white, 
                                          -2px  0px 0px white,
@@ -489,7 +489,7 @@ btn_contorno_claro.addEventListener("click", () => {
                                            0px -2px 0px white`;
 });
 
-btn_contorno_oscuro.addEventListener("click", () => {
+outlineDarkBtn.addEventListener("click", () => {
 	/* desplazamiento hor (X-offset), el desplazamiento vert (Y-offset), el desenfoque (blur) y el color (color*/
 	mainTextTop.style.textShadow = `2px  0px 0px black, 
                                          -2px  0px 0px black,
