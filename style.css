@@ -354,10 +354,10 @@ input{
 }
 
 /*----------------------- SECTION: panel de IMAGEN -------------------*/
-.contenedor-de-origen-y-fondo{
+/*.contenedor-de-origen-y-fondo{
     display: flex;
     flex-direction: column;
-}
+}*/
 
 .sectors-panel { 
     display: flex;
@@ -438,7 +438,7 @@ input[type="url"]{
     cursor: pointer;
     height: 20px; /*Para el cículo de color*/
     width: 20px;  /*Para el cículo de color*/
-} 
+}
 
 ::-webkit-color-swatch { /*Para que input=color, quede redondo*/
     border: 0;
@@ -495,7 +495,7 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 /* :::::::::::::::::::::::::::::::::: reset button :::::::::::::::::::::::::*/
-.img-reset-section{ 
+.img-reset-section { 
     width: 100%;
     border: 0px;
     background-color: var(--color-fondoBtn);
@@ -508,7 +508,7 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 
-.panel-bg-color:hover .input-color{ 
+.panel-bg-color:hover .input-color { 
     background-color: var(--color-hover);  
 }
 
@@ -622,14 +622,14 @@ input[type="color"] :hover,
     cursor: pointer; 
 }
 
-.ancho-alto-esp-inter{
+.dimensions-space-line {
     margin-top: 5px;
     width: 100%;
     height: calc( var(--alto-botones-paneles)* 1px);
     color: #000000;
 }
 
-.marginless{
+.marginless {
     margin: 0px;
 }
 
@@ -639,7 +639,7 @@ input[type="color"] :hover,
 .meme-text-size:hover, 
 .btn-aling:hover,
 .outlineBtn:hover,
-.ancho-alto-esp-inter:hover{
+.dimensions-space-line:hover {
     background-color: var(--color-hover);
 }
 

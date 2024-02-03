@@ -101,7 +101,7 @@ function mostrarPanelImagen1300() {
 
 	document
 		.getElementById("nav-button-img")
-		.focus(); /* carga la pg, y el focus lo tiene el btn imagen*/
+		
 	if (
 		window.innerWidth >= breakPointUno() &&
 		panelContainer.classList.contains("hide")
@@ -111,8 +111,7 @@ function mostrarPanelImagen1300() {
 }
 
 window.visualViewport.addEventListener("resize", () => {
-	/* Cuando se agranda la ventana a más de 1300, debe conservar 
-                                                            lo que estaba seleccionado, o mostrar Panel Imagen, por defecto */
+	
 	if (
 		window.innerWidth >= breakPointUno() &&
 		panelContainer.classList.contains("hide")
@@ -120,13 +119,13 @@ window.visualViewport.addEventListener("resize", () => {
 		mostrarPanelImagen();
 	}
 
-	if (
+	/*if (
 		window.innerWidth <= breakPointDos() &&
 		!panelContainer.classList.contains("hide")
-	) {
+	) /*{
 		ir_arriba.classList.remove("hide");
 		ir_abajo.classList.remove("hide");
-	}
+	}*/
 });
 
 document.getElementById("nav-button-img").addEventListener("click", (e) => {
@@ -502,17 +501,17 @@ outlineDarkBtn.addEventListener("click", () => {
 });
 
 /* ======================== Espaciado e Interlineado ======================== */
-const espaciado_txt_meme = document.getElementById("espaciado-txt-meme");
-const interlineado_txt_meme = document.getElementById("interlineado-txt-meme");
+const spacingTextMeme = document.getElementById("spacing-text-meme");
+const lineTextMeme = document.getElementById("line-text-meme");
 
-espaciado_txt_meme.addEventListener("input", () => {
-	mainTextTop.style.padding = `${espaciado_txt_meme.value}px 20px`;
-	mainTextLower.style.padding = `${espaciado_txt_meme.value}px 20px`;
+spacingTextMeme.addEventListener("input", () => {
+	mainTextTop.style.padding = `${spacingTextMeme.value}px 20px`;
+	mainTextLower.style.padding = `${spacingTextMeme.value}px 20px`;
 });
 
-interlineado_txt_meme.addEventListener("change", () => {
-	mainTextTop.style.lineHeight = `${interlineado_txt_meme.value}`;
-	mainTextLower.style.lineHeight = `${interlineado_txt_meme.value}`;
+lineTextMeme.addEventListener("change", () => {
+	mainTextTop.style.lineHeight = `${lineTextMeme.value}`;
+	mainTextLower.style.lineHeight = `${lineTextMeme.value}`;
 });
 
 /* ================================================================================================*/
