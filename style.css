@@ -89,36 +89,37 @@
     font-style: Regular;
 }
 
-/* ::::::::::::::::::::::::::: dark mode and light mode :::::::::::::::::::::::::::*/
+/* :::::::::::::::::::::::::::::::::::::::::: dark mode ::::::::::::::::::::::::::::::::::::::::::*/
 :root{                              
     --color-header:    #005285 ;    
     --color-seccion:   #012639;     
     --color-cont-main: #0ba8e2;     
-    --color-fondoBtn:  #72d5f8;     
-    --color-fuente:    #f3f4f6;     
+    --color-bg-btn:  #72d5f8;     
+    --color-font:    #f3f4f6;     
 
     --color-hover:  #4eae48;
-    --color_btn-desc-arriba-abajo: #000000;
+    --color-btn-scroll: #000000;
     color-scheme: dark;
    
-    --transition: color 0.1s, background-color 0.2s ease-in-out;
-
-    --cajita_meme-tm-maximo: 600;
-    --cajita_meme-tm-inicial-txt: 50;
-    --alto-botones-paneles: 27;
-    --ancho-panel-imgtxt: 280;
+  
+    --max_meme_box_width: 600;
+    /*--cajita_meme-tm-inicial-txt: 50;*/
+    --panel-btn-height: 27;
+    --imgtext-width: 280;
 
     --breakpoints-uno: 1300;
     --breakpoints-dos: 850;
     --breakpoints-tres: 570;
 }  
 
+/* ::::::::::::::::::::::::::::::::::::::::::  light mode :::::::::::::::::::::::::::::::::::::::::::*/
+
 :root[data-theme-color="light"] {    
     --color-header:    #78c0ee;       
     --color-seccion:    #1490d0;     
     --color-cont-main: #d3d8e2;      
-    --color-fondoBtn:  #b1bcd1;      
-    --color-fuente:    #010101;       
+    --color-bg-btn:  #b1bcd1;      
+    --color-font:    #010101;       
   
     color-scheme: light; 
 }
@@ -178,12 +179,12 @@ body{
   }
 
 
-/* ::::::::::::::::::::::::::: header section styles :::::::::::::::::::::::::::*/
+/* ::::::::::::::::::::::::::::::::::::::: header section styles ::::::::::::::::::::::::::::::::::::::::*/
 
 .header-container {
     height: 15%;
     width: 100%;
-    color: var(--color-fuente);
+    color: var(--color-font);
     background-color: var(--color-header);
     padding: 10px;
     
@@ -205,7 +206,7 @@ body{
     border-radius: 5px ;
 }
 .nav-button:hover{
-    background-color: var(--color-fondoBtn);
+    background-color: var(--color-bg-btn);
     border-radius: 5px ;
 }
 
@@ -224,7 +225,6 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    background-color: var(--color-cont-ppal);  
 }
 
 .main-content {   
@@ -239,8 +239,8 @@ body{
 
 .image-text-container {
     width: 100%;
-    height: calc(var(--cajita_meme-tm-maximo) * 1px); 
-    max-width: calc(var(--cajita_meme-tm-maximo) * 1px);    
+    height: calc(var(--max_meme_box_width) * 1px); 
+    max-width: calc(var(--max_meme_box_width) * 1px);    
     position: relative;
     display: flex;
     flex-direction: column;
@@ -278,7 +278,7 @@ body{
 /* ::::::::::::::::::::::::::: meme download button style :::::::::::::::::::::::::::*/
 .main-button-download {
     border: 0;
-    background-color: var(--color_btn-desc-arriba-abajo);
+    background-color: var(--color-btn-scroll);
     box-shadow: 3px 3px 3px var(--color-header);
     border-radius: 5px ;
     padding: 10px;
@@ -297,14 +297,14 @@ body{
     text-align: center;
     padding: 5px 0px 0px;
     font-weight: 100;
-    color: var(--color_btn-desc-arriba-abajo)      
+    color: var(--color-btn-scroll)      
 }
 
 
 /* ::::::::::::::::::::::::::: text and image panel styles :::::::::::::::::::::::::::  */
 
 .panel-container {
-    width:calc(var(--ancho-panel-imgtxt) * 1px );
+    width:calc(var(--imgtext-width) * 1px );
     height: 100%;
     flex-direction: column;
     background-color: var(--color-seccion);
@@ -341,7 +341,7 @@ body{
     justify-content: center;
 }
 
-.control-sectors-panel {   /*Borde de cada control*/
+.control-sectors-panel {  
     margin-top: 10px;
     padding: 5px 0px 20px 0px;    
 }
@@ -352,15 +352,15 @@ body{
 }
 
 input{
-    background-color: var(--color-fondoBtn);
-    color:var(--color-fuente);
+    background-color: var(--color-bg-btn);
+    color:var(--color-font);
     border: 0;          
     border-radius: 3px; 
     padding: 3px; 
     outline: none; 
 }
 
-/*----------------------- SECTION: panel de IMAGEN -------------------*/
+/*:::::::::::::::::::::::::::::::SECTION: image panel :::::::::::::::::::::::::::::::*/
 .sectors-panel { 
     display: flex;
     flex-direction: row;
@@ -374,50 +374,50 @@ input{
     height: 100px;
 }
 
-.upload-btn {  /* Para el btn de URL/PC. */
-    background-color: var(--color-fondoBtn);
+.upload-btn {  
+    background-color: var(--color-bg-btn);
     border-radius: 5px ;
     border: 0px;
     padding: 3px;
     margin-bottom: 5px;
     font-size: 0.7rem;
     width: calc(50% - 2px);  
-    height: calc( var(--alto-botones-paneles)* 1px);
+    height: calc( var(--panel-btn-height)* 1px);
     cursor: pointer; 
-    color:var(--color_btn-desc-arriba-abajo);
+    color:var(--color-btn-scroll);
 }
 
 input[type="url"]{
-    height: calc( var(--alto-botones-paneles)* 1px);
+    height: calc( var(--panel-btn-height)* 1px);
     width: calc(100% - 0px);
         
 }
 
-::placeholder{  /* modifica el text del placeholder del input-url */
-    color: var(--color_btn-desc-arriba-abajo);
+::placeholder{ 
+    color: var(--color-btn-scroll);
     font-size: 0.7rem;  
 } 
 
-.archivo-img input{  /* button download PC*/
+.image-file input{  
     display: none;
 }
-.archivo-img label{ /* Para btn subir desde PC*/
+.image-file label{ 
     margin-top: 3px;
     width: 100%;
-    height: calc( var(--alto-botones-paneles)* 1px);
-    background-color: var(--color-fondoBtn);
+    height: calc( var(--panel-btn-height)* 1px);
+    background-color: var(--color-bg-btn);
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 3px;
     cursor: pointer;
     font-size: 0.7rem;
-    color:var(--color_btn-desc-arriba-abajo)
+    color:var(--color-btn-scroll)
 }
 
 
 .panel-bg-color {
-    background-color: var(--color-fondoBtn);
+    background-color: var(--color-bg-btn);
     font-size: 0.7rem;
     width: calc(50% - 2px);  
     border-radius: 3px;
@@ -442,25 +442,25 @@ input[type="url"]{
     width: 20px;  /*Para el cículo de color*/
 }
 
-::-webkit-color-swatch { /*Para que input=color, quede redondo*/
+::-webkit-color-swatch { 
     border: 0;
     border-radius: 50%;
 }
 
 .blendModePanel {
-    background-color: var(--color-fondoBtn);
+    background-color: var(--color-bg-btn);
     border-radius: 3px;
     display: flex;
     width: calc(50% - 2px);  
-    height: var(--alto-botones-paneles)px;
+    height: var(--panel-btn-height)px;
     display: flex;
     align-items: center;
         
 }
 .blendModePanel select {
   	border: 0;
-	background-color: var(--color-fondoBtn);
-	color: var(--color-fuente);
+	background-color: var(--color-bg-btn);
+	color: var(--color-font);
     font-size: 0.7rem;
     border-radius: 3px;
     cursor: pointer;
@@ -468,7 +468,7 @@ input[type="url"]{
     color:#000000;
 }
  
-/* :::::::::::::::::::::::: filter style ::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::: filter style ::::::::::::::::::::::::::::::: */
 .filter {
     width: 100%;
     margin-top: 25px;
@@ -482,7 +482,7 @@ input[type="url"]{
 input[type='range'] {
     overflow: hidden;
     appearance: none;
-    background-color: var(--color-fondoBtn);
+    background-color: var(--color-bg-btn);
     
   }
   
@@ -493,14 +493,13 @@ input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
     cursor: ew-resize;
     background: var(--color-header);
-    box-shadow: -130px 0 0 130px var(--color-cont-ppal); 
 }
 
 /* :::::::::::::::::::::::::::::::::: reset button :::::::::::::::::::::::::*/
 .img-reset-section { 
     width: 100%;
     border: 0px;
-    background-color: var(--color-fondoBtn);
+    background-color: var(--color-bg-btn);
     border-radius: 5px ;
     padding: 7px;
     font-size: 0.7rem;
@@ -514,7 +513,7 @@ input[type='range']::-webkit-slider-thumb {
     background-color: var(--color-hover);  
 }
 
-.archivo-img label:hover,
+.image-file label:hover,
 .panel-bg-color:hover, 
 input[type="url"]:hover,
 input[type="color"] :hover,
@@ -526,16 +525,16 @@ input[type="color"] :hover,
 }
 
 
-/*----------------------- SECTION: panel de TEXTO -------------------*/
+/*:::::::::::::::::::::::::::::: SECTION: text panel :::::::::::::::::::::::::::::::*/
 .input-textarea-topLower {
     margin-top: 5px;
     resize: none;
     font-size: 0.9rem;
-    background-color: var(--color-fondoBtn);
+    background-color: var(--color-bg-btn);
     width: 100%;
     height: 70px;
     overflow-y: scroll;
-    color: var(--color_btn-desc-arriba-abajo)
+    color: var(--color-btn-scroll)
         
     
 }
@@ -546,22 +545,22 @@ input[type="color"] :hover,
 
 .select-font-panel {
     margin-top: 5px;
-    background-color: var(--color-fondoBtn);
+    background-color: var(--color-bg-btn);
     border-radius: 3px;
     display: flex;
     width: 100%;
-    height: var(--alto-botones-paneles)px;
+    height: var(--panel-btn-height)px;
     color:#000000;
 }
 .select-font-panel select {
   	border: 0;
-	background-color: var(--color-fondoBtn);
-	color: var(--color-fuente);
+	background-color: var(--color-bg-btn);
+	color: var(--color-font);
     font-size: 0.7rem;
     border-radius: 3px;
     cursor: pointer;
     width: 100%;
-    height: calc( var(--alto-botones-paneles)* 1px);
+    height: calc( var(--panel-btn-height)* 1px);
     color: #000000;
 }
 
@@ -574,19 +573,19 @@ input[type="color"] :hover,
 .meme-text-size {
     margin-top: 5px;
     width: calc(50% - 2px);
-    height: calc( var(--alto-botones-paneles)* 1px);
+    height: calc( var(--panel-btn-height)* 1px);
     color: #000000;
 }
 
 .btn-align {
     margin-top: 5px;
-    background-color: var(--color-fondoBtn);
+    background-color: var(--color-bg-btn);
     border-radius: 5px ;
     border: 0px;
     font-size: 0.7rem;
     width: 35px;  
-    height: calc( var(--alto-botones-paneles)* 1px);
-    cursor: pointer;  /*Para que aparezca la manito sobre el btn. */
+    height: calc( var(--panel-btn-height)* 1px);
+    cursor: pointer;  
     color: #000000;
 }
 
@@ -612,7 +611,7 @@ input[type="color"] :hover,
 }
 
 .outlineBtn { 
-    background-color: var(--color-fondoBtn);
+    background-color: var(--color-bg-btn);
     border-radius: 5px ;
     border: 0px;
     padding: 3px;
@@ -620,14 +619,14 @@ input[type="color"] :hover,
     font-size: 0.7rem;
     color: #000000;
     width: calc(33% - 2px);   
-    height: calc( var(--alto-botones-paneles)* 1px);
+    height: calc( var(--panel-btn-height)* 1px);
     cursor: pointer; 
 }
 
 .dimensions-space-line {
     margin-top: 5px;
     width: 100%;
-    height: calc( var(--alto-botones-paneles)* 1px);
+    height: calc( var(--panel-btn-height)* 1px);
     color: #000000;
 }
 
@@ -647,9 +646,10 @@ input[type="color"] :hover,
 
 
 
+/* ****************************************************** */
+/*                MEDIA QUERY  "SECTION"                */
+/* ****************************************************** */
 
-
-/* -----  MEDIA QUERY  "SECTION" -------  */
 @media(width> 1300px){  
     .panel-close-btn{
         display: none;
@@ -677,7 +677,7 @@ input[type="color"] :hover,
     }
     .panel-container { 
         position: relative;  
-        width: calc(var(--ancho-panel-imgtxt) * 1px);
+        width: calc(var(--imgtext-width) * 1px);
         height: 800px;
         margin: 20px;
     }
@@ -709,7 +709,7 @@ input[type="color"] :hover,
     }
     .panel-container {
         position: relative;  /* fixed para que quede a la derecha*/
-        width: calc(var(--ancho-panel-imgtxt) * 2px);
+        width: calc(var(--imgtext-width) * 2px);
         height: 490px;
         margin-bottom: 50px;
     }
@@ -720,10 +720,10 @@ input[type="color"] :hover,
     }
  
     .filters-column, .sectors-panel {
-        width: calc(var(--ancho-panel-imgtxt) * 1px - 25px); 
+        width: calc(var(--imgtext-width) * 1px - 25px); 
     }
     .text-columns {
-        width: calc(var(--ancho-panel-imgtxt) * 1px - 15px);
+        width: calc(var(--imgtext-width) * 1px - 15px);
     }
 
     .panel-close-btn {

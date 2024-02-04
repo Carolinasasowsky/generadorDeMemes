@@ -1,4 +1,4 @@
-/* ======================== BREAKPOINT ========================  */
+/* :::::::::::::::::::::::::::::::::::::::::::: BREAKPOINT ::::::::::::::::::::::::::::::::::::::::::::  */
 let breakPointUno = () =>
 	parseInt(
 		getComputedStyle(document.documentElement).getPropertyValue(
@@ -13,7 +13,7 @@ let breakPointDos = () =>
 		)
 	); /* 850 */
 
-/* ======================== CLARO - OSCURO ========================  */
+/* ::::::::::::::::::::::::::::::::::::::::::::  dark / light :::::::::::::::::::::::::::::::::::::::::::::::   */
 const btn_oscuro = document.getElementById("nav-button-lightDark");
 
 btn_oscuro.addEventListener("click", () => {
@@ -26,7 +26,7 @@ btn_oscuro.addEventListener("click", () => {
 	}
 });
 
-/* ======================== Alto del main container========================  */
+/* :::::::::::::::::::::::::::::::::::::::  height main container:::::::::::::::::::::::::::::::::::::::   */
 function adjustMainContainerHeight() {
 	if (window.innerWidth <= breakPointDos()) {
 		let element = document.getElementById("header-container");
@@ -40,23 +40,23 @@ function adjustMainContainerHeight() {
 	}
 }
 
-/*======================== TAMAÑO DE LA CAJITA DEL MEME ======================== */
+/*:::::::::::::::::::::::::::::::::::::::  box size meme :::::::::::::::::::::::::::::::::::::::  */
 const boxTextMeme = document.getElementById("image-text-container");
 const boxTextTop = document.getElementById("text-top");
 const boxTextLower = document.getElementById("text-lower");
-const marginBox = 40; /* para que no quede muy pegado al borde (der e izq) de la ventana */
+const marginBox = 40; 
 
-const getFontSizeCajitaMeme = () =>
+const getMemeBoxFontSize = () =>
 	parseInt(
 		getComputedStyle(document.documentElement).getPropertyValue(
 			"--cajita_meme-tm-inicial-txt"
 		)
 	);
 
-const getTamanioMaximoCajitaMeme = () =>
+const getMaxMemeBoxSize = () =>
 	parseInt(
 		getComputedStyle(document.documentElement).getPropertyValue(
-			"--cajita_meme-tm-maximo"
+			"--max_meme_box_width"
 		)
 	);
 
@@ -73,18 +73,18 @@ window.visualViewport.addEventListener("resize", () => {
 		boxTextTop.style.fontSize = `${tm_txt}px`;
 		boxTextLower.style.fontSize = `${tm_txt}px`;
 	} else {
-		boxTextMeme.style.height = getFontSizeCajitaMeme();
-		boxTextMeme.style.width = getFontSizeCajitaMeme();
+		boxTextMeme.style.height = getMemeBoxFontSize();
+		boxTextMeme.style.width = getMemeBoxFontSize();
 
-		boxTextTop.style.fontSize = getTamanioMaximoCajitaMeme();
-		boxTextLower.style.fontSize = getTamanioMaximoCajitaMeme();
+		boxTextTop.style.fontSize = getMaxMemeBoxSize();
+		boxTextLower.style.fontSize = getMaxMemeBoxSize();
 	}
-	adjustMainContainerHeight(); 
+	adjustMainContainerHeight();
 });
 
-/* ========== Eventos de los BOTONES de IMG Y TXT  (hacer aparecer un PANEL u otro) ======================== */
-const ir_arriba = document.getElementById("ir-arriba");
-const ir_abajo = document.getElementById("ir-abajo");
+/* ========== Button events for image and text toggling between panels ================ */
+/*const scrollToTop = document.getElementById("ir-arriba");*/
+/*const scrollDown = document.getElementById("ir-abajo");*/
 
 const imagePanel = document.getElementById("image-panel");
 const textPanel = document.getElementById("text-panel");
@@ -97,11 +97,8 @@ function mostrarPanelImagen() {
 }
 
 function mostrarPanelImagen1300() {
-	/*Carga pg x 1ra vez, y está a más de 1300px, carga panel de IMG*/
+	document.getElementById("nav-button-img");
 
-	document
-		.getElementById("nav-button-img")
-		
 	if (
 		window.innerWidth >= breakPointUno() &&
 		panelContainer.classList.contains("hide")
@@ -111,7 +108,6 @@ function mostrarPanelImagen1300() {
 }
 
 window.visualViewport.addEventListener("resize", () => {
-	
 	if (
 		window.innerWidth >= breakPointUno() &&
 		panelContainer.classList.contains("hide")
@@ -123,8 +119,8 @@ window.visualViewport.addEventListener("resize", () => {
 		window.innerWidth <= breakPointDos() &&
 		!panelContainer.classList.contains("hide")
 	) {
-		ir_arriba.classList.remove("hide");
-		ir_abajo.classList.remove("hide");
+		scrollToTop.classList.remove("hide");
+		scrollDown.classList.remove("hide");
 	}
 });
 
@@ -133,17 +129,15 @@ document.getElementById("nav-button-img").addEventListener("click", (e) => {
 	imagePanel.classList.remove("hide");
 	panelContainer.classList.remove("hide");
 
-	upload_url_input.classList.add(
-		"hide"
-	); 
-	subir_pc_input.classList.add("hide");
+	uploadUrlInput.classList.add("hide");
+	upPcInput.classList.add("hide");
 
 	if (
 		window.innerWidth <= breakPointDos() &&
 		!panelContainer.classList.contains("hide")
 	) {
-		ir_arriba.classList.remove("hide");
-		ir_abajo.classList.remove("hide");
+		scrollToTop.classList.remove("hide");
+		scrollDown.classList.remove("hide");
 	}
 });
 
@@ -156,8 +150,8 @@ document.getElementById("nav-button-text").addEventListener("click", (e) => {
 		window.innerWidth <= breakPointDos() &&
 		!panelContainer.classList.contains("hide")
 	) {
-		ir_arriba.classList.remove("hide");
-		ir_abajo.classList.remove("hide");
+		scrollToTop.classList.remove("hide");
+		scrollDown.classList.remove("hide");
 	}
 });
 
@@ -172,16 +166,16 @@ document.getElementById("panel-close-btn").addEventListener("click", (e) => {
 	}
 });
 
-/* ================================================================================================ */
-/*                                       PANEL DE IMAGEN                                            */
-/* ================================================================================================ */
+/* ============================================================== */
+/*             ******************** IMAGE PANEL  ********************                    */
+/* ============================================================== */
 
-/* ======================== Seleccionar origen de la imagen URL / PC ======================== */
+/* :::::::::::::::::::::::::::::::::::: selection image source: URL/PC :::::::::::::::::::::::::::::::::::: */
 const uploadUrlBtn = document.getElementById("upload-url-btn");
-const subir_pc_btn = document.getElementById("subir-pc-btn");
+const upPcBtn = document.getElementById("up-pc-btn");
 
-const upload_url_input = document.getElementById("upload-url-input");
-const subir_pc_input = document.getElementById("subir-pc-input");
+const uploadUrlInput = document.getElementById("upload-url-input");
+const upPcInput = document.getElementById("up-pc-input");
 
 function esMovil() {
 	return (
@@ -195,39 +189,38 @@ function esMovil() {
 	);
 }
 function dispositivoMovil() {
-	/* Si es celu, cambia el icono de subir img por Desktop a Mobile*/
 	if (esMovil()) {
-		subir_pc_btn.innerHTML = `<i class="fa-solid fa-mobile-screen-button"></i>  Móvil`;
+		upPcBtn.innerHTML = `<i class="fa-solid fa-mobile-screen-button"></i>  Móvil`;
 	}
 }
 
 uploadUrlBtn.addEventListener("click", () => {
-	upload_url_input.classList.remove("hide");
-	subir_pc_input.classList.add("hide");
+	uploadUrlInput.classList.remove("hide");
+	upPcInput.classList.add("hide");
 });
-subir_pc_btn.addEventListener("click", () => {
-	subir_pc_input.classList.remove("hide");
-	upload_url_input.classList.add("hide");
+upPcBtn.addEventListener("click", () => {
+	upPcInput.classList.remove("hide");
+	uploadUrlInput.classList.add("hide");
 });
 
-/* Si la imagen es por URL*/
+/* image URL*/
 const main_img =
 	document.getElementById(
 		"main-img"
-	); /* cajita DIV donde va a ir la img como background*/
+	); 
 
 function formatearImg() {
-	main_img.style.backgroundSize = `cover`; /* cover/contain/100%/auto 100%/*/
+	main_img.style.backgroundSize = `cover`;
 	main_img.style.backgroundRepeat = `no-repeat`;
 	main_img.style.backgroundPosition = `center center`;
 }
 
-upload_url_input.addEventListener("input", (e) => {
+uploadUrlInput.addEventListener("input", (e) => {
 	main_img.style.backgroundImage = `url("${e.target.value}")`;
 	formatearImg();
 });
 
-/* Si la imagen es por PC*/
+/* image PC*/
 const input_file = document.getElementById("input-file");
 input_file.addEventListener("change", (e) => {
 	const file = e.target.files[0];
@@ -241,7 +234,6 @@ input_file.addEventListener("change", (e) => {
 	}
 });
 
-// Funciona el ENTER en input-file
 document.addEventListener("keyup", function (event) {
 	if (event.key === "Enter") {
 		if (event.target.htmlFor === "input-file") {
@@ -250,11 +242,11 @@ document.addEventListener("keyup", function (event) {
 	}
 });
 
-/* ======================== Seleccionar color de FONDO img,  y BLEND MODE (se aplica al background) ======================== */
-const input_color = document.getElementById("input-color"); //input que selecciona color
+/* :::::::::::::::::::::::::::::::::::: choose image background color and Blend Mode ::::::::::::::::::::::::::::::::::::*/
+const inputColor = document.getElementById("input-color"); 
 const blendMode = document.getElementById("blendMode");
 
-input_color.addEventListener("input", (e) => {
+inputColor.addEventListener("input", (e) => {
 	main_img.style.backgroundColor = `${e.target.value}`;
 });
 
@@ -262,10 +254,8 @@ blendMode.addEventListener("input", (e) => {
 	main_img.style.backgroundBlendMode = `${e.target.value}`;
 });
 
-/* ======================== apply reset filters ======================== */
-const resetFilters = document.getElementById(
-	"reset-filters"
-);
+/* :::::::::::::::::::::::::::::::::::: apply reset filters :::::::::::::::::::::::::::::::::::: */
+const resetFilters = document.getElementById("reset-filters");
 const brillo = document.getElementById("brillo");
 const opacidad = document.getElementById("opacidad");
 const contraste = document.getElementById("contraste");
@@ -318,7 +308,7 @@ function filtrarImg(bri, opa, con, blu, gri, sep, hue, sat, inv) {
 	mostarValorFiltros();
 }
 
-/* ::::::::::::::::::::::::::: Valores de los filtros ::::::::::::::::::::::::::: */
+/* :::::::::::::::::::::::::::::::::::: filter values :::::::::::::::::::::::::::::::::::: */
 function mostarValorFiltros() {
 	const label_bri = document.querySelector('label[for="brillo"]');
 	const label_opa = document.querySelector('label[for="opacidad"]');
@@ -341,11 +331,12 @@ function mostarValorFiltros() {
 	label_inv.innerHTML = `INVERTIDO [${invertido.value * 100}%]`;
 }
 
-/* ================================================================================================ */
-/*                                       PANEL DE TEXTO                                             */
-/* ================================================================================================ */
+/* ============================================================== */
+/*                ****************** TEXT PANEL ******************                           */
+/* ============================================================== */
 
-/* ======================== Aplicar TXT superior y/o inferior ======================== */
+/* :::::::::::::::::::::::::::::::: apply text top/lower :::::::::::::::::::::::::::::::: */
+
 const inputTextTop = document.getElementById("input-text-top");
 const mainTextTop = document.getElementById("text-top");
 inputTextTop.addEventListener("input", (e) => {
@@ -370,7 +361,7 @@ hideTextLowerCheckbox.addEventListener("click", () => {
 	mainTextLower.classList.toggle("hide");
 });
 
-/* ======================== Fuente - Tamaño - Alineación ======================== */
+/* :::::::::::::::::::::::::::::::: Font / Size / Alignment :::::::::::::::::::::::::::::::: */
 const fontSelection = document.getElementById("font-selection");
 function cargarFuentes() {
 	var font = "";
@@ -404,7 +395,6 @@ function cargarFuentes() {
 }
 
 fontSelection.addEventListener("input", () => {
-	/*estaba change y no tomaba*/
 	mainTextTop.style.fontFamily = fontSelection.value;
 	mainTextLower.style.fontFamily = fontSelection.value;
 });
@@ -430,7 +420,7 @@ document.getElementById("btn-align-right").addEventListener("click", () => {
 	mainTextLower.style.textAlign = "right";
 });
 
-/* ======================== Color de la fuente, color de fondo, y fondo transparente ======================== */
+/* :::::::::::::::::::::::::::::::: color font / bg color / bg transparent :::::::::::::::::::::::::::::::: */
 const inputTextColor = document.getElementById("input-text-color");
 const inputFontColor = document.getElementById("input-font-color");
 const transBg = document.getElementById("transBg");
@@ -466,7 +456,7 @@ transBg.addEventListener("click", () => {
 	}
 });
 
-/* ======================== Contorno de la fuente ======================== */
+/* :::::::::::::::::::::::::::::::::::::: outline font :::::::::::::::::::::::::::::::::::::::::: */
 const outlineLessBtn = document.getElementById("outlineLessBtn");
 const outlineLightBtn = document.getElementById("outlineLightBtn");
 const outlineDarkBtn = document.getElementById("outlineDarkBtn");
@@ -477,7 +467,7 @@ outlineLessBtn.addEventListener("click", () => {
 });
 
 outlineLightBtn.addEventListener("click", () => {
-	/* desplazamiento hor (X-offset), el desplazamiento vert (Y-offset), el desenfoque (blur) y el color (color*/
+	
 	mainTextTop.style.textShadow = `2px  0px 0px white, 
                                          -2px  0px 0px white,
                                           0px  2px 0px white,
@@ -489,7 +479,7 @@ outlineLightBtn.addEventListener("click", () => {
 });
 
 outlineDarkBtn.addEventListener("click", () => {
-	/* desplazamiento hor (X-offset), el desplazamiento vert (Y-offset), el desenfoque (blur) y el color (color*/
+	
 	mainTextTop.style.textShadow = `2px  0px 0px black, 
                                          -2px  0px 0px black,
                                           0px  2px 0px black,
@@ -500,7 +490,7 @@ outlineDarkBtn.addEventListener("click", () => {
                                            0px -2px 0px black`;
 });
 
-/* ======================== Espaciado e Interlineado ======================== */
+/* ::::::::::::::::::::::::::::::::::::::::::: line spacing  :::::::::::::::::::::::::::::::::::::::::::: */
 const spacingTextMeme = document.getElementById("spacing-text-meme");
 const lineTextMeme = document.getElementById("line-text-meme");
 
@@ -514,8 +504,8 @@ lineTextMeme.addEventListener("change", () => {
 	mainTextLower.style.lineHeight = `${lineTextMeme.value}`;
 });
 
-/* ================================================================================================*/
-/* ------------ BOTON descargar MEME como IMG ---------------- */
+
+/* ::::::::::::::::::::::::::::::::::::::: download Meme as image  :::::::::::::::::::::::::::::::: */
 const div_img_txt = document.getElementById("image-text-container");
 const meme_download_btn = document.getElementById("meme-download-btn");
 meme_download_btn.addEventListener("click", () => {
@@ -524,15 +514,14 @@ meme_download_btn.addEventListener("click", () => {
 	});
 });
 
-/* ================================================================================================*/
+
 
 function initializePageFunctions() {
-	mostrarPanelImagen1300(); /* El Panel de IMG debe ser VISIBLE, si la ventana está a mas de 1300px*/
-	dispositivoMovil(); /* Carga la pg, y es un celu? */
-	cargarFuentes(); /* Para el panel de TXT */
-	//altoContenedorPpal();     /*Calcula el alto del contenedor-ppal, según el alto de la Ventaga Gráfica*/
+	mostrarPanelImagen1300(); 
+	dispositivoMovil(); 
+	cargarFuentes();
 	mostarValorFiltros();
 }
 
-/* Cuando se termina de cargar la página  */
+
 window.onload = initializePageFunctions;
