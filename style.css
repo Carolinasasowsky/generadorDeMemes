@@ -234,7 +234,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 35px 0px;
+    padding: 25px 0px;
 }
 
 .image-text-container {
@@ -291,6 +291,13 @@ body{
 .main-button-download:hover {
     background-color: #ffffff;
     color:#000000
+}
+
+.author {
+    text-align: center;
+    padding: 5px 0px 0px;
+    font-weight: 100;
+    color: var(--color_btn-desc-arriba-abajo)      
 }
 
 
@@ -354,11 +361,6 @@ input{
 }
 
 /*----------------------- SECTION: panel de IMAGEN -------------------*/
-/*.contenedor-de-origen-y-fondo{
-    display: flex;
-    flex-direction: column;
-}*/
-
 .sectors-panel { 
     display: flex;
     flex-direction: row;
@@ -657,7 +659,13 @@ input[type="color"] :hover,
     .header-title {
         font-size: 2.5rem;
     }
+    .author {
+        text-align: center;
+        padding: 5px 0px 0px;
+    }
 }
+
+
 @media (width < 570px) { 
     .main-container { 
         position: relative;
@@ -671,7 +679,7 @@ input[type="color"] :hover,
         position: relative;  
         width: calc(var(--ancho-panel-imgtxt) * 1px);
         height: 800px;
-        margin-bottom: 20px;
+        margin: 20px;
     }
 
     .panel-close-btn {
@@ -679,7 +687,15 @@ input[type="color"] :hover,
         top: 10px;
         right: 10px;
     }
+
+    .author {
+        text-align: center;
+        padding: 5px 0px 0px;
+    }
 }
+
+
+
 @media (570px <= width <= 850px) {  
    
     .main-container {
@@ -689,6 +705,7 @@ input[type="color"] :hover,
     }
     .main-content {
         position: relative;
+        
     }
     .panel-container {
         position: relative;  /* fixed para que quede a la derecha*/
@@ -713,5 +730,9 @@ input[type="color"] :hover,
         position: absolute;
         top: 10px;
         right: 10px;
+    }
+    .author {
+        text-align: center;
+        padding: 5px 0px 0px;
     }
 }

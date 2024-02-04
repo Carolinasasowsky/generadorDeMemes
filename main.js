@@ -41,10 +41,10 @@ function adjustMainContainerHeight() {
 }
 
 /*======================== TAMAÑO DE LA CAJITA DEL MEME ======================== */
-const cajita_del_meme = document.getElementById("image-text-container");
-const cajita_txt_sup = document.getElementById("text-top");
-const cajita_txt_inf = document.getElementById("text-lower");
-const cajita_margin = 40; /* para que no quede muy pegado al borde (der e izq) de la ventana */
+const boxTextMeme = document.getElementById("image-text-container");
+const boxTextTop = document.getElementById("text-top");
+const boxTextLower = document.getElementById("text-lower");
+const marginBox = 40; /* para que no quede muy pegado al borde (der e izq) de la ventana */
 
 const getFontSizeCajitaMeme = () =>
 	parseInt(
@@ -61,25 +61,25 @@ const getTamanioMaximoCajitaMeme = () =>
 	);
 
 window.visualViewport.addEventListener("resize", () => {
-	if (window.innerWidth <= 600 + cajita_margin) {
-		const tm_ancho = window.visualViewport.width - cajita_margin;
+	if (window.innerWidth <= 600 + marginBox) {
+		const tm_ancho = window.visualViewport.width - marginBox;
 		const tm_txt = Math.ceil(
-			(window.innerWidth - cajita_margin) / 10 - 10
+			(window.innerWidth - marginBox) / 10 - 10
 		); /*inicialmente da 60, es muy grande por eso le quito 10*/
 
-		cajita_del_meme.style.width = `${tm_ancho}px`;
-		cajita_del_meme.style.height = `${tm_ancho}px`;
+		boxTextMeme.style.width = `${tm_ancho}px`;
+		boxTextMeme.style.height = `${tm_ancho}px`;
 
-		cajita_txt_sup.style.fontSize = `${tm_txt}px`;
-		cajita_txt_inf.style.fontSize = `${tm_txt}px`;
+		boxTextTop.style.fontSize = `${tm_txt}px`;
+		boxTextLower.style.fontSize = `${tm_txt}px`;
 	} else {
-		cajita_del_meme.style.height = getFontSizeCajitaMeme();
-		cajita_del_meme.style.width = getFontSizeCajitaMeme();
+		boxTextMeme.style.height = getFontSizeCajitaMeme();
+		boxTextMeme.style.width = getFontSizeCajitaMeme();
 
-		cajita_txt_sup.style.fontSize = getTamanioMaximoCajitaMeme();
-		cajita_txt_inf.style.fontSize = getTamanioMaximoCajitaMeme();
+		boxTextTop.style.fontSize = getTamanioMaximoCajitaMeme();
+		boxTextLower.style.fontSize = getTamanioMaximoCajitaMeme();
 	}
-	adjustMainContainerHeight(); /*Calcula el alto del contenedor-ppal, según el alto de la Ventaga Gráfica*/
+	adjustMainContainerHeight(); 
 });
 
 /* ========== Eventos de los BOTONES de IMG Y TXT  (hacer aparecer un PANEL u otro) ======================== */
@@ -119,13 +119,13 @@ window.visualViewport.addEventListener("resize", () => {
 		mostrarPanelImagen();
 	}
 
-	/*if (
+	if (
 		window.innerWidth <= breakPointDos() &&
 		!panelContainer.classList.contains("hide")
-	) /*{
+	) {
 		ir_arriba.classList.remove("hide");
 		ir_abajo.classList.remove("hide");
-	}*/
+	}
 });
 
 document.getElementById("nav-button-img").addEventListener("click", (e) => {
@@ -135,7 +135,7 @@ document.getElementById("nav-button-img").addEventListener("click", (e) => {
 
 	upload_url_input.classList.add(
 		"hide"
-	); /* Siempre que cargue IMG, deben estar ocultos*/
+	); 
 	subir_pc_input.classList.add("hide");
 
 	if (

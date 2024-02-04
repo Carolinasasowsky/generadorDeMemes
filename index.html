@@ -71,7 +71,7 @@
 					<i class="fa fa-download" aria-hidden="true"></i>
 					Descargar Meme
 				</button>
-			</main>
+				
 			<!-- =================   image and text control panel  ================== -->
 			<section class="panel-container ocultar" id="panel-container">
 				<button class="panel-close-btn" id="panel-close-btn" tabindex="0">
@@ -100,7 +100,7 @@
 							<div class="hide" id="upload-url-input">
 								<input
 									type="url"
-									aria-label="Seleccionar archivo desde una URL"
+									aria-label="Elegir una imagen a partir de una URL"
 									placeholder="URL de la imagen"
 									tabindex="0"
 								/>
@@ -116,7 +116,7 @@
 										type="file"
 										id="input-file"
 										accept="image/png, image/gif, image/jpeg"
-										aria-label="Seleccionar archivo desde PC"
+										aria-label="Escoger una imagen desde la  PC"
 										tabindex="0"
 									/>
 								</div>
@@ -133,7 +133,7 @@
 										id="input-color"
 										value="#FFFFFF"
 										oninput="colorhex.value=value.toUpperCase()"
-										aria-label="Color de fondo de la imagen"
+										aria-label="Tono o matiz de fondo de la imagen"
 										tabindex="0"
 									/>
 									<output id="colorhex">#FFFFFF</output>
@@ -337,7 +337,7 @@
 								<select
 									class="font-selection"
 									id="font-selection"
-									aria-label="Seleccionar fuente para el texto"
+									aria-label="Elegir el tipo de letra para el texto"
 								></select>
 							</div>
 
@@ -350,7 +350,7 @@
 									max="80"
 									value="50"
 									step="2"
-									aria-label="Tamaño del texto"
+									aria-label="Dimension del texto"
 									tabindex="0"
 								/>
 
@@ -358,7 +358,7 @@
 									<button
 										class="btn-align"
 										id="btn-align-left"
-										aria-label="Alineación a izquierda"
+										aria-label="Ajuste del texto hacia el margen izquierdo"
 										tabindex="0"
 									>
 										<i class="fa-solid fa-align-left"></i>
@@ -366,7 +366,7 @@
 									<button
 										class="btn-align"
 										id="btn-align-center"
-										aria-label="Alineación al centro"
+										aria-label="Ajuste del texto en posicion central"
 										tabindex="0"
 									>
 										<i class="fa-solid fa-align-center"></i>
@@ -374,7 +374,7 @@
 									<button
 										class="btn-align"
 										id="btn-align-right"
-										aria-label="Alineación a derecha"
+										aria-label="Ajuste del texto hacia el margen derecho"
 										tabindex="0"
 									>
 										<i class="fa-solid fa-align-right"></i>
@@ -412,7 +412,7 @@
 											id="input-font-color"
 											value="#FFFFFF"
 											oninput="colorhexBg.value=value.toUpperCase()"
-											aria-label="Color de fondo del texto"
+											aria-label="Tono o matiz del fondo sobre el cual se encuentra el texto"
 											tabindex="0"
 										/>
 										<output id="colorhexBg">#FFFFFF</output>
@@ -429,27 +429,15 @@
 						<div class="control-sectors-panel text-columns">
 							<h6>CONTORNO</h6>
 							<div class="sectors-panel">
-								<button
-									class="outlineBtn"
-									id="outlineLessBtn"
-									tabindex="0"
-								>
+								<button class="outlineBtn" id="outlineLessBtn" tabindex="0">
 									Ninguno
 								</button>
 
-								<button
-									class="outlineBtn"
-									id="outlineLightBtn"
-									tabindex="0"
-								>
+								<button class="outlineBtn" id="outlineLightBtn" tabindex="0">
 									Claro
 								</button>
 
-								<button
-									class="outlineBtn"
-									id="outlineDarkBtn"
-									tabindex="0"
-								>
+								<button class="outlineBtn" id="outlineDarkBtn" tabindex="0">
 									Oscuro
 								</button>
 							</div>
@@ -467,7 +455,7 @@
 								max="50"
 								value="30"
 								step="1"
-								aria-label="Separación entre el texto y la imagen"
+								aria-label="Distancia entre el texto y la imagen"
 								tabindex="0"
 							/>
 						</div>
@@ -478,7 +466,7 @@
 								<select
 									class="blendModeControl"
 									id="line-text-meme"
-									aria-label="Seleccionar interlineado del texto"
+									aria-label="Seleccionar la distancia entre líneas del texto"
 								>
 									<option value="1" selected>1</option>
 									<option value="1.15">1.15</option>
@@ -491,6 +479,14 @@
 				</div>
 			</section>
 		</div>
+		<footer>
+			<div class="author">
+					<h6>
+						<p>by María Carolina Sasowsky</p>
+						<p>Diseñadora Gráfica y Desarrolladora Web Frontend</p>
+					</h6>
+				</div>
+		</footer>
 	</body>
 	<script src="main.js"></script>
 </html>
