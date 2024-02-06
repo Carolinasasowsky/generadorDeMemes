@@ -50,8 +50,6 @@ Además de la personalización de contenido, el Generador de Memes ofrece una va
 
 El Generador de Memes ofrece a cualquier usuario la oportunidad de sumergirse en el mundo de la creación visual, específicamente en el ámbito de los memes. Este recurso posibilita la inclusión de imágenes, ya sean propias o provenientes de la web, permitiendo así a los usuarios personalizar sus memes de manera singular. La edición del texto es completamente flexible, brindando libertad para plasmar mensajes ingeniosos o reflexivos según las preferencias de cada usuario.
 
-<p align="center">
-  <img src="assets/imgReadme/functionsAnimateds.mp4"  width="600px" alt-text="Título: Funcionamiento animado del Generador de Memes">
-</p>
+https://github.com/Carolinasasowsky/generadorDeMemes/assets/115156100/755988b0-6c1b-4ff2-9bf7-2d9601f7fc20
 
 En resumen, el Generador de Memes no solo es una herramienta para el entretenimiento, sino también un espacio que te invita a explorar tu expresión individual y creatividad. Ofrece una experiencia integral y personalizada en la creación de contenido visual humorístico. ¿Te gustaría conocer más? ¡Haz clic en el siguiente enlace para explorar el proyecto en detalle! Conoce más: https://carolinasasowsky.github.io/generadorDeMemes/
