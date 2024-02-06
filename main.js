@@ -83,8 +83,6 @@ window.visualViewport.addEventListener("resize", () => {
 });
 
 /* ========== Button events for image and text toggling between panels ================ */
-/*const scrollToTop = document.getElementById("ir-arriba");*/
-/*const scrollDown = document.getElementById("ir-abajo");*/
 
 const imagePanel = document.getElementById("image-panel");
 const textPanel = document.getElementById("text-panel");
