@@ -27,8 +27,16 @@ El Generador de Memes ha sido concebido de manera que su funcionamiento sea posi
 Éste trabajo se elaboró como el proyecto final del "Módulo 2 - JavaScript" en el marco del programa de formación en "Desarrollo Frontend" ofrecido por ADA ITW. Este trabajo está integrado en mi Portafolio Personal con el fin de demostrar el nivel de avance, comprensión y aplicación de los conocimientos adquiridos a lo largo de la capacitación.
 
 ***
+## <p aling="center">TECNOLOGIAS UTILIZADAS</p>
+<p aling="center">
+  <img src="assets/imgReadme/technologiesBtn.png"  width="700px" alt-text="Título: Tecnologías 
+  usadas en el Generador de Memes">
+</p>
 
-## <p aling="center">
-  <p>Tecnologías Utilizadas</p>
-  <img src="assets/imgReadme/technologiesBtn.png"  width="900px" alt-text="Título: Tecnologías usadas en el Generador de Memes">
+***
+## <p aling="center">FUNCIONAMIENTO</p>
+
+El Generador de Memes muestra en su pantalla principal tres botones que posibilitan acceder al panel de edición de imágenes, abrir el panel de edición de texto y cambiar entre el Modo Claro y el Modo Oscuro.
+<p aling="center">
+  <img src="assets/imgReadme/modeLightDark.png"  width="700px" alt-text="Título: Panel general de imagen, texo y modo claro/oscuro">
 </p>
