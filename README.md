@@ -21,7 +21,7 @@ En la actualidad, las aplicaciones web, también conocidas como apps, han adquir
 El Generador de Memes ha sido concebido de manera que su funcionamiento sea posible en una variedad de dispositivos, lo que implica que cuenta con un diseño responsivo adecuado.
 
 <p aling="center">
-  <img src="assets/imgReadme/appliedMemeDifferentMobile.png"  width="900px" alt-text="Título: Generador de Memes aplicado a diferentes dispositivos moviles">
+  <img src="assets/imgReadme/appliedMemeDifferentMobile.png"  width="700px" alt-text="Título: Generador de Memes aplicado a diferentes dispositivos moviles">
 </p>
 
 Éste trabajo se elaboró como el proyecto final del "Módulo 2 - JavaScript" en el marco del programa de formación en "Desarrollo Frontend" ofrecido por ADA ITW. Este trabajo está integrado en mi Portafolio Personal con el fin de demostrar el nivel de avance, comprensión y aplicación de los conocimientos adquiridos a lo largo de la capacitación.
