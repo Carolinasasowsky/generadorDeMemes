@@ -564,6 +564,10 @@ input[type="color"] :hover,
     color: #000000;
 }
 
+.loading-font {
+    transition: font 2s ease-in-out;
+}
+
 .text-size-container-align {   
     display: flex;
     flex-direction: row;

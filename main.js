@@ -349,6 +349,8 @@ inputTextLower.addEventListener("input", (e) => {
 	mainTextLower.textContent = mainTextLower.textContent.toUpperCase();
 });
 
+
+
 const hideTextTopCheckbox = document.getElementById("hide-text-top");
 hideTextTopCheckbox.addEventListener("click", () => {
 	mainTextTop.classList.toggle("hide");
@@ -393,8 +395,19 @@ function cargarFuentes() {
 }
 
 fontSelection.addEventListener("input", () => {
+	//se agregó una clase para indicar que se está cargando una nueva tipografí
+	mainTextTop.classList.add("loading-font");
+	mainTextLower.classList.add("loading-font");
+
+	//cambiar la tipografía
 	mainTextTop.style.fontFamily = fontSelection.value;
 	mainTextLower.style.fontFamily = fontSelection.value;
+
+	// Esperar a que la tipografía se cargue antes de eliminar la clase
+		mainTextTop.onload = mainTextLower.onload = function () {
+		mainTextTop.classList.remove("loading-font");
+		mainTextLower.classList.remove("loading-font");
+	};
 });
 
 const memeTextSize = document.getElementById("meme-text-size");
