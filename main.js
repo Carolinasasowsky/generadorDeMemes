@@ -368,12 +368,10 @@ function cargarFuentes() {
 
 	let array = [
 		{ familia: "'Anton',  sans-serif", fuente: "Anton" },
-		{ familia: "'Amaranth', sans-serif", fuente: "Amaranth" },
 		{ familia: "'BlackOpsOne', sans-serif", fuente: "BlackOpsOne" },
 		{ familia: "'DancingScript', sans-serif", fuente: "DancingScript" },
 		{ familia: "'Dokdo', sans-serif", fuente: "Dokdo" },
 		{ familia: "'Honk', sans-serif", fuente: "Honk" },
-		{ familia: "'Luckiest Guy', sans-serif", fuente: "Luckiest Guya" },
 		{ familia: "'OldStandardTT', serif", fuente: "OldStandardTT" },
 		{ familia: "'Pacifico', cursive", fuente: "Pacifico" },
 		{ familia: "'RammettoOne', sans-serif", fuente: "RammettoOne" },
