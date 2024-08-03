@@ -44,7 +44,7 @@ function adjustMainContainerHeight() {
 const boxTextMeme = document.getElementById("image-text-container");
 const boxTextTop = document.getElementById("text-top");
 const boxTextLower = document.getElementById("text-lower");
-const marginBox = 40; 
+const marginBox = 40;
 
 const getMemeBoxFontSize = () =>
 	parseInt(
@@ -87,6 +87,10 @@ window.visualViewport.addEventListener("resize", () => {
 const imagePanel = document.getElementById("image-panel");
 const textPanel = document.getElementById("text-panel");
 const panelContainer = document.getElementById("panel-container");
+
+// variables scrollToTop y scrollDown
+const scrollToTop = document.getElementById("scroll-to-top");
+const scrollDown = document.getElementById("scroll-down");
 
 function mostrarPanelImagen() {
 	imagePanel.classList.remove("hide");
@@ -202,10 +206,7 @@ upPcBtn.addEventListener("click", () => {
 });
 
 /* image URL*/
-const main_img =
-	document.getElementById(
-		"main-img"
-	); 
+const main_img = document.getElementById("main-img");
 
 function formatearImg() {
 	main_img.style.backgroundSize = `cover`;
@@ -241,7 +242,7 @@ document.addEventListener("keyup", function (event) {
 });
 
 /* :::::::::::::::::::::::::::::::::::: choose image background color and Blend Mode ::::::::::::::::::::::::::::::::::::*/
-const inputColor = document.getElementById("input-color"); 
+const inputColor = document.getElementById("input-color");
 const blendMode = document.getElementById("blendMode");
 
 inputColor.addEventListener("input", (e) => {
@@ -349,8 +350,6 @@ inputTextLower.addEventListener("input", (e) => {
 	mainTextLower.textContent = mainTextLower.textContent.toUpperCase();
 });
 
-
-
 const hideTextTopCheckbox = document.getElementById("hide-text-top");
 hideTextTopCheckbox.addEventListener("click", () => {
 	mainTextTop.classList.toggle("hide");
@@ -402,7 +401,7 @@ fontSelection.addEventListener("input", () => {
 	mainTextLower.style.fontFamily = fontSelection.value;
 
 	// Esperar a que la tipografía se cargue antes de eliminar la clase
-		mainTextTop.onload = mainTextLower.onload = function () {
+	mainTextTop.onload = mainTextLower.onload = function () {
 		mainTextTop.classList.remove("loading-font");
 		mainTextLower.classList.remove("loading-font");
 	};
@@ -476,7 +475,6 @@ outlineLessBtn.addEventListener("click", () => {
 });
 
 outlineLightBtn.addEventListener("click", () => {
-	
 	mainTextTop.style.textShadow = `2px  0px 0px white, 
                                          -2px  0px 0px white,
                                           0px  2px 0px white,
@@ -488,7 +486,6 @@ outlineLightBtn.addEventListener("click", () => {
 });
 
 outlineDarkBtn.addEventListener("click", () => {
-	
 	mainTextTop.style.textShadow = `2px  0px 0px black, 
                                          -2px  0px 0px black,
                                           0px  2px 0px black,
@@ -513,7 +510,6 @@ lineTextMeme.addEventListener("change", () => {
 	mainTextLower.style.lineHeight = `${lineTextMeme.value}`;
 });
 
-
 /* ::::::::::::::::::::::::::::::::::::::: download Meme as image  :::::::::::::::::::::::::::::::: */
 const div_img_txt = document.getElementById("image-text-container");
 const meme_download_btn = document.getElementById("meme-download-btn");
@@ -523,14 +519,11 @@ meme_download_btn.addEventListener("click", () => {
 	});
 });
 
-
-
 function initializePageFunctions() {
-	mostrarPanelImagen1300(); 
-	dispositivoMovil(); 
+	mostrarPanelImagen1300();
+	dispositivoMovil();
 	cargarFuentes();
 	mostarValorFiltros();
 }
-
 
 window.onload = initializePageFunctions;
