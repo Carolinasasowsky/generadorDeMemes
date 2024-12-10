@@ -542,15 +542,36 @@ lineTextMeme.addEventListener("change", () => {
 	mainTextTop.style.lineHeight = `${lineTextMeme.value}`;
 	mainTextLower.style.lineHeight = `${lineTextMeme.value}`;
 });
-
 /* ::::::::::::::::::::::::::::::::::::::: download Meme as image  :::::::::::::::::::::::::::::::: */
-const div_img_txt = document.getElementById("image-text-container");
-const meme_download_btn = document.getElementById("meme-download-btn");
-meme_download_btn.addEventListener("click", () => {
-	domtoimage.toBlob(div_img_txt).then((blob) => {
+
+const imageTextContainer = document.getElementById("image-text-container");
+const mainImg = document.getElementById("main-img");
+const btnDescargarMeme = document.getElementById("main-button-download");
+
+btnDescargarMeme.addEventListener("click", () => {
+	domtoimage.toBlob(imageTextContainer).then((blob) => {
 		window.saveAs(blob, "meme.png");
 	});
 });
+
+/*AJUSTAR EL ALTO DEL DIV SEGUN LA PANTALLA*/
+/*window.visualViewport.addEventListener("resize", () => {
+	if (window.visualViewport.width < 600) {
+		imageTextContainer.style.height = `${window.visualViewport.width - 30}px`;
+		imageTextContainer.style.width = `${window.visualViewport.width - 30}px`;
+	} else {
+		imageTextContainer.style.height = "500px";
+		imageTextContainer.style.width = "500px";
+	}
+});
+
+if (window.visualViewport.width < 600) {
+	imageTextContainere.style.height = `${window.visualViewport.width - 30}px`;
+	imageTextContainer.style.width = `${window.visualViewport.width - 30}px`;
+} else {
+	imageTextContainer.style.height = "500px";
+	imageTextContainer.style.width = "500px";
+}*/
 
 function initializePageFunctions() {
 	mostrarPanelImagen1300();
