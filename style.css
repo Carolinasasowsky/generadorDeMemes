@@ -209,7 +209,7 @@ body {
 	border-radius: 5px;
 	padding: 10px;
 	font-size: 0.8rem;
-	margin-top: 20px;
+	margin-top: 120px;
 	font-weight: bold;
 	cursor: pointer !important;
 	color: rgb(255, 255, 255);
@@ -242,6 +242,7 @@ body {
 
 .image-text-container {
 	width: 100%;
+	/*height: 100%;*/
 	height: calc(var(--max_meme_box_width) * 1px);
 	max-width: calc(var(--max_meme_box_width) * 1px);
 	position: relative;
@@ -253,7 +254,7 @@ body {
 
 .main-img {
 	width: 100%;
-	height: 60%;
+	height: 100%;
 	background-color: var(--color-header);
 	position: relative;
 }
@@ -289,6 +290,7 @@ body {
 /* ::::::::::::::::::::::::::: text and image panel styles :::::::::::::::::::::::::::  */
 
 .panel-container {
+	
 	width: calc(var(--imgtext-width) * 1px);
 	height: 100%;
 	flex-direction: column;
@@ -659,7 +661,7 @@ input[type="color"] :hover,
 	}
 
 	.main-button-download {
-		margin-top: 80px;
+		margin-top: 120px;
 	}
 
 	.panel-close-btn {
