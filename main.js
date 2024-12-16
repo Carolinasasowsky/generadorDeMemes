@@ -542,6 +542,9 @@ lineTextMeme.addEventListener("change", () => {
 	mainTextTop.style.lineHeight = `${lineTextMeme.value}`;
 	mainTextLower.style.lineHeight = `${lineTextMeme.value}`;
 });
+
+
+
 /* ::::::::::::::::::::::::::::::::::::::: download Meme as image  :::::::::::::::::::::::::::::::: */
 
 const imageTextContainer = document.getElementById("image-text-container");

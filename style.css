@@ -257,6 +257,7 @@ body {
 	height: 100%;
 	background-color: var(--color-header);
 	position: relative;
+	
 }
 
 .main-text {
@@ -273,9 +274,11 @@ body {
 }
 #text-top {
 	top: 0;
+	overflow-wrap: break-word;
 }
-#text-lowe {
-	bottom: 0;
+#text-lower {
+	bottom: 0;	
+	overflow-wrap: break-word;
 }
 
 /* ::::::::::::::::::::::::::: autor :::::::::::::::::::::::::::  */
@@ -515,6 +518,8 @@ input[type="color"] :hover,
 	height: 50px;
 	overflow-y: scroll;
 	color: var(--color-btn-scroll);
+	overflow-wrap: break-word;
+	padding: 10px; /* Valor inicial del padding */
 }
 
 .checkbox-text-topLower {
