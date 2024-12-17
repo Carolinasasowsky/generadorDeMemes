@@ -550,7 +550,7 @@ input[type="color"] :hover,
 }
 
 .loading-font {
-	transition: font 1s ease-in-out;
+	transition: font-size 0.3s ease-in-out
 }
 
 .text-size-container-align {
