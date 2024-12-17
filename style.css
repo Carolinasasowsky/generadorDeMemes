@@ -25,13 +25,13 @@
 	font-family: "Dokdo";
 	src: url(assets/fonts/Dokdo-Regular.ttf);
 	font-weight: bold;
-	font-style: regular;
+	font-style: normal;
 }
 @font-face {
 	font-family: "Honk";
 	src: url(assets/fonts/Honk-Regular.ttf);
 	font-weight: normal;
-	font-style: regular;
+	font-style: normal;
 }
 
 @font-face {
@@ -44,25 +44,25 @@
 	font-family: "Pacifico";
 	src: url(assets/fonts/Pacifico-Regular.ttf);
 	font-weight: normal;
-	font-style: regular;
+	font-style: normal;
 }
 @font-face {
 	font-family: "RammettoOne";
 	src: url(assets/fonts/RammettoOne-Regular.ttf);
 	font-weight: normal;
-	font-style: regular;
+	font-style: normal;
 }
 @font-face {
 	font-family: "SongMyung";
 	src: url(assets/fonts/SongMyung-Regular.ttf);
 	font-weight: normal;
-	font-style: regular;
+	font-style: normal;
 }
 @font-face {
 	font-family: "SpecialElite";
 	src: url(assets/fonts/SpecialElite-Regular.ttf);
 	font-weight: normal;
-	font-style: regular;
+	font-style: normal;
 }
 @font-face {
 	font-family: "Teko";
@@ -74,7 +74,7 @@
 	font-family: "Ultra";
 	src: url(assets/fonts/Ultra-Regular.ttf);
 	font-weight: bold;
-	font-style: Regular;
+	font-style: normal;
 }
 
 /* :::::::::::::::::::::::::::::::::::::::::: dark mode ::::::::::::::::::::::::::::::::::::::::::*/
@@ -90,7 +90,6 @@
 	color-scheme: dark;
 
 	--max_meme_box_width: 600;
-	/*--cajita_meme-tm-inicial-txt: 50;*/
 	--panel-btn-height: 27;
 	--imgtext-width: 280;
 
@@ -171,7 +170,6 @@ body {
 	color: var(--color-font);
 	background-color: var(--color-header);
 	padding: 5px;
-
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -224,10 +222,10 @@ body {
 .main-container {
 	width: 100%;
 	height: 70%;
-  display: flex;
-  flex-direction: column; /* Cambia a columna para alinear verticalmente */
-  align-items: center;    /* Centra los elementos horizontalmente */
-  justify-content: center; /* Centra los elementos verticalmente */
+	display: flex;
+	flex-direction: column; /* Cambia a columna para alinear verticalmente */
+	align-items: center; /* Centra los elementos horizontalmente */
+	justify-content: center; /* Centra los elementos verticalmente */
 }
 
 .main-content {
@@ -242,7 +240,6 @@ body {
 
 .image-text-container {
 	width: 100%;
-	/*height: 100%;*/
 	height: calc(var(--max_meme_box_width) * 1px);
 	max-width: calc(var(--max_meme_box_width) * 1px);
 	position: relative;
@@ -257,7 +254,6 @@ body {
 	height: 100%;
 	background-color: var(--color-header);
 	position: relative;
-	
 }
 
 .main-text {
@@ -275,12 +271,12 @@ body {
 #text-top {
 	top: 0;
 	overflow-wrap: break-word;
-	word-wrap: break-word;  
+	word-wrap: break-word;
 }
 #text-lower {
-	bottom: 0;	
+	bottom: 0;
 	overflow-wrap: break-word;
-	word-wrap: break-word;  
+	word-wrap: break-word;
 }
 
 /* ::::::::::::::::::::::::::: autor :::::::::::::::::::::::::::  */
@@ -295,7 +291,6 @@ body {
 /* ::::::::::::::::::::::::::: text and image panel styles :::::::::::::::::::::::::::  */
 
 .panel-container {
-	
 	width: calc(var(--imgtext-width) * 1px);
 	height: 100%;
 	flex-direction: column;
@@ -334,7 +329,6 @@ body {
 
 .control-sectors-panel {
 	margin-top: 5px;
-	/*padding: 5px 0px -70px 0px;   */
 }
 
 .image-panel,
@@ -360,10 +354,6 @@ input {
 	width: 100%;
 	margin-top: 5px;
 }
-
-/*.origin-image-height {
-    height: 100px;
-}*/
 
 .upload-btn {
 	background-color: var(--color-bg-btn);
@@ -441,7 +431,7 @@ input[type="url"] {
 	border-radius: 3px;
 	display: flex;
 	width: calc(50% - 2px);
-	height: var(--panel-btn-height) px;
+	height: calc(var(--panel-btn-height) * 1px);
 	display: flex;
 	align-items: center;
 }
@@ -534,9 +524,10 @@ input[type="color"] :hover,
 	border-radius: 3px;
 	display: flex;
 	width: 100%;
-	height: var(--panel-btn-height) px;
+	height: calc(var(--panel-btn-height) * 1px);
 	color: #000000;
 }
+
 .select-font-panel select {
 	border: 0;
 	background-color: var(--color-bg-btn);
@@ -550,7 +541,7 @@ input[type="color"] :hover,
 }
 
 .loading-font {
-	transition: font-size 0.3s ease-in-out
+	transition: font-size 0.3s ease-in-out;
 }
 
 .text-size-container-align {
@@ -702,7 +693,6 @@ input[type="color"] :hover,
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		/* margin: -80px;*/
 	}
 
 	.filters-column {
