@@ -534,8 +534,8 @@ const spacingTextMeme = document.getElementById("spacing-text-meme");
 const lineTextMeme = document.getElementById("line-text-meme");
 
 spacingTextMeme.addEventListener("input", () => {
-	mainTextTop.style.padding = `${spacingTextMeme.value}px 20px`;
-	mainTextLower.style.padding = `${spacingTextMeme.value}px 20px`;
+	mainTextTop.style.padding = `${spacingTextMeme.value}px 10px`;
+	mainTextLower.style.padding = `${spacingTextMeme.value}px 10px`;
 });
 
 lineTextMeme.addEventListener("change", () => {

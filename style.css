@@ -275,10 +275,12 @@ body {
 #text-top {
 	top: 0;
 	overflow-wrap: break-word;
+	word-wrap: break-word;  
 }
 #text-lower {
 	bottom: 0;	
 	overflow-wrap: break-word;
+	word-wrap: break-word;  
 }
 
 /* ::::::::::::::::::::::::::: autor :::::::::::::::::::::::::::  */
