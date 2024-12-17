@@ -13,18 +13,6 @@ let breakPointDos = () =>
 		)
 	); /* 850 */
 
-/* ::::::::::::::::::::::::::::::::::::::::::::  dark / light :::::::::::::::::::::::::::::::::::::::::::::::   */
-/*const btn_oscuro = document.getElementById("nav-button-lightDark");
-
-btn_oscuro.addEventListener("click", () => {
-	if (btn_oscuro.textContent.trim() === "Modo Claro") {
-		document.documentElement.setAttribute("data-theme-color", "light");
-		btn_oscuro.innerHTML = `<i class="fa fa-moon-o" aria-hidden="true"></i> Modo Oscuro`;
-	} else {
-		document.documentElement.setAttribute("data-theme-color", "dark");
-		btn_oscuro.innerHTML = `<i class="fa fa-sun-o"></i> Modo Claro`;
-	}
-});*/
 const btn_oscuro = document.getElementById("nav-button-lightDark");
 const favicon = document.getElementById("favicon");
 
@@ -118,12 +106,8 @@ function mostrarPanelImagen1300() {
 		mostrarPanelImagen();
 	}
 }
-// Define la función scrollToTop
-/*function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}*/
 
-// El resto de tu código
+
 window.visualViewport.addEventListener("resize", () => {
 	if (
 		window.innerWidth >= breakPointUno() &&
@@ -132,32 +116,7 @@ window.visualViewport.addEventListener("resize", () => {
 		mostrarPanelImagen();
 	}
 
-	/*  if (
-        window.innerWidth <= breakPointDos() &&
-        !panelContainer.classList.contains("hide")
-    ) {
-        // Aquí se llama a la función scrollToTop en lugar de tratarlo como un objeto
-        scrollToTop();
-        scrollDown.classList.remove("hide");
-    }*/
 });
-
-/*window.visualViewport.addEventListener("resize", () => {
-	if (
-		window.innerWidth >= breakPointUno() &&
-		panelContainer.classList.contains("hide")
-	) {
-		mostrarPanelImagen();
-	}
-
-	if (
-		window.innerWidth <= breakPointDos() &&
-		!panelContainer.classList.contains("hide")
-	) {
-		scrollToTop.classList.remove("hide");
-		scrollDown.classList.remove("hide");
-	}
-});*/
 
 document.getElementById("nav-button-img").addEventListener("click", (e) => {
 	textPanel.classList.add("hide");
@@ -167,13 +126,6 @@ document.getElementById("nav-button-img").addEventListener("click", (e) => {
 	uploadUrlInput.classList.add("hide");
 	upPcInput.classList.add("hide");
 
-	/*if (
-		window.innerWidth <= breakPointDos() &&
-		!panelContainer.classList.contains("hide")
-	) {
-		scrollToTop.classList.remove("hide");
-		scrollDown.classList.remove("hide");
-	}*/
 });
 
 document.getElementById("nav-button-text").addEventListener("click", (e) => {
@@ -181,13 +133,6 @@ document.getElementById("nav-button-text").addEventListener("click", (e) => {
 	textPanel.classList.remove("hide");
 	panelContainer.classList.remove("hide");
 
-	/*if (
-		window.innerWidth <= breakPointDos() &&
-		!panelContainer.classList.contains("hide")
-	) {
-		scrollToTop.classList.remove("hide");
-		scrollDown.classList.remove("hide");
-	}*/
 });
 
 document.getElementById("panel-close-btn").addEventListener("click", (e) => {
@@ -195,10 +140,6 @@ document.getElementById("panel-close-btn").addEventListener("click", (e) => {
 	textPanel.classList.add("hide");
 	panelContainer.classList.add("hide");
 
-	/*if (window.innerWidth <= breakPointDos()) {
-		ir_arriba.classList.add("ocultar");
-		ir_abajo.classList.add("ocultar");
-	}*/
 });
 
 /* ============================================================== */
@@ -556,25 +497,6 @@ btnDescargarMeme.addEventListener("click", () => {
 		window.saveAs(blob, "meme.png");
 	});
 });
-
-/*AJUSTAR EL ALTO DEL DIV SEGUN LA PANTALLA*/
-/*window.visualViewport.addEventListener("resize", () => {
-	if (window.visualViewport.width < 600) {
-		imageTextContainer.style.height = `${window.visualViewport.width - 30}px`;
-		imageTextContainer.style.width = `${window.visualViewport.width - 30}px`;
-	} else {
-		imageTextContainer.style.height = "500px";
-		imageTextContainer.style.width = "500px";
-	}
-});
-
-if (window.visualViewport.width < 600) {
-	imageTextContainere.style.height = `${window.visualViewport.width - 30}px`;
-	imageTextContainer.style.width = `${window.visualViewport.width - 30}px`;
-} else {
-	imageTextContainer.style.height = "500px";
-	imageTextContainer.style.width = "500px";
-}*/
 
 function initializePageFunctions() {
 	mostrarPanelImagen1300();
