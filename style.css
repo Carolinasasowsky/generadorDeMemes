@@ -279,13 +279,59 @@ body {
 	word-wrap: break-word;
 }
 
-/* ::::::::::::::::::::::::::: autor :::::::::::::::::::::::::::  */
 
-.author {
-	text-align: center;
-	padding: 5px 0px 0px;
-	font-weight: 100;
-	color: var(--color-btn-scroll);
+/* ::::::::::::::::::::::::::: footer ::::::::::::::::::::::::::: */
+.grupo-redes {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.red-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.red-social h2 {
+  font-size: 18px;
+  color: black;
+  margin-top: 20px;
+}
+
+.iconos {
+  display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 10px;
+
+}
+
+.iconos a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  font-size: 16px;
+  transition: all 300ms ease;
+}
+
+.iconos a:hover {
+  background-color: #05274b;
+}
+
+/* Pie de página */
+.grupo-2 {  
+  padding: 30px 10px;
+	margin-top: 30px;
+  text-align: center;
+  color: black;
 }
 
 /* ::::::::::::::::::::::::::: text and image panel styles :::::::::::::::::::::::::::  */
@@ -667,11 +713,7 @@ input[type="color"] :hover,
 		top: 10px;
 		right: 10px;
 	}
-
-	.author {
-		text-align: center;
-		padding: 5px 0px 0px;
-	}
+	
 }
 
 @media (570px <= width <= 850px) {
@@ -711,9 +753,5 @@ input[type="color"] :hover,
 		position: absolute;
 		top: 10px;
 		right: 10px;
-	}
-	.author {
-		text-align: center;
-		padding: 5px 0px 0px;
-	}
+  }	
 }
