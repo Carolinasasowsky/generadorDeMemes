@@ -52,7 +52,7 @@ El Generador de Memes ofrece a cualquier usuario la oportunidad de sumergirse en
 
 <div align="center">
   <video src="assets/imgReadme/generador-memes.mp4" controls width="600">
-    Tu navegador no soporta video.
+   
   </video>
 </div>
 
